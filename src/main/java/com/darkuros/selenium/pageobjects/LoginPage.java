@@ -36,18 +36,18 @@ public class LoginPage {
 
 	// Login to product catalogue page
 	public void loginToApplication(String username, String password) {
-		userEmail.sendKeys(username);
-		userPassword.sendKeys(password);
-		submitButton.click();
+		this.userEmail.sendKeys(username);
+		this.userPassword.sendKeys(password);
+		this.submitButton.click();
 	}
 
 	// Navigate to register user link
 	public void navigateToRegisterLink() {
-		registerLink.click();
+		this.registerLink.click();
 	}
 
 	// Navigate to forgot password link
 	public void navigateToForgotPasswordLink() {
-		forgotPasswordLink.click();
+		this.forgotPasswordLink.click();
 	}
 }

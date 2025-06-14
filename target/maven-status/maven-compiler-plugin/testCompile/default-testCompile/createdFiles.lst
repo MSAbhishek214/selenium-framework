@@ -1,1 +1,5 @@
-com\darkuros\selenium\AppTest.class
+com\darkuros\selenium\LoginTest.class
+com\darkuros\selenium\ForgotPasswordTest.class
+com\darkuros\selenium\OrderAnItemTest.class
+com\darkuros\selenium\RegisterTest.class
+com\darkuros\selenium\OrderAllItemsTest.class

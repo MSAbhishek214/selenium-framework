@@ -11,14 +11,16 @@ public class LandingPage {
 
 	// Declare Web Driver
 	WebDriver driver;
-	
+
+	// url - https://rahulshettyacademy.com/client/dashboard/dash
+
 	public LandingPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	// Get a list of all products in the catalogue page
 	@FindBy(css = ".mb-3")
 	List<WebElement> products;
-	
+
 }

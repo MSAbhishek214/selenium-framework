@@ -35,19 +35,19 @@ public class ForgotPasswordPage {
 
 	// Method to submit new password
 	public void saveNewPassword(String username, String password) {
-		userName.sendKeys(username);
-		userPassword.sendKeys(password);
-		userConfirmPassword.sendKeys(password);
-		submitButton.click();
+		this.userName.sendKeys(username);
+		this.userPassword.sendKeys(password);
+		this.userConfirmPassword.sendKeys(password);
+		this.submitButton.click();
 	}
 
 	// Method to navigate back to Login page from forgot password page
 	public void navigateBackToLoginPage() {
-		loginLink.click();
+		this.loginLink.click();
 	}
 
 	// Method to navigate back to register page from forgot password page
 	public void navigateBackToRegisterPage() {
-		registerLink.click();
+		this.registerLink.click();
 	}
 }
