@@ -5,26 +5,59 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.darkuros.selenium.base.SetupAndTearDown;
-import com.darkuros.selenium.pageobjects.LoginPage;
+import com.darkuros.selenium.base.BaseTest;
 
-
-public class LoginTest extends SetupAndTearDown {
+public class LoginTest extends BaseTest {
 
 	@Test
 	public void LoginWithValidCredentials() {
-		// Create an object of LoginPage class
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.loginToApplication("dark@uros.com", "123@Dark");
-		Assert.assertTrue(wait.until(ExpectedConditions.urlToBe("https://rahulshettyacademy.com/client/dashboard/dash")));
+		loginPage.enterUserEmail("dark@uros.com");
+		loginPage.enterUserPassword("123@Dark");
+		loginPage.clickSubmitButton();
+		Assert.assertTrue(
+				wait.until(ExpectedConditions.urlToBe("https://rahulshettyacademy.com/client/dashboard/dash")));
+	}
+
+	@Test
+	public void LoginWithInvalidUserEmail() {
+		loginPage.enterUserEmail("light@uros.com");
+		loginPage.enterUserPassword("123@Dark");
+		loginPage.clickSubmitButton();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("overlay-container")));
+		Assert.assertEquals(driver.findElement(By.id("toast-container")).getText().trim(),
+				"Incorrect email or password.");
+	}
+
+	@Test
+	public void LoginWithInvalidPassword() {
+		loginPage.enterUserEmail("dark@uros.com");
+		loginPage.enterUserPassword("123@light");
+		loginPage.clickSubmitButton();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("overlay-container")));
+		Assert.assertEquals(driver.findElement(By.id("toast-container")).getText().trim(),
+				"Incorrect email or password.");
+	}
+
+	@Test
+	public void LoginWithInvalidCredentials() {
+		loginPage.enterUserEmail("light@uros.com");
+		loginPage.enterUserPassword("123@light");
+		loginPage.clickSubmitButton();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("overlay-container")));
+		Assert.assertEquals(driver.findElement(By.id("toast-container")).getText().trim(),
+				"Incorrect email or password.");
+	}
+
+	@Test
+	public void isForgotPasswordLinkWorking() {
+		loginPage.navigateToForgotPasswordLink();
+		Assert.assertEquals(driver.getCurrentUrl(), "https://rahulshettyacademy.com/client/auth/password-new");
 	}
 	
 	@Test
-	public void LoginWithInvalidCredentials() {
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.loginToApplication("dark@dark.com", "123@Dark");
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.className("overlay-container")));
-		Assert.assertEquals(driver.findElement(By.id("toast-container")).getText().trim(), "Incorrect email or password.");
+	public void isRegisterLinkWorking() {
+		loginPage.navigateToRegisterLink();
+		Assert.assertEquals(driver.getCurrentUrl(), "https://rahulshettyacademy.com/client/auth/register");
 	}
 
 }

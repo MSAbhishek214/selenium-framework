@@ -16,7 +16,7 @@ public class ForgotPasswordPage {
 	}
 
 	@FindBy(css = ".mt-1 + input")
-	WebElement userName;
+	WebElement userEmail;
 
 	@FindBy(id = "userPassword")
 	WebElement userPassword;
@@ -33,11 +33,24 @@ public class ForgotPasswordPage {
 	@FindBy(xpath = "//a[normalize-space()='Register']")
 	WebElement registerLink;
 
-	// Method to submit new password
-	public void saveNewPassword(String username, String password) {
-		this.userName.sendKeys(username);
+	/*
+	 * All methods defining individual actions go here Keep actions small and
+	 * reusable and return state of element instead of nothing to make them useful
+	 */
+
+	public void enterUserEmail(String userEmail) {
+		this.userEmail.sendKeys(userEmail);
+	}
+
+	public void enterPassword(String password) {
 		this.userPassword.sendKeys(password);
-		this.userConfirmPassword.sendKeys(password);
+	}
+
+	public void enterConfirmPassword(String confirmPassword) {
+		this.userConfirmPassword.sendKeys(confirmPassword);
+	}
+
+	public void clickOnSubmitButton() {
 		this.submitButton.click();
 	}
 

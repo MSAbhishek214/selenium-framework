@@ -42,10 +42,25 @@ public class LoginPage {
 	@FindBy(css = "p.login-wrapper-footer-text")
 	WebElement registerLink;
 
-	// Login to product catalogue page
-	public void loginToApplication(String username, String password) {
-		this.userEmail.sendKeys(username);
-		this.userPassword.sendKeys(password);
+	@FindBy(css = "div[aria-label='Password Changed Successfully']")
+	WebElement passwordChangeSuccessfulMessage;
+
+	/*
+	 * All methods defining individual actions go here Keep actions small and
+	 * reusable and return state of element instead of nothing to make them useful
+	 */
+
+	// Send keys to username field
+	public void enterUserEmail(String userEmail) {
+		this.userEmail.sendKeys(userEmail);
+	}
+
+	// Send keys to password field
+	public void enterUserPassword(String userPassword) {
+		this.userPassword.sendKeys(userPassword);
+	}
+
+	public void clickSubmitButton() {
 		this.submitButton.click();
 	}
 
@@ -57,5 +72,9 @@ public class LoginPage {
 	// Navigate to forgot password link
 	public void navigateToForgotPasswordLink() {
 		this.forgotPasswordLink.click();
+	}
+
+	public String getPasswordChangeSuccessfulText() {
+		return passwordChangeSuccessfulMessage.getText().trim();
 	}
 }

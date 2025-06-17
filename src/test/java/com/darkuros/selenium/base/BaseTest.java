@@ -9,11 +9,18 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
-public class SetupAndTearDown {
+import com.darkuros.selenium.pageobjects.ForgotPasswordPage;
+import com.darkuros.selenium.pageobjects.LoginPage;
+
+public class BaseTest {
 	// Create a web driver object
 	protected WebDriver driver;
 	// Create a Web driver wait object
 	protected WebDriverWait wait;
+	// Create an object for LoginPage
+	protected LoginPage loginPage;
+	// Create an object for LoginPage
+	protected ForgotPasswordPage forgotPasswordPage;
 
 	@BeforeMethod(alwaysRun = true)
 	@Parameters({ "baseURL" })
@@ -21,11 +28,15 @@ public class SetupAndTearDown {
 		// Initializing WebDriver for Chrome browser
 		driver = new ChromeDriver();
 		// Create a wait object for handling explicit wait scenarios
-		this.wait = new WebDriverWait(this.driver, Duration.ofSeconds(5));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		// Navigating to the login practice page
 		driver.get(baseURL);
 		// Maximise window
 		driver.manage().window().maximize();
+		// Initialise loginPage object with driver
+		loginPage = new LoginPage(driver);
+		// Initialise forgotPasswordPage object with driver
+		forgotPasswordPage = new ForgotPasswordPage(driver);
 	}
 
 	@AfterMethod(alwaysRun = true)
