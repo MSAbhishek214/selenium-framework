@@ -1,5 +1,6 @@
-E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\ForgotPasswordTest.java
-E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\LoginTest.java
-E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\OrderAllItemsTest.java
-E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\OrderAnItemTest.java
-E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\RegisterTest.java
+E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\base\SetupAndTearDown.java
+E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\tests\ForgotPasswordTest.java
+E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\tests\LoginTest.java
+E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\tests\OrderAllItemsTest.java
+E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\tests\OrderAnItemTest.java
+E:\EclipseProjects\selenium-framework\src\test\java\com\darkuros\selenium\tests\RegisterTest.java

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [DebugSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="debug(failed)">
+    <parameter name="baseURL" value="https://rahulshettyacademy.com/client/"/>
+    <groups>
+      <run>
+        <include name="debug"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.darkuros.selenium.tests.LoginTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="LoginWithInvalidCredentials"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.darkuros.selenium.tests.LoginTest -->
+    </classes>
+  </test> <!-- debug(failed) -->
+</suite> <!-- Failed suite [DebugSuite] -->

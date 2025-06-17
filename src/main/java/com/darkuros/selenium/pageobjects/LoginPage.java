@@ -8,11 +8,19 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 
 	// Class level driver
-	WebDriver driver;
+	private WebDriver driver;
+
+	public WebDriver getDriver() {
+		return driver;
+	}
+
+	public void setDriver(WebDriver driver) {
+		this.driver = driver;
+	}
 
 	// Constructor to initialize driver
 	public LoginPage(WebDriver driver) {
-		this.driver = driver;
+		this.setDriver(driver);
 		PageFactory.initElements(driver, this);
 	}
 

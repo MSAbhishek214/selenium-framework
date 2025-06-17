@@ -1,4 +1,4 @@
-package com.darkuros.selenium;
+package com.darkuros.selenium.tests;
 
 public class OrderAllItemsTest {
 
