@@ -8,21 +8,22 @@ import org.openqa.selenium.support.PageFactory;
 public class ForgotPasswordPage {
 
 	// Declare a WebDriver
-	WebDriver driver;
+	private final WebDriver driver;
+
 
 	public ForgotPasswordPage(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(this.driver, this);
 	}
 
 	@FindBy(css = ".mt-1 + input")
-	WebElement userEmail;
+	WebElement emailInput;
 
 	@FindBy(id = "userPassword")
-	WebElement userPassword;
+	WebElement passwordInput;
 
 	@FindBy(id = "confirmPassword")
-	WebElement userConfirmPassword;
+	WebElement confirmPasswordInput;
 
 	@FindBy(css = ".btn")
 	WebElement submitButton;
@@ -39,15 +40,15 @@ public class ForgotPasswordPage {
 	 */
 
 	public void enterUserEmail(String userEmail) {
-		this.userEmail.sendKeys(userEmail);
+		emailInput.sendKeys(userEmail);
 	}
 
 	public void enterPassword(String password) {
-		this.userPassword.sendKeys(password);
+		passwordInput.sendKeys(password);
 	}
 
 	public void enterConfirmPassword(String confirmPassword) {
-		this.userConfirmPassword.sendKeys(confirmPassword);
+		confirmPasswordInput.sendKeys(confirmPassword);
 	}
 
 	public void clickOnSubmitButton() {
@@ -62,5 +63,13 @@ public class ForgotPasswordPage {
 	// Method to navigate back to register page from forgot password page
 	public void navigateBackToRegisterPage() {
 		this.registerLink.click();
+	}
+
+	public void fillSavePasswordFormAndSubmit(String userEmail, String password, String confirmPassword) {
+		
+		enterUserEmail(userEmail);
+		enterPassword(password);
+		enterConfirmPassword(confirmPassword);
+		clickOnSubmitButton();
 	}
 }
