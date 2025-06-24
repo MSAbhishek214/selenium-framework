@@ -9,7 +9,7 @@
 	<test thread-count="5" name="debug">
 		<parameter name="baseURL" value="https://rahulshettyacademy.com/client/"></parameter>
 		<classes>
-			<class name="com.darkuros.selenium.tests.ForgotPasswordTest" />
+			<class name="com.darkuros.selenium.tests.RegisterTest" />
 		</classes>
 	</test>
 </suite>

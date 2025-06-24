@@ -9,13 +9,13 @@
       </run>
     </groups>
     <classes>
-      <class name="com.darkuros.selenium.tests.ForgotPasswordTest">
+      <class name="com.darkuros.selenium.tests.RegisterTest">
         <methods>
-          <include name="emptyPassword"/>
+          <include name="passwordLessThan8Chars"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.darkuros.selenium.tests.ForgotPasswordTest -->
+      </class> <!-- com.darkuros.selenium.tests.RegisterTest -->
     </classes>
   </test> <!-- debug(failed) -->
 </suite> <!-- Failed suite [DebugSuite] -->

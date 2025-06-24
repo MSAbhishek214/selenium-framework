@@ -11,6 +11,7 @@ import org.testng.annotations.Parameters;
 
 import com.darkuros.selenium.pageobjects.ForgotPasswordPage;
 import com.darkuros.selenium.pageobjects.LoginPage;
+import com.darkuros.selenium.pageobjects.RegisterPage;
 
 public class BaseTest {
 	// Create a web driver object
@@ -21,6 +22,8 @@ public class BaseTest {
 	protected LoginPage loginPage;
 	// Create an object for LoginPage
 	protected ForgotPasswordPage forgotPasswordPage;
+	// Create an object for RegisterPage
+	protected RegisterPage registerPage;
 
 	@BeforeMethod(alwaysRun = true)
 	@Parameters({ "baseURL" })
@@ -37,6 +40,8 @@ public class BaseTest {
 		loginPage = new LoginPage(driver);
 		// Initialise forgotPasswordPage object with driver
 		forgotPasswordPage = new ForgotPasswordPage(driver);
+		// Initialise registerPage object with driver
+		registerPage = new RegisterPage(driver);
 	}
 
 	@AfterMethod(alwaysRun = true)

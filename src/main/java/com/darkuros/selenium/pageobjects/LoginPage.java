@@ -21,7 +21,7 @@ public class LoginPage {
 	// Constructor to initialize driver
 	public LoginPage(WebDriver driver) {
 		this.setDriver(driver);
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(this.driver, this);
 	}
 
 	// Find email xpath for landing page
@@ -65,13 +65,15 @@ public class LoginPage {
 	}
 
 	// Navigate to register user link
-	public void navigateToRegisterLink() {
-		this.registerLink.click();
+	public RegisterPage navigateToRegisterLink() {
+		registerLink.click();
+		return new RegisterPage(driver);
 	}
 
 	// Navigate to forgot password link
-	public void navigateToForgotPasswordLink() {
-		this.forgotPasswordLink.click();
+	public ForgotPasswordPage navigateToForgotPasswordLink() {
+		forgotPasswordLink.click();
+		return new ForgotPasswordPage(driver);
 	}
 
 	public String getPasswordChangeSuccessfulText() {

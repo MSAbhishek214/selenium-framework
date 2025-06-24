@@ -72,7 +72,7 @@ public class ForgotPasswordTest extends BaseTest {
 				"*Confirm Password is required");
 	}
 
-	@Test(groups = "debug")
+	@Test
 	public void passwordsDontMatch() {
 		loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "abc", "bca");

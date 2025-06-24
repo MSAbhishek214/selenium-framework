@@ -10,7 +10,6 @@ public class ForgotPasswordPage {
 	// Declare a WebDriver
 	private final WebDriver driver;
 
-
 	public ForgotPasswordPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
@@ -56,17 +55,18 @@ public class ForgotPasswordPage {
 	}
 
 	// Method to navigate back to Login page from forgot password page
-	public void navigateBackToLoginPage() {
-		this.loginLink.click();
+	public LoginPage navigateBackToLoginPage() {
+		loginLink.click();
+		return new LoginPage(driver);
 	}
 
 	// Method to navigate back to register page from forgot password page
-	public void navigateBackToRegisterPage() {
-		this.registerLink.click();
+	public RegisterPage navigateBackToRegisterPage() {
+		registerLink.click();
+		return new RegisterPage(driver);
 	}
 
 	public void fillSavePasswordFormAndSubmit(String userEmail, String password, String confirmPassword) {
-		
 		enterUserEmail(userEmail);
 		enterPassword(password);
 		enterConfirmPassword(confirmPassword);

@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-DebugSuite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.ForgotPasswordTest" class="method navigator-link" hash-for-method="passwordsDontMatch">passwordsDontMatch</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.RegisterTest" class="method navigator-link" hash-for-method="passwordLessThan8Chars">passwordLessThan8Chars</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-DebugSuite -->
@@ -121,14 +121,14 @@
           <div class="suite-DebugSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.darkuros.selenium.tests.ForgotPasswordTest</span>
+              <span class="class-name">com.darkuros.selenium.tests.RegisterTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="passwordsDontMatch">
-                  </a> <!-- passwordsDontMatch -->
-                  <span class="method-name">passwordsDontMatch</span>
+                  <a name="passwordLessThan8Chars">
+                  </a> <!-- passwordLessThan8Chars -->
+                  <span class="method-name">passwordLessThan8Chars</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -156,7 +156,7 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;debug&quot;&gt;
     &lt;parameter name=&quot;baseURL&quot; value=&quot;https://rahulshettyacademy.com/client/&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.darkuros.selenium.tests.ForgotPasswordTest&quot;/&gt;
+      &lt;class name=&quot;com.darkuros.selenium.tests.RegisterTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- debug --&gt;
 &lt;/suite&gt; &lt;!-- DebugSuite --&gt;
@@ -184,7 +184,7 @@
               <span class="test-group-name">debug</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">passwordsDontMatch</span>
+                <span class="method-in-group-name">passwordLessThan8Chars</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -206,14 +206,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'passwordsDontMatch')
-data.setCell(0, 2, 'com.darkuros.selenium.tests.ForgotPasswordTest')
-data.setCell(0, 3, 296);
+data.setCell(0, 1, 'passwordLessThan8Chars')
+data.setCell(0, 2, 'com.darkuros.selenium.tests.RegisterTest')
+data.setCell(0, 3, 1189);
 window.suiteTableData['DebugSuite']= { tableData: data, tableDiv: 'times-div-DebugSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 296 ms</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-DebugSuite">
               </div> <!-- times-div-DebugSuite -->
             </div> <!-- times-div -->
@@ -228,23 +228,17 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-DebugSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">6 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.darkuros.selenium.tests.ForgotPasswordTest</span>
+              <span class="ignored-class-name">com.darkuros.selenium.tests.RegisterTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">saveNewPasswordWithValidCredentials</span>
+                <span class="ignored-method-name">registerUserWithOnlyRequiredFields</span>
                 <br/>
-                <span class="ignored-method-name">emptyEmail</span>
+                <span class="ignored-method-name">registerUserWithValidDetails</span>
                 <br/>
-                <span class="ignored-method-name">emptyPasswordAndConfirmPassword</span>
-                <br/>
-                <span class="ignored-method-name">invalidEmail</span>
-                <br/>
-                <span class="ignored-method-name">emptyPassword</span>
-                <br/>
-                <span class="ignored-method-name">emptyConfirmPassword</span>
+                <span class="ignored-method-name">clickRegisterWithEmptyForm</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -256,18 +250,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.darkuros.selenium.tests.ForgotPasswordTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.darkuros.selenium.tests.RegisterTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup(https://rahulshettyacademy.com/client/)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">passwordsDontMatch</span>
-                <span class="method-start">1421 ms</span>
+                <span class="method-name">passwordLessThan8Chars</span>
+                <span class="method-start">1605 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">1719 ms</span>
+                <span class="method-start">2795 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
