@@ -3,16 +3,12 @@ package com.darkuros.selenium.pageobjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ForgotPasswordPage {
-
-	// Declare a WebDriver
-	private final WebDriver driver;
+public class ForgotPasswordPage extends BasePage {
 
 	public ForgotPasswordPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(this.driver, this);
+		super(driver);
 	}
 
 	@FindBy(css = ".mt-1 + input")
@@ -24,7 +20,7 @@ public class ForgotPasswordPage {
 	@FindBy(id = "confirmPassword")
 	WebElement confirmPasswordInput;
 
-	@FindBy(css = ".btn")
+	@FindBy(css = "button[type='submit']")
 	WebElement submitButton;
 
 	@FindBy(xpath = "//a[normalize-space()='Login']")
@@ -33,25 +29,54 @@ public class ForgotPasswordPage {
 	@FindBy(xpath = "//a[normalize-space()='Register']")
 	WebElement registerLink;
 
+	@FindBy(css = ".invalid-feedback div")
+	WebElement invalidEmailError;
+
+	@FindBy(css = ".invalid-feedback div")
+	WebElement emptyEmailError;
+
+	@FindBy(css = "#userPassword + div.invalid-feedback")
+	WebElement passwordError;
+
+	@FindBy(css = "#confirmPassword+ div.invalid-feedback")
+	WebElement confirmPasswordError;
+
 	/*
 	 * All methods defining individual actions go here Keep actions small and
 	 * reusable and return state of element instead of nothing to make them useful
 	 */
 
+	public String getPasswordErrorText() {
+		return wait.until(ExpectedConditions.visibilityOf(passwordError)).getText().trim();
+	}
+
+	public String getConfirmPasswordErrorText() {
+		return wait.until(ExpectedConditions.visibilityOf(confirmPasswordError)).getText().trim();
+	}
+
+	public String getEmptyEmailErrorText() {
+		return wait.until(ExpectedConditions.visibilityOf(emptyEmailError)).getText().trim();
+	}
+
+	public String getInvalidEmailErrorText() {
+		wait.until(ExpectedConditions.visibilityOf(invalidEmailError)).getText().trim();
+		return invalidEmailError.getText().trim();
+	}
+
 	public void enterUserEmail(String userEmail) {
-		emailInput.sendKeys(userEmail);
+		wait.until(ExpectedConditions.visibilityOf(emailInput)).sendKeys(userEmail);
 	}
 
 	public void enterPassword(String password) {
-		passwordInput.sendKeys(password);
+		wait.until(ExpectedConditions.visibilityOf(passwordInput)).sendKeys(password);
 	}
 
 	public void enterConfirmPassword(String confirmPassword) {
-		confirmPasswordInput.sendKeys(confirmPassword);
+		wait.until(ExpectedConditions.visibilityOf(confirmPasswordInput)).sendKeys(confirmPassword);
 	}
 
 	public void clickOnSubmitButton() {
-		this.submitButton.click();
+		wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
 	}
 
 	// Method to navigate back to Login page from forgot password page
@@ -71,5 +96,9 @@ public class ForgotPasswordPage {
 		enterPassword(password);
 		enterConfirmPassword(confirmPassword);
 		clickOnSubmitButton();
+	}
+
+	public String getForgotPasswordPageURL() {
+		return getCurrentPageURL();
 	}
 }

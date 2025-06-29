@@ -2,15 +2,15 @@
 <testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-23T11:30:51 IST" name="DebugSuite" finished-at="2025-06-23T11:30:54 IST" duration-ms="2968">
+  <suite started-at="2025-06-29T11:25:33 IST" name="DebugSuite" finished-at="2025-06-29T11:25:36 IST" duration-ms="2851">
     <groups>
       <group name="debug">
-        <method signature="RegisterTest.passwordLessThan8Chars()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@41d477ed]" name="passwordLessThan8Chars" class="com.darkuros.selenium.tests.RegisterTest"/>
+        <method signature="RegisterTest.passwordLessThan8Chars()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@776aec5c]" name="passwordLessThan8Chars" class="com.darkuros.selenium.tests.RegisterTest"/>
       </group> <!-- debug -->
     </groups>
-    <test started-at="2025-06-23T11:30:51 IST" name="debug" finished-at="2025-06-23T11:30:54 IST" duration-ms="2968">
+    <test started-at="2025-06-29T11:25:33 IST" name="debug" finished-at="2025-06-29T11:25:36 IST" duration-ms="2851">
       <class name="com.darkuros.selenium.tests.RegisterTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@41d477ed]" started-at="2025-06-23T11:30:51 IST" name="setup" finished-at="2025-06-23T11:30:53 IST" duration-ms="1604" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@776aec5c]" started-at="2025-06-29T11:25:33 IST" name="setup" finished-at="2025-06-29T11:25:35 IST" duration-ms="1929" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,11 +21,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="passwordLessThan8Chars()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@41d477ed]" started-at="2025-06-23T11:30:53 IST" name="passwordLessThan8Chars" finished-at="2025-06-23T11:30:54 IST" duration-ms="1189" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@776aec5c]" started-at="2025-06-29T11:25:35 IST" name="setup" finished-at="2025-06-29T11:25:35 IST" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="passwordLessThan8Chars()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@776aec5c]" started-at="2025-06-29T11:25:35 IST" name="passwordLessThan8Chars" finished-at="2025-06-29T11:25:36 IST" duration-ms="734" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- passwordLessThan8Chars -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@41d477ed]" started-at="2025-06-23T11:30:54 IST" name="tearDown" finished-at="2025-06-23T11:30:54 IST" duration-ms="147" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@776aec5c]" started-at="2025-06-29T11:25:36 IST" name="tearDown" finished-at="2025-06-29T11:25:36 IST" duration-ms="145" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

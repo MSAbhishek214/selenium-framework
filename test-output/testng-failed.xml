@@ -11,8 +11,9 @@
     <classes>
       <class name="com.darkuros.selenium.tests.RegisterTest">
         <methods>
-          <include name="passwordLessThan8Chars"/>
           <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="registerUserWithOnlyRequiredFields"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.darkuros.selenium.tests.RegisterTest -->

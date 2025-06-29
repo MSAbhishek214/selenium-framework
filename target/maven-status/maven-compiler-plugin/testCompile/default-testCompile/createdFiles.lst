@@ -1,6 +1,8 @@
 com\darkuros\selenium\tests\ForgotPasswordTest.class
+com\darkuros\selenium\tests\OrderAnItemTest.class
+com\darkuros\selenium\base\BaseTest.class
+com\darkuros\selenium\utils\RetryAnalyzer.class
 com\darkuros\selenium\tests\OrderAllItemsTest.class
 com\darkuros\selenium\tests\RegisterTest.class
-com\darkuros\selenium\base\SetupAndTearDown.class
-com\darkuros\selenium\tests\OrderAnItemTest.class
 com\darkuros\selenium\tests\LoginTest.class
+com\darkuros\selenium\utils\RetryTransformer.class

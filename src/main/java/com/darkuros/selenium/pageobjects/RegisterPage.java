@@ -1,26 +1,17 @@
 package com.darkuros.selenium.pageobjects;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class RegisterPage {
-
-	// Class level driver
-	private WebDriver driver;
-	private WebDriverWait wait;
+public class RegisterPage extends BasePage {
 
 	public RegisterPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(this.driver, this);
-		this.setWait(new WebDriverWait(driver, Duration.ofSeconds(5)));
+		super(driver);
 	}
 
 	// Username field locator
@@ -62,9 +53,33 @@ public class RegisterPage {
 
 	@FindBy(xpath = "//div[@aria-label='Registered Successfully']")
 	WebElement registerSuccessfulToast;
-	
+
 	@FindBy(xpath = "//div[@aria-label='Password must be 8 Character Long!']")
 	WebElement passwordLessThan8CharsErrorToast;
+
+	@FindBy(css = "#firstName + div")
+	WebElement firstNameEmptyError;
+
+	@FindBy(css = ".ng-tns-c4-7")
+	WebElement lastNameRequiredToast;
+
+	@FindBy(xpath = "//div[@aria-label='Last Name is required!']")
+	WebElement lastNameRequiredError;
+
+	@FindBy(css = "#userEmail+ div")
+	WebElement emailRequiredError;
+
+	@FindBy(css = "#userMobile + div")
+	WebElement phoneRequiredError;
+
+	@FindBy(css = "#userPassword + div")
+	WebElement passwordRequiredError;
+
+	@FindBy(css = "#confirmPassword + div")
+	WebElement confirmPasswordRequiredError;
+
+	@FindBy(xpath = "//div[contains(text(),'*Please check above checkbox')]")
+	WebElement checkboxError;
 
 	// Provide details of the new user and register
 	public void registerUser(String firstName, String lastName, String email, String phoneNumber, String Occupation,
@@ -150,10 +165,43 @@ public class RegisterPage {
 	}
 
 	public String getRegisterSuccessfulToast() {
-		return registerSuccessfulToast.getText().trim();
+		return wait.until(ExpectedConditions.visibilityOf(registerSuccessfulToast)).getText().trim();
 	}
-	
+
 	public String getMessagePasswordLessThan8Chars() {
-		return passwordLessThan8CharsErrorToast.getText().trim();
+		return wait.until(ExpectedConditions.visibilityOf(passwordLessThan8CharsErrorToast)).getText().trim();
+	}
+
+	public String getFirstNameEmptyErrorText() {
+		return wait.until(ExpectedConditions.visibilityOf(firstNameEmptyError)).getText().trim();
+	}
+
+	public String getLastNameRequiredToast() {
+		wait.until(ExpectedConditions.visibilityOf(lastNameRequiredToast));
+		return lastNameRequiredError.getText().trim();
+	}
+
+	public String getEmailRequiredErrorText() {
+		return wait.until(ExpectedConditions.visibilityOf(emailRequiredError)).getText().trim();
+	}
+
+	public String getPhoneRequiredErrorText() {
+		return wait.until(ExpectedConditions.visibilityOf(phoneRequiredError)).getText().trim();
+	}
+
+	public String getPasswordRequiredErrorText() {
+		return wait.until(ExpectedConditions.visibilityOf(passwordRequiredError)).getText().trim();
+	}
+
+	public String getConfirmPasswordRequiredErrorText() {
+		return wait.until(ExpectedConditions.visibilityOf(confirmPasswordRequiredError)).getText().trim();
+	}
+
+	public String getCheckboxErrorText() {
+		return wait.until(ExpectedConditions.visibilityOf(checkboxError)).getText().trim();
+	}
+
+	public Boolean isCheckboxSelected() {
+		return wait.until(ExpectedConditions.elementToBeClickable(ageCheckBoxSelection)).isSelected();
 	}
 }
