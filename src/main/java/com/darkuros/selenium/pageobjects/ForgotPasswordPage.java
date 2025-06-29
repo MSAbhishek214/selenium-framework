@@ -82,13 +82,13 @@ public class ForgotPasswordPage extends BasePage {
 	// Method to navigate back to Login page from forgot password page
 	public LoginPage navigateBackToLoginPage() {
 		loginLink.click();
-		return new LoginPage(driver);
+		return new LoginPage(getDriver());
 	}
 
 	// Method to navigate back to register page from forgot password page
 	public RegisterPage navigateBackToRegisterPage() {
 		registerLink.click();
-		return new RegisterPage(driver);
+		return new RegisterPage(getDriver());
 	}
 
 	public void fillSavePasswordFormAndSubmit(String userEmail, String password, String confirmPassword) {

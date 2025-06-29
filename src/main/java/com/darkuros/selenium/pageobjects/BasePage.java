@@ -8,8 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
 	
-	protected WebDriver driver; // <<< Driver declared here but lives in BaseTest
-	protected WebDriverWait wait;
+	private final WebDriver driver; // Driver declared here but lives in BaseTest
+	
+	protected WebDriver getDriver() {
+		return driver;
+	}
+
+	protected WebDriverWait wait; // WebDriverWait is used for explicit waits in Page Objects
 	
 	public BasePage(WebDriver driver) {
 		this.driver = driver;

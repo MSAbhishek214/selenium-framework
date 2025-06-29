@@ -17,7 +17,7 @@ public class ForgotPasswordTest extends BaseTest {
 	// (LoginTest)
 	@BeforeMethod(alwaysRun = true)
 	public void setup() {
-		loginPage = new LoginPage(driver);
+		loginPage = new LoginPage(getDriver());
 	}
 
 	@Test

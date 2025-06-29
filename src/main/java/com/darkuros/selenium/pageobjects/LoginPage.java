@@ -60,13 +60,13 @@ public class LoginPage extends BasePage {
 	// Navigate to register user link
 	public RegisterPage navigateToRegisterLink() {
 		wait.until(ExpectedConditions.elementToBeClickable(registerLink)).click();
-		return new RegisterPage(driver);
+		return new RegisterPage(getDriver());
 	}
 
 	// Navigate to forgot password link
 	public ForgotPasswordPage navigateToForgotPasswordLink() {
 		wait.until(ExpectedConditions.elementToBeClickable(forgotPasswordLink)).click();
-		return new ForgotPasswordPage(driver);
+		return new ForgotPasswordPage(getDriver());
 	}
 
 	// Get the text of the password change successful message
@@ -90,6 +90,6 @@ public class LoginPage extends BasePage {
 		enterUserEmail(email);
 		enterUserPassword(password);
 		clickSubmitButton();
-		return new LandingPage(driver);
+		return new LandingPage(getDriver());
 	}
 }

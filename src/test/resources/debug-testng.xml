@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="DebugSuite">
-	<groups>
+<suite name="DebugSuite" parallel="true" thread-count="5">
+	<listeners>
+		<listener class-name="com.darkuros.selenium.utils.RetryTransformer" />
+		<listener class-name="com.darkuros.selenium.utils.ExtentTestListener" />
+	</listeners>
+	<!--<groups>
 		<run>
 			<include name="debug"></include>
 		</run>
-	</groups>
+	</groups>-->
 	<test thread-count="5" name="debug">
 		<parameter name="baseURL" value="https://rahulshettyacademy.com/client/"></parameter>
 		<classes>
-			<class name="com.darkuros.selenium.tests.RegisterTest" />
+			<class name="com.darkuros.selenium.tests.ForgotPasswordTest" />
 		</classes>
 	</test>
 </suite>

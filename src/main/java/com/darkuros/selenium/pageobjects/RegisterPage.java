@@ -114,8 +114,8 @@ public class RegisterPage extends BasePage {
 
 	public void selectOccupation(String occupationValue) {
 
-		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(".custom-select"))));
-		Select occupation = new Select(driver.findElement(By.cssSelector(".custom-select")));
+		wait.until(ExpectedConditions.visibilityOf(getDriver().findElement(By.cssSelector(".custom-select"))));
+		Select occupation = new Select(getDriver().findElement(By.cssSelector(".custom-select")));
 		if (!occupationValue.equalsIgnoreCase("")) {
 			occupation.selectByVisibleText(occupationValue);
 		}
@@ -149,7 +149,7 @@ public class RegisterPage extends BasePage {
 
 	public LoginPage navigateToLogin() {
 		navigateToLogin.click();
-		return new LoginPage(driver);
+		return new LoginPage(getDriver());
 	}
 
 	public WebDriverWait getWait() {
