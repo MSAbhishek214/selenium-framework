@@ -30,7 +30,12 @@ public class ExtentTestListener implements ITestListener {
 		Object testInstance = result.getInstance();
 		String screenshotPath = ((BaseTest) testInstance).captureScreenshot(result.getMethod().getMethodName());
 
-		extentTest.get().addScreenCaptureFromPath(screenshotPath);
+		if (screenshotPath == null) {
+			extentTest.get().info("🚨 Screenshot not captured: driver is null");
+			return;
+		} else {
+			extentTest.get().addScreenCaptureFromPath(screenshotPath);
+		}
 	}
 
 	@Override

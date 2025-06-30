@@ -91,11 +91,12 @@ public class ForgotPasswordPage extends BasePage {
 		return new RegisterPage(getDriver());
 	}
 
-	public void fillSavePasswordFormAndSubmit(String userEmail, String password, String confirmPassword) {
+	public LoginPage fillSavePasswordFormAndSubmit(String userEmail, String password, String confirmPassword) {
 		enterUserEmail(userEmail);
 		enterPassword(password);
 		enterConfirmPassword(confirmPassword);
 		clickOnSubmitButton();
+		return new LoginPage(getDriver());
 	}
 
 	public String getForgotPasswordPageURL() {

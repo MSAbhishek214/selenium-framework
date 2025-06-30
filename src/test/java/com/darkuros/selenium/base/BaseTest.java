@@ -9,9 +9,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+import com.darkuros.selenium.utils.ConfigReader;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -24,35 +26,50 @@ public class BaseTest {
 	}
 
 	@BeforeMethod(alwaysRun = true)
-	@Parameters({ "baseURL" })
-	public void setup(String baseURL) {
-		// Initializing WebDriver for Chrome browser
-		WebDriverManager.chromedriver().setup();
-		WebDriver localDriver = new ChromeDriver();
+	public void setup() {
+		String baseURL = ConfigReader.get("baseURL");
+		String browser = ConfigReader.get("browser");
+		Long implicitWait = Long.parseLong(ConfigReader.get("implicitWait"));
+
+		WebDriver localDriver;
+
+		switch (browser.toLowerCase()) {
+		case "firefox":
+			WebDriverManager.firefoxdriver().setup();
+			localDriver = new FirefoxDriver();
+			break;
+		case "edge":
+			WebDriverManager.edgedriver().setup();
+			localDriver = new EdgeDriver();
+			break;
+		default:
+			WebDriverManager.chromedriver().setup();
+			localDriver = new ChromeDriver();
+		}
+
 		driverThreadLocal.set(localDriver);
-
-		// Maximise window
 		getDriver().manage().window().maximize();
-
-		// Optional: Implicit wait (applies globally to findElement calls)
-		// Explicit waits in Page Objects will handle precise waits.
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-		// Navigating to the base URL
+		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
 		getDriver().get(baseURL);
 	}
-	
-	public String captureScreenshot(String methodName) {
-	    File src = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-	    String path = System.getProperty("user.dir") + "/screenshots/" + methodName + "_" + System.currentTimeMillis() + ".png";
-	    try {
-	        Files.copy(src.toPath(), new File(path).toPath());
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
-	    return path;
-	}
 
+	public String captureScreenshot(String methodName) {
+		WebDriver driver = getDriver();
+		if (driver == null) {
+			System.err.println("🚨 Screenshot skipped: driver is null for " + methodName);
+			return null;
+		}
+
+		File src = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir") + "/screenshots/" + methodName + "_" + System.currentTimeMillis()
+				+ ".png";
+		try {
+			Files.copy(src.toPath(), new File(path).toPath());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return path;
+	}
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown() {

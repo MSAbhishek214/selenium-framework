@@ -20,13 +20,13 @@ public class ForgotPasswordTest extends BaseTest {
 		loginPage = new LoginPage(getDriver());
 	}
 
-	@Test
+	@Test(groups = "debug")
 	public void saveNewPasswordWithValidCredentials() {
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
-		forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "123@Dark", "123@Dark");
+		loginPage = forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "123@Dark", "123@Dark");
 
-		Assert.assertEquals(forgotPasswordPage.getForgotPasswordPageURL(),
-				"https://rahulshettyacademy.com/client/auth/password-new");
+		Assert.assertEquals(loginPage.getLoginPageURL(),
+				"https://rahulshettyacademy.com/client/auth/login");
 		Assert.assertEquals(loginPage.getPasswordChangeSuccessfulText(), "Password Changed Successfully");
 	}
 

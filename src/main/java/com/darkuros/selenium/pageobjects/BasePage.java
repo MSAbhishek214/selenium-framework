@@ -17,6 +17,9 @@ public abstract class BasePage {
 	protected WebDriverWait wait; // WebDriverWait is used for explicit waits in Page Objects
 	
 	public BasePage(WebDriver driver) {
+		if (driver == null) {
+		    throw new IllegalStateException("❌ WebDriver passed to BasePage is null!");
+		}
 		this.driver = driver;
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		

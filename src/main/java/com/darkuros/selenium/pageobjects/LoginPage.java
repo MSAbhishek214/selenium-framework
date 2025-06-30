@@ -92,4 +92,9 @@ public class LoginPage extends BasePage {
 		clickSubmitButton();
 		return new LandingPage(getDriver());
 	}
+
+	public String getLoginPageURL() {
+		// TODO Auto-generated method stub
+		return getDriver().getCurrentUrl();
+	}
 }
