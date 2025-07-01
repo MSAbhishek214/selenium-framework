@@ -8,6 +8,7 @@ import java.time.Duration;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -56,19 +57,21 @@ public class BaseTest {
 	public String captureScreenshot(String methodName) {
 		WebDriver driver = getDriver();
 		if (driver == null) {
-			System.err.println("🚨 Screenshot skipped: driver is null for " + methodName);
+			System.err.println("🚫 Screenshot skipped: driver is null for " + methodName);
 			return null;
 		}
 
-		File src = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-		String path = System.getProperty("user.dir") + "/screenshots/" + methodName + "_" + System.currentTimeMillis()
-				+ ".png";
 		try {
+			File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			String path = System.getProperty("user.dir") + "/screenshots/" + methodName + "_"
+					+ System.currentTimeMillis() + ".png";
 			Files.copy(src.toPath(), new File(path).toPath());
-		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("📸 Screenshot captured: " + path);
+			return path;
+		} catch (IOException | WebDriverException e) {
+			System.err.println("❌ Screenshot capture failed: " + e.getMessage());
+			return null;
 		}
-		return path;
 	}
 
 	@AfterMethod(alwaysRun = true)

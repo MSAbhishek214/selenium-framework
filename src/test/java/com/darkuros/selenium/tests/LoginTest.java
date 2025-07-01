@@ -6,7 +6,9 @@ import org.testng.annotations.Test;
 
 import com.darkuros.selenium.base.BaseTest;
 import com.darkuros.selenium.pageobjects.LoginPage;
+import com.darkuros.selenium.utils.ConfigReader;
 import com.darkuros.selenium.utils.DataProviderUtils;
+import com.darkuros.selenium.utils.FrameworkHealthChecker;
 
 public class LoginTest extends BaseTest {
 	// This @BeforeMethod will run before EACH @Test method in THIS class
@@ -15,10 +17,12 @@ public class LoginTest extends BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	public void setup() {
 		super.setup(); // Call the setup method from BaseTest to initialize the driver
-		System.out.println("🧪 Driver before LoginPage init: " + getDriver());
+		FrameworkHealthChecker.validateDriver(getDriver(), "LoginTest.setup()");
+		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), "LoginTest.setup()");
+		
 	}
 
-	@Test(dataProvider = "loginData", dataProviderClass = DataProviderUtils.class, groups = "debug")
+	@Test(dataProvider = "loginData", dataProviderClass = DataProviderUtils.class)
 	public void LoginWithValidCredentials(String email, String password) {
 		LoginPage loginPage = new LoginPage(getDriver());
 		Assert.assertTrue(loginPage.loginApplication(email, password).isHomePageDisplayed());

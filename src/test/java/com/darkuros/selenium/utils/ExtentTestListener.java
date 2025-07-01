@@ -1,5 +1,6 @@
 package com.darkuros.selenium.utils;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -25,17 +26,23 @@ public class ExtentTestListener implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		extentTest.get().fail(result.getThrowable());
-
 		Object testInstance = result.getInstance();
-		String screenshotPath = ((BaseTest) testInstance).captureScreenshot(result.getMethod().getMethodName());
 
-		if (screenshotPath == null) {
-			extentTest.get().info("🚨 Screenshot not captured: driver is null");
-			return;
-		} else {
-			extentTest.get().addScreenCaptureFromPath(screenshotPath);
+		if (testInstance instanceof BaseTest baseTest) {
+			WebDriver driver = baseTest.getDriver();
+			if (driver != null) {
+				String screenshotPath = baseTest.captureScreenshot(result.getMethod().getMethodName());
+				if (screenshotPath != null) {
+					extentTest.get().addScreenCaptureFromPath(screenshotPath, "📸 Failure Screenshot");
+				} else {
+					extentTest.get().info("🚫 Screenshot skipped: path was null");
+				}
+			} else {
+				extentTest.get().info("🚫 Screenshot skipped: driver was null at time of failure");
+			}
 		}
+		
+		extentTest.get().fail(result.getThrowable());
 	}
 
 	@Override

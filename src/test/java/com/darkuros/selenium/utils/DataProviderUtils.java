@@ -7,7 +7,7 @@ public class DataProviderUtils {
     @DataProvider(name = "loginData")
     public Object[][] loginDataProvider() {
         return new Object[][] {
-            { "dark@uros.com", "123@dark" }
+            { "dark@uros.com", "123@Dark" }
         };
     }
     

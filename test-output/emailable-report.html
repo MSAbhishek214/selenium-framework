@@ -9,26 +9,46 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">DebugSuite</th></tr>
-<tr><td><a href="#t0">debug</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">48,697</td><td></td><td></td></tr>
+<tr><td><a href="#t0">debug</a></td><td class="num">5</td><td class="num">0</td><td class="num attn">1</td><td class="num attn">1</td><td class="num">28,515</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">DebugSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">debug &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.darkuros.selenium.tests.LoginTest</td><td><a href="#m0">LoginWithValidCredentials</a></td><td rowspan="1">1751262011597</td><td rowspan="1">5422</td></tr><tr><th colspan="4">debug &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.darkuros.selenium.tests.LoginTest</td><td><a href="#m1">LoginWithInvalidCredentials</a></td><td rowspan="1">1751261991216</td><td rowspan="1">402</td></tr><tr class="passedeven"><td><a href="#m2">LoginWithInvalidPassword</a></td><td rowspan="1">1751261998054</td><td rowspan="1">347</td></tr><tr class="passedeven"><td><a href="#m3">LoginWithInvalidUserEmail</a></td><td rowspan="1">1751262004813</td><td rowspan="1">338</td></tr><tr class="passedeven"><td><a href="#m4">isForgotPasswordLinkWorking</a></td><td rowspan="1">1751262023720</td><td rowspan="1">259</td></tr><tr class="passedeven"><td><a href="#m5">isRegisterLinkWorking</a></td><td rowspan="1">1751262030454</td><td rowspan="1">274</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">DebugSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">debug &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.darkuros.selenium.tests.LoginTest</td><td><a href="#m0">LoginWithValidCredentials</a></td><td rowspan="1">1751387214397</td><td rowspan="1">5421</td></tr><tr><th colspan="4">debug &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="1">com.darkuros.selenium.tests.LoginTest</td><td><a href="#m1">LoginWithValidCredentials</a></td><td rowspan="1">1751387201451</td><td rowspan="1">5502</td></tr><tr><th colspan="4">debug &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.darkuros.selenium.tests.LoginTest</td><td><a href="#m2">LoginWithInvalidCredentials</a></td><td rowspan="1">1751387202060</td><td rowspan="1">411</td></tr><tr class="passedeven"><td><a href="#m3">LoginWithInvalidPassword</a></td><td rowspan="1">1751387200870</td><td rowspan="1">467</td></tr><tr class="passedeven"><td><a href="#m4">LoginWithInvalidUserEmail</a></td><td rowspan="1">1751387199762</td><td rowspan="1">474</td></tr><tr class="passedeven"><td><a href="#m5">isForgotPasswordLinkWorking</a></td><td rowspan="1">1751387205422</td><td rowspan="1">277</td></tr><tr class="passedeven"><td><a href="#m6">isRegisterLinkWorking</a></td><td rowspan="1">1751387208035</td><td rowspan="1">269</td></tr></tbody>
 </table>
-<h2>debug</h2><h3 id="m0">com.darkuros.selenium.tests.LoginTest#LoginWithValidCredentials</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>dark@uros.com</td><td>123@light</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;https://rahulshettyacademy.com/client/dashboard/dash&quot;. Current url: &quot;https://rahulshettyacademy.com/client/auth/login&quot; (tried for 5 second(s) with 500 milliseconds interval)
+<h2>debug</h2><h3 id="m0">com.darkuros.selenium.tests.LoginTest#LoginWithValidCredentials</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>dark@uros.com</td><td>123@dark</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;https://rahulshettyacademy.com/client/dashboard/dash&quot;. Current url: &quot;https://rahulshettyacademy.com/client/auth/login&quot; (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 5756, moz:profile: C:\Users\ABHIN~1.HOM\AppDat..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: ef90c60a-c699-4792-b806-9bd4eb6acfb9
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 18544, moz:profile: C:\Users\ABHIN~1.HOM\AppDat..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 9eda2d37-20c9-41f2-bb11-2de8c46eca20
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
 	at com.darkuros.selenium.pageobjects.LandingPage.isHomePageDisplayed(LandingPage.java:21)
-	at com.darkuros.selenium.tests.LoginTest.LoginWithValidCredentials(LoginTest.java:24)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.darkuros.selenium.tests.LoginTest#LoginWithInvalidCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.darkuros.selenium.tests.LoginTest#LoginWithInvalidPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.darkuros.selenium.tests.LoginTest#LoginWithInvalidUserEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.darkuros.selenium.tests.LoginTest#isForgotPasswordLinkWorking</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.darkuros.selenium.tests.LoginTest#isRegisterLinkWorking</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at com.darkuros.selenium.tests.LoginTest.LoginWithValidCredentials(LoginTest.java:28)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.darkuros.selenium.tests.LoginTest#LoginWithValidCredentials</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>dark@uros.com</td><td>123@dark</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;https://rahulshettyacademy.com/client/dashboard/dash&quot;. Current url: &quot;https://rahulshettyacademy.com/client/auth/login&quot; (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 23088, moz:profile: C:\Users\ABHIN~1.HOM\AppDat..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: f776d402-60dd-4191-b6ce-2985dcf9bd5e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.darkuros.selenium.pageobjects.LandingPage.isHomePageDisplayed(LandingPage.java:21)
+	at com.darkuros.selenium.tests.LoginTest.LoginWithValidCredentials(LoginTest.java:28)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 11 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.darkuros.selenium.tests.LoginTest#LoginWithInvalidCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.darkuros.selenium.tests.LoginTest#LoginWithInvalidPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.darkuros.selenium.tests.LoginTest#LoginWithInvalidUserEmail</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.darkuros.selenium.tests.LoginTest#isForgotPasswordLinkWorking</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.darkuros.selenium.tests.LoginTest#isRegisterLinkWorking</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
