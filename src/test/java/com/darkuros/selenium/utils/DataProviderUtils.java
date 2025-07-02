@@ -14,7 +14,8 @@ public class DataProviderUtils {
 
 	@DataProvider(name = "registrationData")
 	public Object[][] registrationDataProvider() {
-		return new Object[][] { {}, {}, {} };
+
+		return new Object[][] { { DataGeneratorUtils.generateTestUser() } };
 	}
 
 	@DataProvider(name = "forgotPasswordData")

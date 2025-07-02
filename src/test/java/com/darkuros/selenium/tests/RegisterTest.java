@@ -5,9 +5,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.darkuros.selenium.base.BaseTest;
+import com.darkuros.selenium.models.UserTestData;
 import com.darkuros.selenium.pageobjects.LoginPage;
 import com.darkuros.selenium.pageobjects.RegisterPage;
 import com.darkuros.selenium.utils.ConfigReader;
+import com.darkuros.selenium.utils.DataProviderUtils;
 import com.darkuros.selenium.utils.FrameworkHealthChecker;
 
 public class RegisterTest extends BaseTest {
@@ -40,31 +42,34 @@ public class RegisterTest extends BaseTest {
 		}
 	}
 
-	@Test
-	public void registerUserWithValidDetails() {
+	@Test(dataProvider = "registrationData", dataProviderClass = DataProviderUtils.class)
+	public void registerUserWithValidDetails(UserTestData user) {
 		LoginPage loginPage = new LoginPage(getDriver());
 		RegisterPage registerPage = loginPage.navigateToRegisterLink();
-		registerPage.registerUser("tad", "packer", "tad@packer.comdddd", "9876987645", "Student", "Male", "Password@1");
+		registerPage.registerUser(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPhoneNumber(),
+				user.getOccupation(), user.getGender(), user.getPassword());
 
 		Assert.assertEquals(registerPage.getRegisterSuccessfulToast(), "Registered Successfully");
 		Assert.assertEquals(registerPage.getSuccessMessageAfterRegister(), "Account Created Successfully");
 	}
 
-	@Test
-	public void registerUserWithOnlyRequiredFields() {
+	@Test(dataProvider = "registrationData", dataProviderClass = DataProviderUtils.class)
+	public void registerUserWithOnlyRequiredFields(UserTestData user) {
 		LoginPage loginPage = new LoginPage(getDriver());
 		RegisterPage registerPage = loginPage.navigateToRegisterLink();
-		registerPage.registerUser("troy", "baker", "troy@bakerss.com", "9878978978", "", "", "Password@1");
+		registerPage.registerUser(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPhoneNumber(), "",
+				"", user.getPassword());
 
 		Assert.assertEquals(registerPage.getRegisterSuccessfulToast(), "Registered Successfully");
 		Assert.assertEquals(registerPage.getSuccessMessageAfterRegister(), "Account Created Successfully");
 	}
 
-	@Test
-	public void passwordLessThan8Chars() {
+	@Test(dataProvider = "registrationData", dataProviderClass = DataProviderUtils.class)
+	public void passwordLessThan8Chars(UserTestData user) {
 		LoginPage loginPage = new LoginPage(getDriver());
 		RegisterPage registerPage = loginPage.navigateToRegisterLink();
-		registerPage.registerUser("tad", "packer", "tad@packer.comds", "9876987645", "Student", "Male", "Pass@1");
+		registerPage.registerUser(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPhoneNumber(),
+				user.getOccupation(), user.getGender(), user.getPassword().substring(0, 7));
 
 		Assert.assertEquals(registerPage.getMessagePasswordLessThan8Chars(), "Password must be 8 Character Long!");
 	}
