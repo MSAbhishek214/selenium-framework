@@ -12,34 +12,34 @@ public class ForgotPasswordPage extends BasePage {
 	}
 
 	@FindBy(css = ".mt-1 + input")
-	WebElement emailInput;
+	private WebElement emailInput;
 
 	@FindBy(id = "userPassword")
-	WebElement passwordInput;
+	private WebElement passwordInput;
 
 	@FindBy(id = "confirmPassword")
-	WebElement confirmPasswordInput;
+	private WebElement confirmPasswordInput;
 
 	@FindBy(css = "button[type='submit']")
-	WebElement submitButton;
+	private WebElement submitButton;
 
 	@FindBy(xpath = "//a[normalize-space()='Login']")
-	WebElement loginLink;
+	private WebElement loginLink;
 
 	@FindBy(xpath = "//a[normalize-space()='Register']")
-	WebElement registerLink;
+	private WebElement registerLink;
 
 	@FindBy(css = ".invalid-feedback div")
-	WebElement invalidEmailError;
+	private WebElement invalidEmailError;
 
 	@FindBy(css = ".invalid-feedback div")
-	WebElement emptyEmailError;
+	private WebElement emptyEmailError;
 
 	@FindBy(css = "#userPassword + div.invalid-feedback")
-	WebElement passwordError;
+	private WebElement passwordError;
 
 	@FindBy(css = "#confirmPassword+ div.invalid-feedback")
-	WebElement confirmPasswordError;
+	private WebElement confirmPasswordError;
 
 	/*
 	 * All methods defining individual actions go here Keep actions small and
@@ -59,8 +59,7 @@ public class ForgotPasswordPage extends BasePage {
 	}
 
 	public String getInvalidEmailErrorText() {
-		wait.until(ExpectedConditions.visibilityOf(invalidEmailError)).getText().trim();
-		return invalidEmailError.getText().trim();
+		return wait.until(ExpectedConditions.visibilityOf(invalidEmailError)).getText().trim();
 	}
 
 	public void enterUserEmail(String userEmail) {
@@ -81,13 +80,13 @@ public class ForgotPasswordPage extends BasePage {
 
 	// Method to navigate back to Login page from forgot password page
 	public LoginPage navigateBackToLoginPage() {
-		loginLink.click();
+		wait.until(ExpectedConditions.elementToBeClickable(loginLink)).click();
 		return new LoginPage(getDriver());
 	}
 
 	// Method to navigate back to register page from forgot password page
 	public RegisterPage navigateBackToRegisterPage() {
-		registerLink.click();
+		wait.until(ExpectedConditions.elementToBeClickable(registerLink)).click();
 		return new RegisterPage(getDriver());
 	}
 

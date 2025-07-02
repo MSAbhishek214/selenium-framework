@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods, 1 failed,  1 skipped,  5 passed</span>
+                    <span class="method-stats">5 methods, 1 failed,  1 skipped,  3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-DebugSuite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.LoginTest" class="method navigator-link" hash-for-method="LoginWithValidCredentials(dark@uros.com, 123@dark)">LoginWithValidCredentials(dark@uros.com, 123@dark)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.RegisterTest" class="method navigator-link" hash-for-method="registerUserWithOnlyRequiredFields">registerUserWithOnlyRequiredFields</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-DebugSuite -->
@@ -117,7 +117,7 @@
                     <div class="method-list-content skipped suite-DebugSuite">
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.LoginTest" class="method navigator-link" hash-for-method="LoginWithValidCredentials(dark@uros.com, 123@dark)">LoginWithValidCredentials(dark@uros.com, 123@dark)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.RegisterTest" class="method navigator-link" hash-for-method="registerUserWithOnlyRequiredFields">registerUserWithOnlyRequiredFields</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content skipped suite-DebugSuite -->
@@ -131,27 +131,17 @@
                     <div class="method-list-content passed suite-DebugSuite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.LoginTest" class="method navigator-link" hash-for-method="LoginWithInvalidCredentials">LoginWithInvalidCredentials</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.RegisterTest" class="method navigator-link" hash-for-method="clickRegisterWithEmptyForm">clickRegisterWithEmptyForm</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.LoginTest" class="method navigator-link" hash-for-method="LoginWithInvalidPassword">LoginWithInvalidPassword</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.RegisterTest" class="method navigator-link" hash-for-method="passwordLessThan8Chars">passwordLessThan8Chars</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.LoginTest" class="method navigator-link" hash-for-method="LoginWithInvalidUserEmail">LoginWithInvalidUserEmail</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.LoginTest" class="method navigator-link" hash-for-method="isForgotPasswordLinkWorking">isForgotPasswordLinkWorking</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.LoginTest" class="method navigator-link" hash-for-method="isRegisterLinkWorking">isRegisterLinkWorking</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-DebugSuite" title="com.darkuros.selenium.tests.RegisterTest" class="method navigator-link" hash-for-method="registerUserWithValidDetails">registerUserWithValidDetails</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-DebugSuite -->
@@ -169,31 +159,52 @@
           <div class="suite-DebugSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.darkuros.selenium.tests.LoginTest</span>
+              <span class="class-name">com.darkuros.selenium.tests.RegisterTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginWithValidCredentials(dark@uros.com, 123@dark)">
-                  </a> <!-- LoginWithValidCredentials(dark@uros.com, 123@dark) -->
-                  <span class="method-name">LoginWithValidCredentials</span>
-                  <span class="parameters">(dark@uros.com,123@dark)</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;https://rahulshettyacademy.com/client/dashboard/dash&quot;. Current url: &quot;https://rahulshettyacademy.com/client/auth/login&quot; (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 18544, moz:profile: C:\Users\ABHIN~1.HOM\AppDat..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 9eda2d37-20c9-41f2-bb11-2de8c46eca20
+                  <a name="registerUserWithOnlyRequiredFields">
+                  </a> <!-- registerUserWithOnlyRequiredFields -->
+                  <span class="method-name">registerUserWithOnlyRequiredFields</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div[@aria-label=&apos;Registered Successfully&apos;]&apos; (tried for 5 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.darkuros.selenium.pageobjects.LandingPage.isHomePageDisplayed(LandingPage.java:21)
-	at com.darkuros.selenium.tests.LoginTest.LoginWithValidCredentials(LoginTest.java:28)
+	at com.darkuros.selenium.pageobjects.RegisterPage.getRegisterSuccessfulToast(RegisterPage.java:157)
+	at com.darkuros.selenium.tests.RegisterTest.registerUserWithOnlyRequiredFields(RegisterTest.java:59)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 11 stack frames
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //div[@aria-label=&apos;Registered Successfully&apos;]
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [3f5da630-f4f9-41a1-9096-b25b92a5d005, findElement {value=//div[@aria-label=&apos;Registered Successfully&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 2304, moz:profile: C:\Users\ABHIN~1.HOM\AppDat..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 3f5da630-f4f9-41a1-9096-b25b92a5d005
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 18 more
+... Removed 14 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -202,31 +213,52 @@ Session ID: 9eda2d37-20c9-41f2-bb11-2de8c46eca20
           <div class="suite-DebugSuite-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
-              <span class="class-name">com.darkuros.selenium.tests.LoginTest</span>
+              <span class="class-name">com.darkuros.selenium.tests.RegisterTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginWithValidCredentials(dark@uros.com, 123@dark)">
-                  </a> <!-- LoginWithValidCredentials(dark@uros.com, 123@dark) -->
-                  <span class="method-name">LoginWithValidCredentials</span>
-                  <span class="parameters">(dark@uros.com,123@dark)</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to be &quot;https://rahulshettyacademy.com/client/dashboard/dash&quot;. Current url: &quot;https://rahulshettyacademy.com/client/auth/login&quot; (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 23088, moz:profile: C:\Users\ABHIN~1.HOM\AppDat..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: f776d402-60dd-4191-b6ce-2985dcf9bd5e
+                  <a name="registerUserWithOnlyRequiredFields">
+                  </a> <!-- registerUserWithOnlyRequiredFields -->
+                  <span class="method-name">registerUserWithOnlyRequiredFields</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div[@aria-label=&apos;Registered Successfully&apos;]&apos; (tried for 5 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.darkuros.selenium.pageobjects.LandingPage.isHomePageDisplayed(LandingPage.java:21)
-	at com.darkuros.selenium.tests.LoginTest.LoginWithValidCredentials(LoginTest.java:28)
+	at com.darkuros.selenium.pageobjects.RegisterPage.getRegisterSuccessfulToast(RegisterPage.java:157)
+	at com.darkuros.selenium.tests.RegisterTest.registerUserWithOnlyRequiredFields(RegisterTest.java:59)
 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 11 stack frames
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //div[@aria-label=&apos;Registered Successfully&apos;]
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.33.0&apos;, revision: &apos;2c6aaad03a&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [1fced0dd-2756-487e-84c6-63ae1383961e, findElement {value=//div[@aria-label=&apos;Registered Successfully&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 10508, moz:profile: C:\Users\ABHIN~1.HOM\AppDat..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
+Session ID: 1fced0dd-2756-487e-84c6-63ae1383961e
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 18 more
+... Removed 14 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -235,42 +267,28 @@ Session ID: f776d402-60dd-4191-b6ce-2985dcf9bd5e
           <div class="suite-DebugSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.darkuros.selenium.tests.LoginTest</span>
+              <span class="class-name">com.darkuros.selenium.tests.RegisterTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginWithInvalidCredentials">
-                  </a> <!-- LoginWithInvalidCredentials -->
-                  <span class="method-name">LoginWithInvalidCredentials</span>
+                  <a name="clickRegisterWithEmptyForm">
+                  </a> <!-- clickRegisterWithEmptyForm -->
+                  <span class="method-name">clickRegisterWithEmptyForm</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginWithInvalidPassword">
-                  </a> <!-- LoginWithInvalidPassword -->
-                  <span class="method-name">LoginWithInvalidPassword</span>
+                  <a name="passwordLessThan8Chars">
+                  </a> <!-- passwordLessThan8Chars -->
+                  <span class="method-name">passwordLessThan8Chars</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="LoginWithInvalidUserEmail">
-                  </a> <!-- LoginWithInvalidUserEmail -->
-                  <span class="method-name">LoginWithInvalidUserEmail</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="isForgotPasswordLinkWorking">
-                  </a> <!-- isForgotPasswordLinkWorking -->
-                  <span class="method-name">isForgotPasswordLinkWorking</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="isRegisterLinkWorking">
-                  </a> <!-- isRegisterLinkWorking -->
-                  <span class="method-name">isRegisterLinkWorking</span>
+                  <a name="registerUserWithValidDetails">
+                  </a> <!-- registerUserWithValidDetails -->
+                  <span class="method-name">registerUserWithValidDetails</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -291,7 +309,7 @@ Session ID: f776d402-60dd-4191-b6ce-2985dcf9bd5e
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;4&quot; parallel=&quot;methods&quot; name=&quot;debug&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.darkuros.selenium.tests.LoginTest&quot;/&gt;
+      &lt;class name=&quot;com.darkuros.selenium.tests.RegisterTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- debug --&gt;
 &lt;/suite&gt; &lt;!-- DebugSuite --&gt;
@@ -331,40 +349,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(7);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'LoginWithValidCredentials')
-data.setCell(0, 2, 'com.darkuros.selenium.tests.LoginTest')
-data.setCell(0, 3, 5502);
+data.setCell(0, 1, 'registerUserWithOnlyRequiredFields')
+data.setCell(0, 2, 'com.darkuros.selenium.tests.RegisterTest')
+data.setCell(0, 3, 20954);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'LoginWithValidCredentials')
-data.setCell(1, 2, 'com.darkuros.selenium.tests.LoginTest')
-data.setCell(1, 3, 5421);
+data.setCell(1, 1, 'registerUserWithOnlyRequiredFields')
+data.setCell(1, 2, 'com.darkuros.selenium.tests.RegisterTest')
+data.setCell(1, 3, 20934);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'LoginWithInvalidUserEmail')
-data.setCell(2, 2, 'com.darkuros.selenium.tests.LoginTest')
-data.setCell(2, 3, 474);
+data.setCell(2, 1, 'registerUserWithValidDetails')
+data.setCell(2, 2, 'com.darkuros.selenium.tests.RegisterTest')
+data.setCell(2, 3, 1561);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'LoginWithInvalidPassword')
-data.setCell(3, 2, 'com.darkuros.selenium.tests.LoginTest')
-data.setCell(3, 3, 467);
+data.setCell(3, 1, 'passwordLessThan8Chars')
+data.setCell(3, 2, 'com.darkuros.selenium.tests.RegisterTest')
+data.setCell(3, 3, 1421);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'LoginWithInvalidCredentials')
-data.setCell(4, 2, 'com.darkuros.selenium.tests.LoginTest')
-data.setCell(4, 3, 411);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'isForgotPasswordLinkWorking')
-data.setCell(5, 2, 'com.darkuros.selenium.tests.LoginTest')
-data.setCell(5, 3, 277);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'isRegisterLinkWorking')
-data.setCell(6, 2, 'com.darkuros.selenium.tests.LoginTest')
-data.setCell(6, 3, 269);
+data.setCell(4, 1, 'clickRegisterWithEmptyForm')
+data.setCell(4, 2, 'com.darkuros.selenium.tests.RegisterTest')
+data.setCell(4, 3, 649);
 window.suiteTableData['DebugSuite']= { tableData: data, tableDiv: 'times-div-DebugSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 12 seconds</span>
+              <span class="suite-total-time">Total running time: 45 seconds</span>
               <div id="times-div-DebugSuite">
               </div> <!-- times-div-DebugSuite -->
             </div> <!-- times-div -->
@@ -390,7 +400,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.darkuros.selenium.tests.LoginTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.darkuros.selenium.tests.RegisterTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
@@ -408,74 +418,50 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">LoginWithInvalidUserEmail</span>
-                <span class="method-start">5175 ms</span>
+                <span class="method-name">registerUserWithValidDetails</span>
+                <span class="method-start">5815 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">passwordLessThan8Chars</span>
+                <span class="method-start">6129 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">5656 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">LoginWithInvalidPassword</span>
-                <span class="method-start">6283 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">6612 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">6750 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="test-method">
-                <span class="method-name">LoginWithValidCredentials(dark@uros.com, 123@dark)</span>
-                <span class="method-start">6864 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">LoginWithInvalidCredentials</span>
-                <span class="method-start">7473 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">7886 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">8735 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">isForgotPasswordLinkWorking</span>
-                <span class="method-start">10835 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">11112 ms</span>
+                <span class="method-start">7381 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">12372 ms</span>
+                <span class="method-start">7551 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
-                <span class="method-name">isRegisterLinkWorking</span>
-                <span class="method-start">13448 ms</span>
+                <span class="method-name">registerUserWithOnlyRequiredFields</span>
+                <span class="method-start">8988 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">clickRegisterWithEmptyForm</span>
+                <span class="method-start">9099 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">13718 ms</span>
+                <span class="method-start">9749 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">29947 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">15682 ms</span>
+                <span class="method-start">32662 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">LoginWithValidCredentials(dark@uros.com, 123@dark)</span>
-                <span class="method-start">19810 ms</span>
+                <span class="method-name">registerUserWithOnlyRequiredFields</span>
+                <span class="method-start">36246 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">25493 ms</span>
+                <span class="method-start">57415 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

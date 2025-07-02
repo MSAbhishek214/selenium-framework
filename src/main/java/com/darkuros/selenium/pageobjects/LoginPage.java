@@ -15,28 +15,30 @@ public class LoginPage extends BasePage {
 
 	// Find email xpath for landing page
 	@FindBy(id = "userEmail")
-	WebElement emailInput;
+	private WebElement emailInput;
 
 	// Find password field for landing page
 	@FindBy(id = "userPassword")
-	WebElement passwordInput;
+	private WebElement passwordInput;
 
 	// Find submit button for landing page
 	@FindBy(id = "login")
-	WebElement submitButton;
+	private WebElement submitButton;
 
 	@FindBy(css = ".forgot-password-link")
-	WebElement forgotPasswordLink;
+	private WebElement forgotPasswordLink;
 
 	@FindBy(css = "p.login-wrapper-footer-text")
-	WebElement registerLink;
+	private WebElement registerLink;
 
 	@FindBy(css = "div[aria-label='Password Changed Successfully']")
-	WebElement passwordChangedToast;
+	private WebElement passwordChangedToast;
 
-	By overlayContainer = By.className("overlay-container");
+	// initialized to wait for the overlay to be present
+	private final By overlayContainer = By.className("overlay-container");
 
-	By toastContainer = By.id("toast-container");
+	// initialized to wait for the toast container to be present
+	private final By toastContainer = By.id("toast-container");
 
 	/*
 	 * All methods defining individual actions go here Keep actions small and
@@ -94,7 +96,6 @@ public class LoginPage extends BasePage {
 	}
 
 	public String getLoginPageURL() {
-		// TODO Auto-generated method stub
 		return getDriver().getCurrentUrl();
 	}
 }
