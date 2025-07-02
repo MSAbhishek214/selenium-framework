@@ -1,191 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="1" ignored="0" total="5" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-02T09:14:59 IST" name="DebugSuite" finished-at="2025-07-02T09:15:59 IST" duration-ms="60254">
+  <suite started-at="2025-07-02T14:16:16 IST" name="DebugSuite" finished-at="2025-07-02T14:16:45 IST" duration-ms="28532">
     <groups>
     </groups>
-    <test started-at="2025-07-02T09:14:59 IST" name="debug" finished-at="2025-07-02T09:15:59 IST" duration-ms="60254">
-      <class name="com.darkuros.selenium.tests.RegisterTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:14:59 IST" name="setup" finished-at="2025-07-02T09:15:08 IST" duration-ms="8988" status="PASS">
+    <test started-at="2025-07-02T14:16:16 IST" name="debug" finished-at="2025-07-02T14:16:45 IST" duration-ms="28532">
+      <class name="com.darkuros.selenium.tests.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:16 IST" name="setup" finished-at="2025-07-02T14:16:23 IST" duration-ms="6699" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:14:59 IST" name="setup" finished-at="2025-07-02T09:15:05 IST" duration-ms="6129" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:16 IST" name="setup" finished-at="2025-07-02T14:16:22 IST" duration-ms="5962" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:14:59 IST" name="setup" finished-at="2025-07-02T09:15:08 IST" duration-ms="9099" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:16 IST" name="setup" finished-at="2025-07-02T14:16:21 IST" duration-ms="4709" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:14:59 IST" name="setup" finished-at="2025-07-02T09:15:05 IST" duration-ms="5814" status="PASS">
+        <test-method signature="loginScenarios(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:21 IST" name="loginScenarios" data-provider="loginScenarios" finished-at="2025-07-02T14:16:22 IST" duration-ms="447" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[dark@uros.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123@Dark]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[success]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenarios -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:22 IST" name="tearDown" finished-at="2025-07-02T14:16:25 IST" duration-ms="2956" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="isForgotPasswordLinkWorking()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:22 IST" name="isForgotPasswordLinkWorking" finished-at="2025-07-02T14:16:23 IST" duration-ms="264" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isForgotPasswordLinkWorking -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:23 IST" name="tearDown" finished-at="2025-07-02T14:16:26 IST" duration-ms="2896" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="isRegisterLinkWorking()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:23 IST" name="isRegisterLinkWorking" finished-at="2025-07-02T14:16:23 IST" duration-ms="278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isRegisterLinkWorking -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:23 IST" name="tearDown" finished-at="2025-07-02T14:16:24 IST" duration-ms="622" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:25 IST" name="setup" finished-at="2025-07-02T14:16:29 IST" duration-ms="3969" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="registerUserWithValidDetails()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:05 IST" name="registerUserWithValidDetails" finished-at="2025-07-02T09:15:06 IST" duration-ms="1561" status="PASS">
+        <test-method signature="loginScenarios(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:29 IST" name="loginScenarios" data-provider="loginScenarios" finished-at="2025-07-02T14:16:29 IST" duration-ms="342" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[light@uros.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123@Dark]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Incorrect email or password.]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- registerUserWithValidDetails -->
-        <test-method signature="passwordLessThan8Chars()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:05 IST" name="passwordLessThan8Chars" finished-at="2025-07-02T09:15:07 IST" duration-ms="1421" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- passwordLessThan8Chars -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:06 IST" name="tearDown" finished-at="2025-07-02T09:15:07 IST" duration-ms="821" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:07 IST" name="tearDown" finished-at="2025-07-02T09:15:07 IST" duration-ms="823" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method retried="true" signature="registerUserWithOnlyRequiredFields()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:08 IST" name="registerUserWithOnlyRequiredFields" finished-at="2025-07-02T09:15:29 IST" duration-ms="20954" status="SKIP">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@aria-label='Registered Successfully']' (tried for 5 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@aria-label='Registered Successfully']' (tried for 5 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.darkuros.selenium.pageobjects.RegisterPage.getRegisterSuccessfulToast(RegisterPage.java:157)
-at com.darkuros.selenium.tests.RegisterTest.registerUserWithOnlyRequiredFields(RegisterTest.java:59)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //div[@aria-label='Registered Successfully']
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [1fced0dd-2756-487e-84c6-63ae1383961e, findElement {value=//div[@aria-label='Registered Successfully'], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 10508, moz:profile: C:\Users\ABHIN~1.HOM\AppDat..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 1fced0dd-2756-487e-84c6-63ae1383961e
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 18 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- registerUserWithOnlyRequiredFields -->
-        <test-method signature="clickRegisterWithEmptyForm()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:08 IST" name="clickRegisterWithEmptyForm" finished-at="2025-07-02T09:15:09 IST" duration-ms="649" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickRegisterWithEmptyForm -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:09 IST" name="tearDown" finished-at="2025-07-02T09:15:12 IST" duration-ms="2823" status="PASS">
+        </test-method> <!-- loginScenarios -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:29 IST" name="tearDown" finished-at="2025-07-02T14:16:32 IST" duration-ms="2833" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:29 IST" name="tearDown" finished-at="2025-07-02T09:15:32 IST" duration-ms="2714" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:32 IST" name="setup" finished-at="2025-07-02T09:15:35 IST" duration-ms="3584" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:32 IST" name="setup" finished-at="2025-07-02T14:16:35 IST" duration-ms="3456" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="registerUserWithOnlyRequiredFields()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:35 IST" name="registerUserWithOnlyRequiredFields" finished-at="2025-07-02T09:15:56 IST" duration-ms="20934" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@aria-label='Registered Successfully']' (tried for 5 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@aria-label='Registered Successfully']' (tried for 5 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.darkuros.selenium.pageobjects.RegisterPage.getRegisterSuccessfulToast(RegisterPage.java:157)
-at com.darkuros.selenium.tests.RegisterTest.registerUserWithOnlyRequiredFields(RegisterTest.java:59)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: //div[@aria-label='Registered Successfully']
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.33.0', revision: '2c6aaad03a'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [3f5da630-f4f9-41a1-9096-b25b92a5d005, findElement {value=//div[@aria-label='Registered Successfully'], using=xpath}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 140.0.2, moz:accessibilityChecks: false, moz:buildID: 20250627085530, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 10.0, moz:processID: 2304, moz:profile: C:\Users\ABHIN~1.HOM\AppDat..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Windows NT 10....}
-Session ID: 3f5da630-f4f9-41a1-9096-b25b92a5d005
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 18 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="loginScenarios(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:35 IST" name="loginScenarios" data-provider="loginScenarios" finished-at="2025-07-02T14:16:36 IST" duration-ms="341" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[dark@uros.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123@dark]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Incorrect email or password.]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- registerUserWithOnlyRequiredFields -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.RegisterTest@24959ca4]" started-at="2025-07-02T09:15:56 IST" name="tearDown" finished-at="2025-07-02T09:15:59 IST" duration-ms="2810" status="PASS">
+        </test-method> <!-- loginScenarios -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:36 IST" name="tearDown" finished-at="2025-07-02T14:16:38 IST" duration-ms="2842" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.darkuros.selenium.tests.RegisterTest -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:38 IST" name="setup" finished-at="2025-07-02T14:16:42 IST" duration-ms="3420" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="loginScenarios(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:42 IST" name="loginScenarios" data-provider="loginScenarios" finished-at="2025-07-02T14:16:42 IST" duration-ms="342" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[light@uros.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123@dark]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[error]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Incorrect email or password.]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenarios -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.LoginTest@730d2164]" started-at="2025-07-02T14:16:42 IST" name="tearDown" finished-at="2025-07-02T14:16:45 IST" duration-ms="2824" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.darkuros.selenium.tests.LoginTest -->
     </test> <!-- debug -->
   </suite> <!-- DebugSuite -->
 </testng-results>

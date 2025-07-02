@@ -19,34 +19,17 @@ public class LoginTest extends BaseTest {
 		super.setup(); // Call the setup method from BaseTest to initialize the driver
 		FrameworkHealthChecker.validateDriver(getDriver(), "LoginTest.setup()");
 		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), "LoginTest.setup()");
-		
 	}
 
-	@Test(dataProvider = "loginData", dataProviderClass = DataProviderUtils.class)
-	public void LoginWithValidCredentials(String email, String password) {
+	@Test(dataProvider = "loginScenarios", dataProviderClass = DataProviderUtils.class)
+	public void loginScenarios(String email, String password, String expectedResult, String expectedErrorMessage) {
 		LoginPage loginPage = new LoginPage(getDriver());
-		Assert.assertTrue(loginPage.loginApplication(email, password).isHomePageDisplayed());
-	}
-
-	@Test
-	public void LoginWithInvalidUserEmail() {
-		LoginPage loginPage = new LoginPage(getDriver());
-		loginPage.loginApplication("light@uros.com", "123@Dark");
-		Assert.assertEquals(loginPage.getToastContainerText(), "Incorrect email or password.");
-	}
-
-	@Test
-	public void LoginWithInvalidPassword() {
-		LoginPage loginPage = new LoginPage(getDriver());
-		loginPage.loginApplication("dark@uros.com", "123@light");
-		Assert.assertEquals(loginPage.getToastContainerText(), "Incorrect email or password.");
-	}
-
-	@Test
-	public void LoginWithInvalidCredentials() {
-		LoginPage loginPage = new LoginPage(getDriver());
-		loginPage.loginApplication("light@uros.com", "123@light");
-		Assert.assertEquals(loginPage.getToastContainerText(), "Incorrect email or password.");
+		if (expectedResult.equalsIgnoreCase("success")) {
+			Assert.assertTrue(loginPage.loginApplication(email, password).isHomePageDisplayed(), "Login failed for valid credentials.");
+		} else {
+			loginPage.loginApplication(email, password);
+			Assert.assertEquals(loginPage.getToastContainerText(), expectedErrorMessage);
+		}
 	}
 
 	@Test

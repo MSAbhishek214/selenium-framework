@@ -12,7 +12,7 @@
 	</listeners>
 	<test name="debug">
 		<classes>
-			<class name="com.darkuros.selenium.tests.ForgotPasswordTest" />
+			<class name="com.darkuros.selenium.tests.LoginTest" />
 		</classes>
 	</test>
 </suite>

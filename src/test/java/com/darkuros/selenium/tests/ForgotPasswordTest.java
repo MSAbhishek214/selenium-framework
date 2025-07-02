@@ -18,7 +18,7 @@ public class ForgotPasswordTest extends BaseTest {
 		super.setup();
 	}
 
-	@Test(groups = "debug")
+	@Test
 	public void saveNewPasswordWithValidCredentials() {
 		LoginPage loginPage = new LoginPage(getDriver());
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
