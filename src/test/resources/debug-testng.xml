@@ -12,6 +12,8 @@
 	</listeners>
 	<test name="debug">
 		<classes>
+			<class name="com.darkuros.selenium.tests.ForgotPasswordTest" />
+			<class name="com.darkuros.selenium.tests.LoginTest" />
 			<class name="com.darkuros.selenium.tests.RegisterTest" />
 		</classes>
 	</test>

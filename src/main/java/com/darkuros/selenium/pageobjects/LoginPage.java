@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import com.darkuros.selenium.utils.InteractionUtils;
 
 public class LoginPage extends BasePage {
 
@@ -56,18 +57,18 @@ public class LoginPage extends BasePage {
 	}
 
 	public void clickSubmitButton() {
-		wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
+		InteractionUtils.safeClick(getDriver(), submitButton);
 	}
 
 	// Navigate to register user link
 	public RegisterPage navigateToRegisterLink() {
-		wait.until(ExpectedConditions.elementToBeClickable(registerLink)).click();
+		InteractionUtils.safeClick(getDriver(), registerLink);
 		return new RegisterPage(getDriver());
 	}
 
 	// Navigate to forgot password link
 	public ForgotPasswordPage navigateToForgotPasswordLink() {
-		wait.until(ExpectedConditions.elementToBeClickable(forgotPasswordLink)).click();
+		InteractionUtils.safeClick(getDriver(), forgotPasswordLink);
 		return new ForgotPasswordPage(getDriver());
 	}
 
@@ -96,6 +97,7 @@ public class LoginPage extends BasePage {
 	}
 
 	public String getLoginPageURL() {
+		wait.until(ExpectedConditions.urlContains("auth/login"));
 		return getDriver().getCurrentUrl();
 	}
 }

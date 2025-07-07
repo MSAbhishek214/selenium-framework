@@ -10,10 +10,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
 import com.darkuros.selenium.utils.ConfigReader;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -29,7 +32,10 @@ public class BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	public void setup() {
 		String baseURL = ConfigReader.get("baseURL");
-		String browser = ConfigReader.get("browser");
+
+		// Read browser and headless mode from system properties or config file
+		String browser = System.getProperty("browser", ConfigReader.get("browser"));
+		Boolean headless = Boolean.parseBoolean(System.getProperty("headless", ConfigReader.get("headless")));
 		Long implicitWait = Long.parseLong(ConfigReader.get("implicitWait"));
 
 		WebDriver localDriver;
@@ -41,11 +47,25 @@ public class BaseTest {
 			break;
 		case "edge":
 			WebDriverManager.edgedriver().setup();
-			localDriver = new EdgeDriver();
+			EdgeOptions edgeOptions = new EdgeOptions();
+			if (headless) {
+				edgeOptions.addArguments("--headless=new");
+				edgeOptions.addArguments("--disable-gpu");
+				edgeOptions.addArguments("--disable-dev-shm-usage");
+				edgeOptions.addArguments("--window-size=1920,1080"); // Set window size for headless mode
+			}
+			localDriver = new EdgeDriver(edgeOptions);
 			break;
 		default:
 			WebDriverManager.chromedriver().setup();
-			localDriver = new ChromeDriver();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			if (headless) {
+				chromeOptions.addArguments("--headless=new");
+				chromeOptions.addArguments("--disable-gpu");
+				chromeOptions.addArguments("--disable-dev-shm-usage");
+				chromeOptions.addArguments("--window-size=1920,1080"); // Set window size for headless mode
+			}
+			localDriver = new ChromeDriver(chromeOptions);
 		}
 
 		driverThreadLocal.set(localDriver);

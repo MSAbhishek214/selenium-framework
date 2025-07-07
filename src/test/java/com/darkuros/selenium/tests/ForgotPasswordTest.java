@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import com.darkuros.selenium.base.BaseTest;
 import com.darkuros.selenium.pageobjects.ForgotPasswordPage;
 import com.darkuros.selenium.pageobjects.LoginPage;
+import com.darkuros.selenium.utils.ConfigReader;
+import com.darkuros.selenium.utils.FrameworkHealthChecker;
 
 public class ForgotPasswordTest extends BaseTest {
 
@@ -16,6 +18,8 @@ public class ForgotPasswordTest extends BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	public void setup() {
 		super.setup();
+		FrameworkHealthChecker.validateDriver(getDriver(), "ForgotPasswordTest.setup()");
+		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), "ForgotPasswordTest.setup()");
 	}
 
 	@Test
@@ -23,7 +27,6 @@ public class ForgotPasswordTest extends BaseTest {
 		LoginPage loginPage = new LoginPage(getDriver());
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		loginPage = forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "123@Dark", "123@Dark");
-
 		Assert.assertEquals(loginPage.getLoginPageURL(), "https://rahulshettyacademy.com/client/auth/login");
 		Assert.assertEquals(loginPage.getPasswordChangeSuccessfulText(), "Password Changed Successfully");
 	}
