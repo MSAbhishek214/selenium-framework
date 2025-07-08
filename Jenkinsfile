@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/MSAbhishek214/selenium-framework.git', branch: 'main'
+                git url: 'https://github.com/MSAbhishek214/selenium-framework.git', branch: 'master'
             }
         }
 
