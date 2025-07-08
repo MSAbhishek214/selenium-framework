@@ -76,6 +76,12 @@ public class RegisterTest extends BaseTest {
 		Assert.assertEquals(registerPage.getSuccessMessageAfterRegister(), "Account Created Successfully");
 	}
 
+	/**
+	 * This test will register a user with an invalid email format and check if the
+	 * error message is displayed.
+	 * 
+	 * @param user UserTestData object containing user details for registration
+	 */
 	@Test(dataProvider = "registrationData", dataProviderClass = DataProviderUtils.class)
 	public void passwordLessThan8Chars(UserTestData user) {
 		LoginPage loginPage = new LoginPage(getDriver());
