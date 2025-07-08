@@ -42,6 +42,12 @@ public class RegisterTest extends BaseTest {
 		}
 	}
 
+	/**
+	 * This test will register a user with valid details and check if the registration
+	 * was successful.
+	 * 
+	 * @param user UserTestData object containing user details for registration
+	 */
 	@Test(dataProvider = "registrationData", dataProviderClass = DataProviderUtils.class)
 	public void registerUserWithValidDetails(UserTestData user) {
 		LoginPage loginPage = new LoginPage(getDriver());
