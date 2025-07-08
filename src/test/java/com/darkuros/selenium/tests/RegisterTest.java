@@ -59,6 +59,12 @@ public class RegisterTest extends BaseTest {
 		Assert.assertEquals(registerPage.getSuccessMessageAfterRegister(), "Account Created Successfully");
 	}
 
+	/**
+	 * This test will register a user with only the required fields and check if the
+	 * registration was successful.
+	 * 
+	 * @param user UserTestData object containing user details for registration
+	 */
 	@Test(dataProvider = "registrationData", dataProviderClass = DataProviderUtils.class)
 	public void registerUserWithOnlyRequiredFields(UserTestData user) {
 		LoginPage loginPage = new LoginPage(getDriver());
