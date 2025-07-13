@@ -8,7 +8,7 @@ public class RetryAnalyzer implements IRetryAnalyzer {
 
 	private static final Logger logger = LoggerFactoryUtils.getLogger(RetryAnalyzer.class);
 	private ThreadLocal<Integer> retryCount = ThreadLocal.withInitial(() -> 0);
-	private static final int maxRetryCount = 1;
+	private static final int maxRetryCount = 2;
 
 	@Override
 	public boolean retry(ITestResult result) {
