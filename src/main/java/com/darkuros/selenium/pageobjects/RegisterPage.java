@@ -6,8 +6,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.slf4j.Logger;
 
+import com.darkuros.selenium.utils.LoggerFactoryUtils;
+
+/**
+ * Represents the registration page of the application. This page allows new
+ * users to register by providing their details. Also has methods to navigate to
+ * the login page.
+ */
 public class RegisterPage extends BasePage {
+	private static final Logger logger = LoggerFactoryUtils.getLogger(RegisterPage.class);
 
 	public RegisterPage(WebDriver driver) {
 		super(driver);
@@ -86,6 +95,9 @@ public class RegisterPage extends BasePage {
 	// Provide details of the new user and register
 	public void registerUser(String firstName, String lastName, String email, String phoneNumber, String Occupation,
 			String gender, String password) {
+		logger.info(
+				"Registering user with details: First Name: {}, Last Name: {}, Email: {}, Phone Number: {}, Occupation: {}, gender: {}, Password: {}",
+				firstName, lastName, email, phoneNumber, Occupation, gender, password);
 		enterFirstName(firstName);
 		enterLastName(lastName);
 		enterEmail(email);
@@ -97,26 +109,32 @@ public class RegisterPage extends BasePage {
 		enterConfirmPassword(password);
 		ageCheckBoxSelection.click();
 		clickRegisterButton();
+		logger.info("User registration form filled with provided details and submitted.");
 	}
 
 	public void enterFirstName(String firstName) {
+		logger.info("Entering first name: {}", firstName);
 		wait.until(ExpectedConditions.visibilityOf(firstNameInput)).sendKeys(firstName);
 	}
 
 	public void enterLastName(String lastName) {
+		logger.info("Entering last name: {}", lastName);
 		wait.until(ExpectedConditions.visibilityOf(lastNameInput)).sendKeys(lastName);
 	}
 
 	public void enterEmail(String email) {
+		logger.info("Entering email: {}", email);
 		wait.until(ExpectedConditions.visibilityOf(emailInput)).sendKeys(email);
 	}
 
 	public void enterPhoneNumber(String phoneNumber) {
+		logger.info("Entering phone number: {}", phoneNumber);
 		wait.until(ExpectedConditions.visibilityOf(phoneNumberInput)).sendKeys(phoneNumber);
 
 	}
 
 	public void selectOccupation(String occupationValue) {
+		logger.info("Selecting occupation: {}", occupationValue);
 		wait.until(ExpectedConditions.elementToBeClickable(occupationDropdown));
 		if (!occupationValue.isBlank()) {
 			new Select(occupationDropdown).selectByVisibleText(occupationValue);
@@ -126,71 +144,106 @@ public class RegisterPage extends BasePage {
 	public void selectGender(String gender) {
 		WebElement genderOption = getDriver().findElement(By.cssSelector("input[value='" + gender + "']"));
 		wait.until(ExpectedConditions.elementToBeClickable(genderOption)).click();
+		logger.info("Selected gender: {}", gender);
 	}
 
 	public void enterPassword(String password) {
+		logger.info("Entering password: {}", password);
 		wait.until(ExpectedConditions.visibilityOf(passwordInput)).sendKeys(password);
 	}
 
 	public void enterConfirmPassword(String confirmPassword) {
+		logger.info("Entering confirm password: {}", confirmPassword);
 		wait.until(ExpectedConditions.visibilityOf(confirmPasswordInput)).sendKeys(confirmPassword);
 	}
 
 	public Boolean isCheckBoxSelected() {
+		logger.info("Checking if age checkbox is selected.");
 		return wait.until(ExpectedConditions.elementToBeClickable(ageCheckBoxSelection)).isSelected();
 	}
 
 	public void clickRegisterButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(registerButton)).click();
+		logger.info("Clicked on the register button.");
 	}
 
 	public LoginPage navigateToLogin() {
+		logger.info("Navigating to the login page.");
 		navigateToLogin.click();
 		return new LoginPage(getDriver());
 	}
 
 	public String getSuccessMessageAfterRegister() {
-		return successMessage.getText().trim();
+		String successMessageText = wait.until(ExpectedConditions.visibilityOf(successMessage)).getText().trim();
+		logger.info("Success message after registration: {}", successMessageText);
+		return successMessageText;
 	}
 
 	public String getRegisterSuccessfulToast() {
-		return wait.until(ExpectedConditions.visibilityOf(registerSuccessfulToast)).getText().trim();
+		String registerSuccessText = wait.until(ExpectedConditions.visibilityOf(registerSuccessfulToast)).getText()
+				.trim();
+		logger.info("Register successful toast message: {}", registerSuccessText);
+		return registerSuccessText;
 	}
 
 	public String getMessagePasswordLessThan8Chars() {
-		return wait.until(ExpectedConditions.visibilityOf(passwordLessThan8CharsErrorToast)).getText().trim();
+		String passwordErrorText = wait.until(ExpectedConditions.visibilityOf(passwordLessThan8CharsErrorToast))
+				.getText().trim();
+		logger.info("Password less than 8 characters error message: {}", passwordErrorText);
+		return passwordErrorText;
 	}
 
 	public String getFirstNameEmptyErrorText() {
-		return wait.until(ExpectedConditions.visibilityOf(firstNameEmptyError)).getText().trim();
+		String firstNameEmptyErrorText = wait.until(ExpectedConditions.visibilityOf(firstNameEmptyError)).getText()
+				.trim();
+		logger.info("First name empty error message: {}", firstNameEmptyErrorText);
+		return firstNameEmptyErrorText;
 	}
 
 	public String getLastNameRequiredToast() {
 		wait.until(ExpectedConditions.visibilityOf(lastNameRequiredToast));
-		return lastNameRequiredError.getText().trim();
+		String lastNameRequiredErrorText = lastNameRequiredError.getText().trim();
+		logger.info("Last name required toast message: {}", lastNameRequiredErrorText);
+		return lastNameRequiredErrorText;
 	}
 
 	public String getEmailRequiredErrorText() {
-		return wait.until(ExpectedConditions.visibilityOf(emailRequiredError)).getText().trim();
+		String emailRequiredErrorText = wait.until(ExpectedConditions.visibilityOf(emailRequiredError)).getText()
+				.trim();
+		logger.info("Email required error message: {}", emailRequiredErrorText);
+		return emailRequiredErrorText;
 	}
 
 	public String getPhoneRequiredErrorText() {
-		return wait.until(ExpectedConditions.visibilityOf(phoneRequiredError)).getText().trim();
+		String phoneRequiredErrorText = wait.until(ExpectedConditions.visibilityOf(phoneRequiredError)).getText()
+				.trim();
+		logger.info("Phone number required error message: {}", phoneRequiredErrorText);
+		return phoneRequiredErrorText;
 	}
 
 	public String getPasswordRequiredErrorText() {
-		return wait.until(ExpectedConditions.visibilityOf(passwordRequiredError)).getText().trim();
+		String passwordRequiredErrorText = wait.until(ExpectedConditions.visibilityOf(passwordRequiredError)).getText()
+				.trim();
+		logger.info("Password required error message: {}", passwordRequiredErrorText);
+		return passwordRequiredErrorText;
 	}
 
 	public String getConfirmPasswordRequiredErrorText() {
-		return wait.until(ExpectedConditions.visibilityOf(confirmPasswordRequiredError)).getText().trim();
+		String confirmPasswordRequiredErrorText = wait
+				.until(ExpectedConditions.visibilityOf(confirmPasswordRequiredError)).getText().trim();
+		logger.info("Confirm password required error message: {}", confirmPasswordRequiredErrorText);
+		return confirmPasswordRequiredErrorText;
 	}
 
 	public String getCheckboxErrorText() {
-		return wait.until(ExpectedConditions.visibilityOf(checkboxError)).getText().trim();
+		String checkboxErrorText = wait.until(ExpectedConditions.visibilityOf(checkboxError)).getText().trim();
+		logger.info("Checkbox error message: {}", checkboxErrorText);
+		return checkboxErrorText;
 	}
 
 	public Boolean isCheckboxSelected() {
-		return wait.until(ExpectedConditions.elementToBeClickable(ageCheckBoxSelection)).isSelected();
+		Boolean isSelected = wait.until(ExpectedConditions.elementToBeClickable(ageCheckBoxSelection)).isSelected();
+		logger.info("Is age checkbox selected? {}", isSelected);
+		return isSelected;
 	}
 }

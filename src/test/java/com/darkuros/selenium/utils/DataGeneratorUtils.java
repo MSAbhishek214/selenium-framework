@@ -28,20 +28,12 @@ public final class DataGeneratorUtils {
 		return (generateFirstName() + "." + generateLastName() + UUID.randomUUID().toString().substring(0, 4))
 				.toLowerCase() + "@test.com";
 	}
-	
+
 	public static UserTestData generateTestUser() {
-	    String first = generateFirstName();
-	    String last = generateLastName();
-	    String email = generateEmailFromName(first, last);
-	    return new UserTestData(
-	        first,
-	        last,
-	        email,
-	        "9876987645",
-	        "Student",
-	        "Male",
-	        "Password@1"
-	    );
+		String first = generateFirstName();
+		String last = generateLastName();
+		String email = generateEmailFromName(first, last);
+		return new UserTestData(first, last, email, "9876987645", "Student", "Male", "Password@1");
 	}
 
 }

@@ -19,7 +19,7 @@ public class RegisterTest extends BaseTest {
 	public void setup() {
 		super.setup(); // Call the setup method from BaseTest to initialize the driver
 		FrameworkHealthChecker.validateDriver(getDriver(), "RegisterTest.setup()");
-		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), "RegisterTest.setup()");
+		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), "RegisterTest.setup()", "browser", "baseURL");
 	}
 
 	@Test
@@ -43,8 +43,8 @@ public class RegisterTest extends BaseTest {
 	}
 
 	/**
-	 * This test will register a user with valid details and check if the registration
-	 * was successful.
+	 * This test will register a user with valid details and check if the
+	 * registration was successful.
 	 * 
 	 * @param user UserTestData object containing user details for registration
 	 */

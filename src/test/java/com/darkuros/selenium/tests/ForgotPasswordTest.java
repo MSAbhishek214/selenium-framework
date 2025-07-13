@@ -19,7 +19,8 @@ public class ForgotPasswordTest extends BaseTest {
 	public void setup() {
 		super.setup();
 		FrameworkHealthChecker.validateDriver(getDriver(), "ForgotPasswordTest.setup()");
-		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), "ForgotPasswordTest.setup()");
+		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), "ForgotPasswordTest.setup()", "browser",
+				"baseURL");
 	}
 
 	@Test

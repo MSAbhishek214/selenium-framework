@@ -4,9 +4,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.slf4j.Logger;
 
+import com.darkuros.selenium.utils.LoggerFactoryUtils;
+
+/**
+ * ForgotPasswordPage class represents the Forgot Password page in the
+ * application. It contains methods to interact with the elements on the page
+ * and perform actions such as entering email, password, and confirming
+ * password, as well as navigating to other pages like Login and Register.
+ */
 public class ForgotPasswordPage extends BasePage {
+	private static final Logger logger = LoggerFactoryUtils.getLogger(ForgotPasswordPage.class);
 
+	/**
+	 * Constructor for ForgotPasswordPage.
+	 * 
+	 * @param driver WebDriver instance to interact with the browser.
+	 */
 	public ForgotPasswordPage(WebDriver driver) {
 		super(driver);
 	}
@@ -47,58 +62,77 @@ public class ForgotPasswordPage extends BasePage {
 	 */
 
 	public String getPasswordErrorText() {
-		return wait.until(ExpectedConditions.visibilityOf(passwordError)).getText().trim();
+		String passwordErrorText = wait.until(ExpectedConditions.visibilityOf(passwordError)).getText().trim();
+		logger.info("Fetched password error text: {}", passwordErrorText);
+		return passwordErrorText;
 	}
 
 	public String getConfirmPasswordErrorText() {
-		return wait.until(ExpectedConditions.visibilityOf(confirmPasswordError)).getText().trim();
+		String confirmPasswordErrorText = wait.until(ExpectedConditions.visibilityOf(confirmPasswordError)).getText()
+				.trim();
+		logger.info("Fetched confirm password error text: {}", confirmPasswordErrorText);
+		return confirmPasswordErrorText;
 	}
 
 	public String getEmptyEmailErrorText() {
-		return wait.until(ExpectedConditions.visibilityOf(emptyEmailError)).getText().trim();
+		String emptyEmailErrorText = wait.until(ExpectedConditions.visibilityOf(emptyEmailError)).getText().trim();
+		logger.info("Fetch empty email error text: {}", emptyEmailErrorText);
+		return emptyEmailErrorText;
 	}
 
 	public String getInvalidEmailErrorText() {
-		return wait.until(ExpectedConditions.visibilityOf(invalidEmailError)).getText().trim();
+		String InvalidEmailErrorText = wait.until(ExpectedConditions.visibilityOf(invalidEmailError)).getText().trim();
+		logger.info("Fetched invalid email error text: {}", InvalidEmailErrorText);
+		return InvalidEmailErrorText;
 	}
 
 	public void enterUserEmail(String userEmail) {
+		logger.info("Entering user email: {}", userEmail);
 		wait.until(ExpectedConditions.visibilityOf(emailInput)).sendKeys(userEmail);
 	}
 
 	public void enterPassword(String password) {
+		logger.info("Entering password: {}", password);
 		wait.until(ExpectedConditions.visibilityOf(passwordInput)).sendKeys(password);
 	}
 
 	public void enterConfirmPassword(String confirmPassword) {
+		logger.info("Entering confirm password: {}", confirmPassword);
 		wait.until(ExpectedConditions.visibilityOf(confirmPasswordInput)).sendKeys(confirmPassword);
 	}
 
 	public void clickOnSubmitButton() {
+		logger.info("Clicking on submit button");
 		wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
 	}
 
 	// Method to navigate back to Login page from forgot password page
 	public LoginPage navigateBackToLoginPage() {
+		logger.info("Navigating back to Login page from Forgot Password page");
 		wait.until(ExpectedConditions.elementToBeClickable(loginLink)).click();
 		return new LoginPage(getDriver());
 	}
 
 	// Method to navigate back to register page from forgot password page
 	public RegisterPage navigateBackToRegisterPage() {
+		logger.info("Navigating back to Register page from Forgot Password page");
 		wait.until(ExpectedConditions.elementToBeClickable(registerLink)).click();
 		return new RegisterPage(getDriver());
 	}
 
 	public LoginPage fillSavePasswordFormAndSubmit(String userEmail, String password, String confirmPassword) {
+		logger.info("Filling save password form with user email: {}, password: {}, confirm password: {}", userEmail,
+				password, confirmPassword);
 		enterUserEmail(userEmail);
 		enterPassword(password);
 		enterConfirmPassword(confirmPassword);
 		clickOnSubmitButton();
+		logger.info("Filled save password form and submitted");
 		return new LoginPage(getDriver());
 	}
 
 	public String getForgotPasswordPageURL() {
+		logger.info("Fetching current URL of Forgot Password page");
 		return getCurrentPageURL();
 	}
 }

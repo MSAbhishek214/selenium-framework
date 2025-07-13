@@ -1,0 +1,36 @@
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] com.darkuros.selenium.base.BaseTest -
+				Current driver URL: https://rahulshettyacademy.com/client/auth/login
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] c.d.s.utils.FrameworkHealthChecker -
+				[ LoginTest.setup() ] WebDriver ready: ChromeDriver: chrome on windows (20ae12b75fedaf7053baa9c447eb61ff)
+2025-07-13 16:41:55 DEBUG [TestNG-test-debug-3] c.d.s.utils.FrameworkHealthChecker -
+				Config key 'browser' = 'chrome'
+2025-07-13 16:41:55 DEBUG [TestNG-test-debug-3] c.d.s.utils.FrameworkHealthChecker -
+				Config key 'baseURL' = 'https://rahulshettyacademy.com/client/'
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] c.darkuros.selenium.tests.LoginTest -
+				LoginTest environment setup complete.
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] c.d.s.utils.ExtentTestListener -
+				Test started: loginScenarios
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.BasePage -
+				Initializing Page Object: LoginPage
+2025-07-13 16:41:55 DEBUG [TestNG-test-debug-3] c.d.selenium.pageobjects.BasePage -
+				WebDriver session established for BasePage
+2025-07-13 16:41:55 DEBUG [TestNG-test-debug-3] c.d.selenium.pageobjects.BasePage -
+				Explicit wait configured with 5 seconds timeout
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.LoginPage -
+				Logging in with email: light@uros.com
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.LoginPage -
+				Entering email: light@uros.com
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.LoginPage -
+				Entering password: 123@dark
+2025-07-13 16:41:55 DEBUG [TestNG-test-debug-3] c.d.selenium.utils.InteractionUtils -
+				safeClick executed via WebDriver click
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.LoginPage -
+				Submit button clicked, waiting for login to process
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.LoginPage -
+				Login submitted, waiting for landing page to load
+2025-07-13 16:41:55 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.BasePage -
+				Initializing Page Object: LandingPage
+2025-07-13 16:41:55 DEBUG [TestNG-test-debug-3] c.d.selenium.pageobjects.BasePage -
+				WebDriver session established for BasePage
+2025-07-13 16:41:55 DEBUG [TestNG-test-debug-3] c.d.selenium.pageobjects.BasePage -
+				Explicit wait configured with 5 seconds timeout

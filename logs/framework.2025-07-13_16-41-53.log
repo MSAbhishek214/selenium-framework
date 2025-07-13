@@ -1,0 +1,32 @@
+2025-07-13 16:41:53 DEBUG [TestNG-test-debug-3] c.d.selenium.utils.InteractionUtils -
+				safeClick executed via WebDriver click
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.LoginPage -
+				Submit button clicked, waiting for login to process
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.LoginPage -
+				Login submitted, waiting for landing page to load
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.BasePage -
+				Initializing Page Object: LandingPage
+2025-07-13 16:41:53 DEBUG [TestNG-test-debug-3] c.d.selenium.pageobjects.BasePage -
+				WebDriver session established for BasePage
+2025-07-13 16:41:53 DEBUG [TestNG-test-debug-3] c.d.selenium.pageobjects.BasePage -
+				Explicit wait configured with 5 seconds timeout
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.LoginPage -
+				Fetched toast container text: Incorrect email or password.
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] c.d.s.utils.ExtentTestListener -
+				Test passed: loginScenarios
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] com.darkuros.selenium.base.BaseTest -
+				WebDriver for thread 50 has been quit and removed from ThreadLocal.
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] c.darkuros.selenium.tests.LoginTest -
+				Setting up LoginTest environment.
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] com.darkuros.selenium.base.BaseTest -
+				Test setup initiated with browser: chrome, headless: false, implicitWait: 10
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] i.g.bonigarcia.wdm.WebDriverManager -
+				Using chromedriver 138.0.7204.94 (resolved driver for Chrome 138)
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] i.g.bonigarcia.wdm.WebDriverManager -
+				Exporting webdriver.chrome.driver as C:\Users\abhin.HOME\.cache\selenium\chromedriver\win64\138.0.7204.94\chromedriver.exe
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] com.darkuros.selenium.base.BaseTest -
+				Launching browser: chrome
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] com.darkuros.selenium.base.BaseTest -
+				ThreadLocal WebDriver set for current thread: 50
+2025-07-13 16:41:53 INFO  [TestNG-test-debug-3] com.darkuros.selenium.base.BaseTest -
+				Implicit wait set to 10 seconds
