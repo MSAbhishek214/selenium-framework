@@ -40,12 +40,12 @@ public class LoginTest extends BaseTest {
 		}
 	}
 
-	@Test
+	@Test(groups = "debug")
 	public void isForgotPasswordLinkWorking() {
 		LoginPage loginPage = new LoginPage(getDriver());
 		logger.info("Checking if the Forgot Password link is working.");
 		Assert.assertEquals(loginPage.navigateToForgotPasswordLink().getCurrentPageURL(),
-				"https://rahulshettyacademy.com/client/auth/password-new");
+				"https://rahulshettyacademy.com/client/#/auth/password-new");
 		logger.info("Forgot Password link is working as expected.");
 	}
 

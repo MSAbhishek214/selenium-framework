@@ -1,44 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="4" parallel="methods" name="Failed suite [DebugSuite]" guice-stage="DEVELOPMENT">
+<suite thread-count="4" parallel="methods" name="Failed suite [DebugSuite]" guice-stage="DEVELOPMENT" verbose="2">
   <listeners>
     <listener class-name="com.darkuros.selenium.utils.RetryTransformer"/>
     <listener class-name="com.darkuros.selenium.utils.ExtentTestListener"/>
   </listeners>
-  <test thread-count="4" parallel="methods" name="debug(failed)">
+  <test thread-count="4" parallel="methods" name="debug(failed)" verbose="2">
+    <groups>
+      <run>
+        <include name="debug"/>
+      </run>
+    </groups>
     <classes>
       <class name="com.darkuros.selenium.tests.LoginTest">
         <methods>
-          <include name="isRegisterLinkWorking"/>
-          <include name="loginScenarios"/>
           <include name="setup"/>
           <include name="isForgotPasswordLinkWorking"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.darkuros.selenium.tests.LoginTest -->
-      <class name="com.darkuros.selenium.tests.RegisterTest">
-        <methods>
-          <include name="passwordLessThan8Chars"/>
-          <include name="clickRegisterWithEmptyForm"/>
-          <include name="registerUserWithValidDetails"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="registerUserWithOnlyRequiredFields"/>
-        </methods>
-      </class> <!-- com.darkuros.selenium.tests.RegisterTest -->
-      <class name="com.darkuros.selenium.tests.ForgotPasswordTest">
-        <methods>
-          <include name="passwordsDontMatch"/>
-          <include name="emptyEmail"/>
-          <include name="emptyPasswordAndConfirmPassword"/>
-          <include name="invalidEmail"/>
-          <include name="emptyPassword"/>
-          <include name="tearDown"/>
-          <include name="emptyConfirmPassword"/>
-          <include name="setup"/>
-          <include name="saveNewPasswordWithValidCredentials"/>
-        </methods>
-      </class> <!-- com.darkuros.selenium.tests.ForgotPasswordTest -->
     </classes>
   </test> <!-- debug(failed) -->
 </suite> <!-- Failed suite [DebugSuite] -->

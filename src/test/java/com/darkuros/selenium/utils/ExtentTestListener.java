@@ -13,12 +13,20 @@ import com.darkuros.selenium.base.BaseTest;
 public class ExtentTestListener implements ITestListener {
 	private static final Logger logger = LoggerFactoryUtils.getLogger(ExtentTestListener.class);
 
-	private static ExtentReports extent = ExtentReportManager.createInstance();
+	private static ExtentReports extent;
 	private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
 	@Override
 	public void onStart(ITestContext context) {
 		logger.info("Suite Started: {}", context.getSuite().getName());
+		
+		extent = ExtentReportManager.createInstance(context);
+		extent.setSystemInfo("Suite Name", context.getSuite().getName());
+		extent.setSystemInfo("Browser", System.getProperty("browser", "chrome"));
+		extent.setSystemInfo("Headless Mode", System.getProperty("headless", "false"));
+		extent.setSystemInfo("OS", System.getProperty("os.name"));
+		extent.setSystemInfo("Java Version", System.getProperty("java.version"));
+		extent.setSystemInfo("User", System.getProperty("user.name"));
 	}
 
 	@Override
@@ -46,6 +54,7 @@ public class ExtentTestListener implements ITestListener {
 				String screenshotPath = baseTest.captureScreenshot(result.getMethod().getMethodName());
 				if (screenshotPath != null) {
 					logger.info("Screenshot captured: {}", screenshotPath);
+					extentTest.get().fail("Test failed. Refer to the attached screenshot.");
 					extentTest.get().addScreenCaptureFromPath(screenshotPath, "Failure Screenshot");
 				} else {
 					logger.warn("Screenshot path was null, skipping attach");
@@ -57,6 +66,8 @@ public class ExtentTestListener implements ITestListener {
 			}
 		}
 
+		extentTest.get().fail("Error Type: " + result.getThrowable().getClass().getSimpleName());
+		extentTest.get().fail("Message: " + result.getThrowable().getMessage());
 		extentTest.get().fail(result.getThrowable());
 	}
 

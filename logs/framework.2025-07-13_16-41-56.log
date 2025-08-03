@@ -1,0 +1,20 @@
+2025-07-13 16:41:56 INFO  [TestNG-test-debug-3] c.d.selenium.pageobjects.LoginPage -
+				Fetched toast container text: Incorrect email or password.
+2025-07-13 16:41:56 INFO  [TestNG-test-debug-3] c.d.s.utils.ExtentTestListener -
+				Test passed: loginScenarios
+2025-07-13 16:41:56 INFO  [TestNG-test-debug-3] com.darkuros.selenium.base.BaseTest -
+				WebDriver for thread 50 has been quit and removed from ThreadLocal.
+2025-07-13 16:41:56 INFO  [main] c.d.s.utils.ExtentTestListener -
+				Flushing ExtentReports for suite: DebugSuite
+2025-07-13 16:41:56 INFO  [main] org.testng.internal.Utils -
+				[TestNG] Time taken by org.testng.reporters.jq.Main@2a3a299: 31 ms
+2025-07-13 16:41:56 INFO  [main] org.testng.internal.Utils -
+				[TestNG] Time taken by org.testng.reporters.FailedReporter@31be6b49: 0 ms
+2025-07-13 16:41:56 INFO  [main] org.testng.internal.Utils -
+				[TestNG] Time taken by org.testng.reporters.XMLReporter@150d80c4: 7 ms
+2025-07-13 16:41:56 INFO  [main] org.testng.internal.Utils -
+				[TestNG] Time taken by org.testng.reporters.EmailableReporter2@2516fc68: 6 ms
+2025-07-13 16:41:56 INFO  [main] org.testng.internal.Utils -
+				[TestNG] Time taken by org.testng.reporters.JUnitReportReporter@347bdeef: 3 ms
+2025-07-13 16:41:56 INFO  [main] org.testng.internal.Utils -
+				[TestNG] Time taken by org.testng.internal.ExitCodeListener@2aa27288: 0 ms

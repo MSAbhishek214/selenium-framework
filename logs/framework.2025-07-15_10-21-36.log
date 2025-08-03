@@ -1,0 +1,52 @@
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] com.darkuros.selenium.base.BaseTest -
+				ThreadLocal WebDriver set for current thread: 44
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] com.darkuros.selenium.base.BaseTest -
+				Implicit wait set to 10 seconds
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] com.darkuros.selenium.base.BaseTest -
+				Current driver URL: https://rahulshettyacademy.com/client/#/auth/login
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] c.d.s.utils.FrameworkHealthChecker -
+				[ LoginTest.setup() ] WebDriver ready: ChromeDriver: chrome on windows (094f9704dd24cdd6a847a716a23e32b7)
+2025-07-15 10:21:36 DEBUG [TestNG-test-debug-1] c.d.s.utils.FrameworkHealthChecker -
+				Config key 'browser' = 'chrome'
+2025-07-15 10:21:36 DEBUG [TestNG-test-debug-1] c.d.s.utils.FrameworkHealthChecker -
+				Config key 'baseURL' = 'https://rahulshettyacademy.com/client/'
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] c.darkuros.selenium.tests.LoginTest -
+				LoginTest environment setup complete.
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] c.d.s.utils.ExtentTestListener -
+				Test started: isForgotPasswordLinkWorking
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] c.d.selenium.pageobjects.BasePage -
+				Initializing Page Object: LoginPage
+2025-07-15 10:21:36 DEBUG [TestNG-test-debug-1] c.d.selenium.pageobjects.BasePage -
+				WebDriver session established for BasePage
+2025-07-15 10:21:36 DEBUG [TestNG-test-debug-1] c.d.selenium.pageobjects.BasePage -
+				Explicit wait configured with 5 seconds timeout
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] c.darkuros.selenium.tests.LoginTest -
+				Checking if the Forgot Password link is working.
+2025-07-15 10:21:36 DEBUG [TestNG-test-debug-1] c.d.selenium.utils.InteractionUtils -
+				safeClick executed via WebDriver click
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] c.d.selenium.pageobjects.LoginPage -
+				Forgot password link clicked, navigating to ForgotPasswordPage
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] c.d.selenium.pageobjects.BasePage -
+				Initializing Page Object: ForgotPasswordPage
+2025-07-15 10:21:36 DEBUG [TestNG-test-debug-1] c.d.selenium.pageobjects.BasePage -
+				WebDriver session established for BasePage
+2025-07-15 10:21:36 DEBUG [TestNG-test-debug-1] c.d.selenium.pageobjects.BasePage -
+				Explicit wait configured with 5 seconds timeout
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] c.d.selenium.pageobjects.BasePage -
+				Current driver URL: https://rahulshettyacademy.com/client/#/auth/password-new
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] c.d.selenium.utils.RetryAnalyzer -
+				Retrying test: isForgotPasswordLinkWorking | Thread: 44 | Attempt: 2 of 2
+2025-07-15 10:21:36 WARN  [TestNG-test-debug-1] c.d.s.utils.ExtentTestListener -
+				Test skipped: isForgotPasswordLinkWorking
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] com.darkuros.selenium.base.BaseTest -
+				WebDriver for thread 44 has been quit and removed from ThreadLocal.
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] c.darkuros.selenium.tests.LoginTest -
+				Setting up LoginTest environment.
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] com.darkuros.selenium.base.BaseTest -
+				Test setup initiated with browser: chrome, headless: false, implicitWait: 10
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] i.g.bonigarcia.wdm.WebDriverManager -
+				Using chromedriver 138.0.7204.94 (resolved driver for Chrome 138)
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] i.g.bonigarcia.wdm.WebDriverManager -
+				Exporting webdriver.chrome.driver as C:\Users\abhin.HOME\.cache\selenium\chromedriver\win64\138.0.7204.94\chromedriver.exe
+2025-07-15 10:21:36 INFO  [TestNG-test-debug-1] com.darkuros.selenium.base.BaseTest -
+				Launching browser: chrome
