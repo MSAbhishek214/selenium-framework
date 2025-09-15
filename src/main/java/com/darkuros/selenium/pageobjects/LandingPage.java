@@ -41,7 +41,7 @@ public class LandingPage extends BasePage {
 	 */
 	public boolean isHomePageDisplayed() {
 		Boolean isDisplayed = wait
-				.until(ExpectedConditions.urlToBe("https://rahulshettyacademy.com/client/dashboard/dash"));
+				.until(ExpectedConditions.urlToBe("https://rahulshettyacademy.com/client/#/dashboard/dash"));
 		logger.info("Is home page displayed: {}", isDisplayed);
 		return isDisplayed;
 	}

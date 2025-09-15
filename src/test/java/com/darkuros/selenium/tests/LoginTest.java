@@ -40,7 +40,7 @@ public class LoginTest extends BaseTest {
 		}
 	}
 
-	@Test(groups = "debug")
+	@Test
 	public void isForgotPasswordLinkWorking() {
 		LoginPage loginPage = new LoginPage(getDriver());
 		logger.info("Checking if the Forgot Password link is working.");
@@ -54,7 +54,7 @@ public class LoginTest extends BaseTest {
 		LoginPage loginPage = new LoginPage(getDriver());
 		logger.info("Checking if the Register link is working.");
 		Assert.assertEquals(loginPage.navigateToRegisterLink().getCurrentPageURL(),
-				"https://rahulshettyacademy.com/client/auth/register");
+				"https://rahulshettyacademy.com/client/#/auth/register");
 		logger.info("Register link is working as expected.");
 	}
 

@@ -28,7 +28,7 @@ public class ForgotPasswordTest extends BaseTest {
 		LoginPage loginPage = new LoginPage(getDriver());
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		loginPage = forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "123@Dark", "123@Dark");
-		Assert.assertEquals(loginPage.getLoginPageURL(), "https://rahulshettyacademy.com/client/auth/login");
+		Assert.assertEquals(loginPage.getLoginPageURL(), "https://rahulshettyacademy.com/client/#/auth/login");
 		Assert.assertEquals(loginPage.getPasswordChangeSuccessfulText(), "Password Changed Successfully");
 	}
 

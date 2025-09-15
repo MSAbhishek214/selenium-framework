@@ -1,4 +1,0 @@
-2025-07-15 10:02:15 INFO  [TestNG-test-debug-1] com.darkuros.selenium.base.BaseTest -
-				ThreadLocal WebDriver set for current thread: 44
-2025-07-15 10:02:15 INFO  [TestNG-test-debug-1] com.darkuros.selenium.base.BaseTest -
-				Implicit wait set to 10 seconds
