@@ -90,7 +90,7 @@ public class BaseTest {
 			localDriver = new EdgeDriver(edgeOptions);
 			break;
 		default:
-			WebDriverManager.chromedriver().clearResolutionCache().browserVersion("138").setup();
+			WebDriverManager.chromedriver().browserVersion("140").setup();
 			ChromeOptions chromeOptions = new ChromeOptions();
 			if (headless) {
 				chromeOptions.addArguments("--headless=new");

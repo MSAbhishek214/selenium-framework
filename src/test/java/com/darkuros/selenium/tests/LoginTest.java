@@ -13,8 +13,9 @@ import com.darkuros.selenium.utils.FrameworkHealthChecker;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 public class LoginTest extends BaseTest {
-	
+
 	private static final Logger logger = LoggerFactoryUtils.getLogger(LoginTest.class);
+
 	// This @BeforeMethod will run before EACH @Test method in THIS class
 	// (LoginTest)
 	@Override
@@ -25,10 +26,10 @@ public class LoginTest extends BaseTest {
 		FrameworkHealthChecker.validateDriver(getDriver(), "LoginTest.setup()");
 		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), "LoginTest.setup()", "browser", "baseURL");
 		logger.info("LoginTest environment setup complete.");
-		
+
 	}
 
-	@Test(dataProvider = "loginScenarios", dataProviderClass = DataProviderUtils.class)
+	@Test(dataProvider = "loginScenarios", dataProviderClass = DataProviderUtils.class, groups = { "debug" })
 	public void loginScenarios(String email, String password, String expectedResult, String expectedErrorMessage) {
 		LoginPage loginPage = new LoginPage(getDriver());
 		if (expectedResult.equalsIgnoreCase("success")) {

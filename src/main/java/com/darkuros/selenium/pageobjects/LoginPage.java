@@ -97,12 +97,14 @@ public class LoginPage extends BasePage {
 	/**
 	 * Gets the text from the toast container, which is used to display messages
 	 * like password change success.
+	 * Using explicit wait to ensure the toast is visible before fetching text, instead of just waiting for presence.
+	 * This was causing issues in headless mode where the element was present but not visible.
 	 * 
 	 * @return The text from the toast container.
 	 */
 	public String getToastContainerText() {
-		wait.until(ExpectedConditions.presenceOfElementLocated(overlayContainer));
-		String toastText = wait.until(ExpectedConditions.presenceOfElementLocated(toastContainer)).getText().trim();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(overlayContainer));
+		String toastText = wait.until(ExpectedConditions.visibilityOfElementLocated(toastContainer)).getText().trim();
 		logger.info("Fetched toast container text: {}", toastText);
 		return toastText;
 	}
