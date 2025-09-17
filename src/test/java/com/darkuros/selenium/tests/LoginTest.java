@@ -29,7 +29,7 @@ public class LoginTest extends BaseTest {
 
 	}
 
-	@Test(dataProvider = "loginScenarios", dataProviderClass = DataProviderUtils.class, groups = { "debug" })
+	@Test(dataProvider = "loginScenarios", dataProviderClass = DataProviderUtils.class)
 	public void loginScenarios(String email, String password, String expectedResult, String expectedErrorMessage) {
 		LoginPage loginPage = new LoginPage(getDriver());
 		if (expectedResult.equalsIgnoreCase("success")) {
@@ -41,7 +41,7 @@ public class LoginTest extends BaseTest {
 		}
 	}
 
-	@Test
+	@Test(groups = { "debug" })
 	public void isForgotPasswordLinkWorking() {
 		LoginPage loginPage = new LoginPage(getDriver());
 		logger.info("Checking if the Forgot Password link is working.");

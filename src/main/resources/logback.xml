@@ -1,8 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  📄 Logback Configuration Overview
+
+  This file defines the logging behavior for the Selenium framework using SLF4J +
+Logback.
+
+  ──────────────────────────────────────────────────────────────
+  🔧 Logger Definitions:
+    - com.darkuros.selenium → Level: WARN
+      Suppresses INFO/DEBUG logs from framework unless something breaks.
+      Logs to both console and file. Additivity disabled to prevent bubbling.
+
+    - org.testng.internal → Level: WARN
+      Silences verbose internal TestNG logs (e.g., method sorting, graph creation).
+      Logs to both console and file. Additivity disabled.
+      
+      - io.github.bonigarcia → Level: WARN
+      Suppresses WebDriverManager logs.
+      Logs to both console and file. Additivity disabled.
+
+  ──────────────────────────────────────────────────────────────
+  🧪 Console Appender:
+    - Outputs logs to console with timestamp, level, thread, and logger name.
+    - Pattern: HH:mm:ss.SSS %-5level [%thread] %logger{36} - %msg%n
+
+  📂 File Appender:
+    - Rolling file logs stored in /logs/framework.log
+    - Time-based rolling policy with max 30 files and 100MB cap.
+    - Pattern: yyyy-MM-dd HH:mm:ss %-5level [%thread] %logger{36} - %msg%n
+
+  🚨 Root Logger:
+    - Level: INFO
+    - Acts as fallback for uncategorized packages.
+    - Logs to both console and file.
+
+  🧠 Notes:
+    - To enable verbose debugging: change com.darkuros.selenium to DEBUG.
+    - To suppress all INFO globally: change root level to WARN.
+    - To toggle verbosity dynamically: consider using -Dlog.level=DEBUG and
+conditional config blocks.
+
+  Last updated: 2025-09-17
+-->
 <configuration>
 
 	<!-- 🎯 Package-specific logger for your entire framework -->
-	<logger name="com.darkuros.selenium" level="DEBUG" />
+	<logger name="com.darkuros.selenium" level="WARN" additivity="false">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</logger>
 
 	<!-- 🧪 Console Appender -->
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
@@ -30,7 +76,16 @@
 			<charset>UTF-8</charset>
 		</encoder>
 	</appender>
-
+	<!-- 🧹 Suppress TestNG internal logs -->
+	<logger name="org.testng.internal" level="WARN" additivity="false">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</logger>
+	<!-- 🧹 Suppress WebDriverManager logs -->
+	<logger name="io.github.bonigarcia" level="WARN" additivity="false">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</logger>
 	<!-- 🚨 Root logger fallback -->
 	<root level="INFO">
 		<appender-ref ref="CONSOLE" />
