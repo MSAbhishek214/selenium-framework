@@ -157,11 +157,6 @@ public class RegisterPage extends BasePage {
 		wait.until(ExpectedConditions.visibilityOf(confirmPasswordInput)).sendKeys(confirmPassword);
 	}
 
-	public Boolean isCheckBoxSelected() {
-		logger.info("Checking if age checkbox is selected.");
-		return wait.until(ExpectedConditions.elementToBeClickable(ageCheckBoxSelection)).isSelected();
-	}
-
 	public void clickRegisterButton() {
 		wait.until(ExpectedConditions.elementToBeClickable(registerButton)).click();
 		logger.info("Clicked on the register button.");
