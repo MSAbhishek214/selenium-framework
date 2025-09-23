@@ -41,7 +41,7 @@ public class LoginTest extends BaseTest {
 		}
 	}
 
-	@Test(groups = { "debug" })
+	@Test
 	public void isForgotPasswordLinkWorking() {
 		LoginPage loginPage = new LoginPage(getDriver());
 		logger.info("Checking if the Forgot Password link is working.");

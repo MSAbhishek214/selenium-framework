@@ -44,11 +44,8 @@ public class ForgotPasswordPage extends BasePage {
 	@FindBy(xpath = "//a[normalize-space()='Register']")
 	private WebElement registerLink;
 
-	@FindBy(css = ".invalid-feedback div")
-	private WebElement invalidEmailError;
-
-	@FindBy(css = ".invalid-feedback div")
-	private WebElement emptyEmailError;
+	@FindBy(css = "input[formcontrolname='userEmail'] + div > div")
+	private WebElement emailValidationError;
 
 	@FindBy(css = "#userPassword + div.invalid-feedback")
 	private WebElement passwordError;
@@ -75,13 +72,13 @@ public class ForgotPasswordPage extends BasePage {
 	}
 
 	public String getEmptyEmailErrorText() {
-		String emptyEmailErrorText = wait.until(ExpectedConditions.visibilityOf(emptyEmailError)).getText().trim();
+		String emptyEmailErrorText = wait.until(ExpectedConditions.visibilityOf(emailValidationError)).getText().trim();
 		logger.info("Fetch empty email error text: {}", emptyEmailErrorText);
 		return emptyEmailErrorText;
 	}
 
 	public String getInvalidEmailErrorText() {
-		String InvalidEmailErrorText = wait.until(ExpectedConditions.visibilityOf(invalidEmailError)).getText().trim();
+		String InvalidEmailErrorText = wait.until(ExpectedConditions.visibilityOf(emailValidationError)).getText().trim();
 		logger.info("Fetched invalid email error text: {}", InvalidEmailErrorText);
 		return InvalidEmailErrorText;
 	}
