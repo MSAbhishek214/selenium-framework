@@ -2,55 +2,88 @@
 <!--
   📄 Logback Configuration Overview
 
-  This file defines the logging behavior for the Selenium framework using SLF4J +
-Logback.
+  This file defines the logging behavior for the Selenium framework using SLF4J + Logback.
 
   ──────────────────────────────────────────────────────────────
   🔧 Logger Definitions:
-    - com.darkuros.selenium → Level: WARN
-      Suppresses INFO/DEBUG logs from framework unless something breaks.
-      Logs to both console and file. Additivity disabled to prevent bubbling.
+    - com.darkuros.selenium → Level: INFO
+      Captures framework-level logs at INFO and above.
+      Logs routed to both console (WARN only) and rolling file.
+      Additivity disabled to prevent log propagation.
 
     - org.testng.internal → Level: WARN
-      Silences verbose internal TestNG logs (e.g., method sorting, graph creation).
-      Logs to both console and file. Additivity disabled.
-      
-      - io.github.bonigarcia → Level: WARN
-      Suppresses WebDriverManager logs.
-      Logs to both console and file. Additivity disabled.
+      Suppresses verbose internal TestNG logs (e.g., method sorting, graph creation).
+      Logs routed to both console (WARN only) and rolling file.
+      Additivity disabled.
+
+    - io.github.bonigarcia → Level: WARN
+      Silences WebDriverManager logs.
+      Logs routed to both console (WARN only) and rolling file.
+      Additivity disabled.
 
   ──────────────────────────────────────────────────────────────
-  🧪 Console Appender:
-    - Outputs logs to console with timestamp, level, thread, and logger name.
-    - Pattern: HH:mm:ss.SSS %-5level [%thread] %logger{36} - %msg%n
+  🧪 Console Appenders:
+    - CONSOLE_WARN:
+        - Outputs only WARN and above to console.
+        - Pattern: HH:mm:ss.SSS %-5level [%thread] %logger{36} - %msg%n
+        - Used by selective loggers to reduce noise.
+
+    - CONSOLE:
+        - Outputs all levels to console (used by root logger).
+        - Pattern: HH:mm:ss.SSS %-5level [%thread] %logger{36} - %msg%n
 
   📂 File Appender:
     - Rolling file logs stored in /logs/framework.log
-    - Time-based rolling policy with max 30 files and 100MB cap.
+    - Time-based rolling policy:
+        - File name pattern: logs/framework.{timestamp}.log
+        - Retains up to 30 historical files
+        - Total size capped at 100MB
     - Pattern: yyyy-MM-dd HH:mm:ss %-5level [%thread] %logger{36} - %msg%n
 
   🚨 Root Logger:
     - Level: INFO
     - Acts as fallback for uncategorized packages.
-    - Logs to both console and file.
+    - Logs routed to both CONSOLE and FILE appenders.
 
   🧠 Notes:
     - To enable verbose debugging: change com.darkuros.selenium to DEBUG.
     - To suppress all INFO globally: change root level to WARN.
-    - To toggle verbosity dynamically: consider using -Dlog.level=DEBUG and
-conditional config blocks.
+    - Dynamic verbosity toggling: use -Dlog.level=DEBUG and conditional config blocks.
 
-  Last updated: 2025-09-17
+  Last updated: 2025-09-25
 -->
 <configuration>
 
-	<!-- 🎯 Package-specific logger for your entire framework -->
-	<logger name="com.darkuros.selenium" level="WARN" additivity="false">
-		<appender-ref ref="CONSOLE" />
+	<!-- Package-specific logger for your entire framework -->
+	<logger name="com.darkuros.selenium" level="INFO" additivity="false">
+		<appender-ref ref="CONSOLE_WARN" />
 		<appender-ref ref="FILE" />
 	</logger>
 
-	<!-- 🧪 Console Appender -->
+	<!-- Suppress TestNG internal logs -->
+	<logger name="org.testng.internal" level="WARN" additivity="false">
+		<appender-ref ref="CONSOLE_WARN" />
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<!-- Suppress WebDriverManager logs -->
+	<logger name="io.github.bonigarcia" level="WARN" additivity="false">
+		<appender-ref ref="CONSOLE_WARN" />
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<!-- Console Warn Appender -->
+	<appender name="CONSOLE_WARN" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>WARN</level>
+		</filter>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<!-- Console Appender -->
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<pattern>%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
@@ -58,35 +91,24 @@ conditional config blocks.
 		</encoder>
 	</appender>
 
-	<!-- 📂 File Appender with Time-Based Rolling -->
+	<!-- File Appender with Time-Based Rolling -->
 	<appender name="FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>logs/framework.log</file>
-
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<fileNamePattern>logs/framework.%d{yyyy-MM-dd_HH-mm-ss}.log</fileNamePattern>
 			<maxHistory>30</maxHistory>
 			<totalSizeCap>100MB</totalSizeCap>
 		</rollingPolicy>
-
 		<encoder>
 			<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} -
 				%msg%n</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 	</appender>
-	<!-- 🧹 Suppress TestNG internal logs -->
-	<logger name="org.testng.internal" level="WARN" additivity="false">
-		<appender-ref ref="CONSOLE" />
-		<appender-ref ref="FILE" />
-	</logger>
-	<!-- 🧹 Suppress WebDriverManager logs -->
-	<logger name="io.github.bonigarcia" level="WARN" additivity="false">
-		<appender-ref ref="CONSOLE" />
-		<appender-ref ref="FILE" />
-	</logger>
-	<!-- 🚨 Root logger fallback -->
+
+	<!-- Root logger fallback -->
 	<root level="INFO">
 		<appender-ref ref="CONSOLE" />
 		<appender-ref ref="FILE" />
