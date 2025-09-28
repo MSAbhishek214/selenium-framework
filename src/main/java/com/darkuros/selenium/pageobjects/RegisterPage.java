@@ -18,8 +18,8 @@ import com.darkuros.selenium.utils.LoggerFactoryUtils;
 public class RegisterPage extends BasePage {
 	private static final Logger logger = LoggerFactoryUtils.getLogger(RegisterPage.class);
 
-	public RegisterPage(WebDriver driver) {
-		super(driver);
+	public RegisterPage(WebDriver driver, long explicitWaitInSeconds) {
+		super(driver, explicitWaitInSeconds);
 	}
 
 	// Username field locator
@@ -165,7 +165,7 @@ public class RegisterPage extends BasePage {
 	public LoginPage navigateToLogin() {
 		logger.info("Navigating to the login page.");
 		navigateToLogin.click();
-		return new LoginPage(getDriver());
+		return new LoginPage(getDriver(), explicitWaitInSeconds);
 	}
 
 	public String getSuccessMessageAfterRegister() {

@@ -21,6 +21,8 @@ public abstract class BasePage {
 
 	private static final Logger logger = LoggerFactoryUtils.getLogger(BasePage.class);
 	private final WebDriver driver; // Driver declared here but lives in BaseTest
+	protected final WebDriverWait wait;
+	protected final long explicitWaitInSeconds;
 
 	/**
 	 * Returns the WebDriver instance associated with this page.
@@ -31,26 +33,26 @@ public abstract class BasePage {
 		return driver;
 	}
 
-	protected WebDriverWait wait; // WebDriverWait is used for explicit waits in Page Objects
-
 	/**
 	 * Constructor for BasePage. Initializes the WebDriver and WebDriverWait, and
 	 * sets up the PageFactory for this page.
 	 * 
 	 * @param driver the WebDriver instance to be used by this page
+	 * @param explicitWaitInSeconds the time in seconds for explicit waits
 	 * @throws IllegalStateException if the provided WebDriver is null
 	 */
-	public BasePage(WebDriver driver) {
+	public BasePage(WebDriver driver, long explicitWaitTime) {
 		if (driver == null) {
 			logger.error("WebDriver passed to BasePage is null! Throwing IllegalStateException.");
 			throw new IllegalStateException("WebDriver passed to BasePage is null!");
 		}
 		this.driver = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		this.explicitWaitInSeconds = explicitWaitTime;
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(explicitWaitInSeconds));
+		
 		// Log the initialization of the BasePage
 		logger.info("Initializing Page Object: {}", this.getClass().getSimpleName());
 		logger.debug("WebDriver session established for BasePage");
-		logger.debug("Explicit wait configured with 5 seconds timeout");
 
 		// Initialize elements for the specific child Page Object
 		// 'this' refers to the concrete Page Object instance (e.g., LoginPage)

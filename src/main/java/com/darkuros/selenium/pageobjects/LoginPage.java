@@ -20,8 +20,8 @@ public class LoginPage extends BasePage {
 	private static final Logger logger = LoggerFactoryUtils.getLogger(LoginPage.class);
 
 	// Constructor to initialize driver
-	public LoginPage(WebDriver driver) {
-		super(driver); // This initializes 'this.driver' and 'this.wait' in BasePage
+	public LoginPage(WebDriver driver, long explicitWaitInSeconds) {
+		super(driver, explicitWaitInSeconds); // This initializes 'this.driver' and 'this.wait' in BasePage
 	}
 
 	// Find email xpath for landing page
@@ -77,14 +77,14 @@ public class LoginPage extends BasePage {
 	public RegisterPage navigateToRegisterLink() {
 		InteractionUtils.safeClick(getDriver(), registerLink);
 		logger.info("Register link clicked, navigating to RegisterPage");
-		return new RegisterPage(getDriver());
+		return new RegisterPage(getDriver(), explicitWaitInSeconds);
 	}
 
 	// Navigate to forgot password link
 	public ForgotPasswordPage navigateToForgotPasswordLink() {
 		InteractionUtils.safeClick(getDriver(), forgotPasswordLink);
 		logger.info("Forgot password link clicked, navigating to ForgotPasswordPage");
-		return new ForgotPasswordPage(getDriver());
+		return new ForgotPasswordPage(getDriver(), explicitWaitInSeconds);
 	}
 
 	// Get the text of the password change successful message
@@ -96,9 +96,10 @@ public class LoginPage extends BasePage {
 
 	/**
 	 * Gets the text from the toast container, which is used to display messages
-	 * like password change success.
-	 * Using explicit wait to ensure the toast is visible before fetching text, instead of just waiting for presence.
-	 * This was causing issues in headless mode where the element was present but not visible.
+	 * like password change success. Using explicit wait to ensure the toast is
+	 * visible before fetching text, instead of just waiting for presence. This was
+	 * causing issues in headless mode where the element was present but not
+	 * visible.
 	 * 
 	 * @return The text from the toast container.
 	 */
@@ -116,13 +117,13 @@ public class LoginPage extends BasePage {
 	 * @param email    The user's email.
 	 * @param password The user's password.
 	 */
-	public LandingPage loginApplication(String email, String password) {
+	public ProductCataloguePage loginApplication(String email, String password) {
 		logger.info("Logging in with email: {}", email);
 		enterUserEmail(email);
 		enterUserPassword(password);
 		clickSubmitButton();
 		logger.info("Login submitted, waiting for landing page to load");
-		return new LandingPage(getDriver());
+		return new ProductCataloguePage(getDriver(), explicitWaitInSeconds);
 	}
 
 	/**

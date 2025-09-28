@@ -25,7 +25,7 @@ public class ForgotPasswordTest extends BaseTest {
 
 	@Test
 	public void saveNewPasswordWithValidCredentials() {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		loginPage = forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "123@Dark", "123@Dark");
 		Assert.assertEquals(loginPage.getLoginPageURL(), "https://rahulshettyacademy.com/client/#/auth/login");
@@ -34,7 +34,7 @@ public class ForgotPasswordTest extends BaseTest {
 
 	@Test
 	public void invalidEmail() {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("com", "123@Dark", "123@Dark");
 
@@ -43,7 +43,7 @@ public class ForgotPasswordTest extends BaseTest {
 
 	@Test
 	public void emptyEmail() {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("", "123@Dark", "123@Dark");
 
@@ -52,7 +52,7 @@ public class ForgotPasswordTest extends BaseTest {
 
 	@Test
 	public void emptyPassword() {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "", "123@Dark");
 
@@ -64,7 +64,7 @@ public class ForgotPasswordTest extends BaseTest {
 
 	@Test
 	public void emptyConfirmPassword() {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "123@Dark", "");
 
@@ -73,7 +73,7 @@ public class ForgotPasswordTest extends BaseTest {
 
 	@Test
 	public void emptyPasswordAndConfirmPassword() {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "", "");
 
@@ -83,7 +83,7 @@ public class ForgotPasswordTest extends BaseTest {
 
 	@Test
 	public void passwordsDontMatch() {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "abc", "bca");
 

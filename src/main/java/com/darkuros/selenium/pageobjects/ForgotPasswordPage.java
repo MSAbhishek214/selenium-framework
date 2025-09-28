@@ -21,9 +21,10 @@ public class ForgotPasswordPage extends BasePage {
 	 * Constructor for ForgotPasswordPage.
 	 * 
 	 * @param driver WebDriver instance to interact with the browser.
+	 * @param explicitWaitInSeconds Time in seconds for explicit waits.
 	 */
-	public ForgotPasswordPage(WebDriver driver) {
-		super(driver);
+	public ForgotPasswordPage(WebDriver driver, long explicitWaitInSeconds) {
+		super(driver, explicitWaitInSeconds); // This initializes 'this.driver' and 'this.wait' in BasePage
 	}
 
 	@FindBy(css = ".mt-1 + input")
@@ -107,14 +108,14 @@ public class ForgotPasswordPage extends BasePage {
 	public LoginPage navigateBackToLoginPage() {
 		logger.info("Navigating back to Login page from Forgot Password page");
 		wait.until(ExpectedConditions.elementToBeClickable(loginLink)).click();
-		return new LoginPage(getDriver());
+		return new LoginPage(getDriver(), explicitWaitInSeconds);
 	}
 
 	// Method to navigate back to register page from forgot password page
 	public RegisterPage navigateBackToRegisterPage() {
 		logger.info("Navigating back to Register page from Forgot Password page");
 		wait.until(ExpectedConditions.elementToBeClickable(registerLink)).click();
-		return new RegisterPage(getDriver());
+		return new RegisterPage(getDriver(), explicitWaitInSeconds);
 	}
 
 	public LoginPage fillSavePasswordFormAndSubmit(String userEmail, String password, String confirmPassword) {
@@ -125,7 +126,7 @@ public class ForgotPasswordPage extends BasePage {
 		enterConfirmPassword(confirmPassword);
 		clickOnSubmitButton();
 		logger.info("Filled save password form and submitted");
-		return new LoginPage(getDriver());
+		return new LoginPage(getDriver(), explicitWaitInSeconds);
 	}
 
 	public String getForgotPasswordPageURL() {

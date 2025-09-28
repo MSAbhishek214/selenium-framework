@@ -24,7 +24,7 @@ public class RegisterTest extends BaseTest {
 
 	@Test
 	public void clickRegisterWithEmptyForm() {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		RegisterPage registerPage = loginPage.navigateToRegisterLink();
 		registerPage.clickRegisterButton();
 
@@ -50,7 +50,7 @@ public class RegisterTest extends BaseTest {
 	 */
 	@Test(dataProvider = "registrationData", dataProviderClass = DataProviderUtils.class)
 	public void registerUserWithValidDetails(UserTestData user) {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		RegisterPage registerPage = loginPage.navigateToRegisterLink();
 		registerPage.registerUser(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPhoneNumber(),
 				user.getOccupation(), user.getGender(), user.getPassword());
@@ -67,7 +67,7 @@ public class RegisterTest extends BaseTest {
 	 */
 	@Test(dataProvider = "registrationData", dataProviderClass = DataProviderUtils.class)
 	public void registerUserWithOnlyRequiredFields(UserTestData user) {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		RegisterPage registerPage = loginPage.navigateToRegisterLink();
 		registerPage.registerUser(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPhoneNumber(), "",
 				"", user.getPassword());
@@ -84,7 +84,7 @@ public class RegisterTest extends BaseTest {
 	 */
 	@Test(dataProvider = "registrationData", dataProviderClass = DataProviderUtils.class)
 	public void passwordLessThan8Chars(UserTestData user) {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		RegisterPage registerPage = loginPage.navigateToRegisterLink();
 		registerPage.registerUser(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPhoneNumber(),
 				user.getOccupation(), user.getGender(), user.getPassword().substring(0, 7));

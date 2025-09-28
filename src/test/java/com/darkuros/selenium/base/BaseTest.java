@@ -37,7 +37,9 @@ public class BaseTest {
 
 	// Create a web driver object -> lives and is managed here
 	private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
-
+	
+	protected long explicitWaitInSeconds;
+	
 	/**
 	 * Returns the WebDriver instance for the current thread. This method ensures
 	 * that each test method gets its own WebDriver instance, allowing parallel
@@ -62,12 +64,13 @@ public class BaseTest {
 		String browser = System.getProperty("browser", ConfigReader.get("browser"));
 		Boolean headless = Boolean.parseBoolean(System.getProperty("headless", ConfigReader.get("headless")));
 		Long implicitWait = Long.parseLong(ConfigReader.get("implicitWait"));
+		this.explicitWaitInSeconds = Long.parseLong(ConfigReader.get("explicitWait"));
 
 		WebDriver localDriver;
 
 		// Log the browser and headless mode being used
-		logger.info("Test setup initiated with browser: {}, headless: {}, implicitWait: {}", browser, headless,
-				implicitWait);
+		logger.info("Test setup initiated with browser: {}, headless: {}, implicitWait: {}, explicitWait: {}", browser, headless,
+				implicitWait, this.explicitWaitInSeconds);
 
 		switch (browser.toLowerCase()) {
 		case "firefox":

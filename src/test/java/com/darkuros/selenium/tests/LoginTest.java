@@ -31,7 +31,7 @@ public class LoginTest extends BaseTest {
 
 	@Test(dataProvider = "loginScenarios", dataProviderClass = DataProviderUtils.class)
 	public void loginScenarios(String email, String password, String expectedResult, String expectedErrorMessage) {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		if (expectedResult.equalsIgnoreCase("success")) {
 			Assert.assertTrue(loginPage.loginApplication(email, password).isHomePageDisplayed(),
 					"Login failed for valid credentials.");
@@ -43,7 +43,7 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void isForgotPasswordLinkWorking() {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		logger.info("Checking if the Forgot Password link is working.");
 		Assert.assertEquals(loginPage.navigateToForgotPasswordLink().getCurrentPageURL(),
 				"https://rahulshettyacademy.com/client/#/auth/password-new");
@@ -52,7 +52,7 @@ public class LoginTest extends BaseTest {
 
 	@Test
 	public void isRegisterLinkWorking() {
-		LoginPage loginPage = new LoginPage(getDriver());
+		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds);
 		logger.info("Checking if the Register link is working.");
 		Assert.assertEquals(loginPage.navigateToRegisterLink().getCurrentPageURL(),
 				"https://rahulshettyacademy.com/client/#/auth/register");
