@@ -3,6 +3,8 @@ package com.darkuros.selenium.pageobjects;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
@@ -23,6 +25,9 @@ public abstract class BasePage {
 	private final WebDriver driver; // Driver declared here but lives in BaseTest
 	protected final WebDriverWait wait;
 	protected final long explicitWaitInSeconds;
+	
+	@FindBy(css = "button[routerlink*='cart']")
+    private WebElement cartButton;
 
 	/**
 	 * Returns the WebDriver instance associated with this page.
@@ -70,5 +75,15 @@ public abstract class BasePage {
 		logger.info("Current driver URL: {}", currentUrl);
 		return currentUrl;
 	}
+	
+	/**
+     * Clicks the global cart button to navigate to the CartPage.
+     * @return A new CartPage object.
+     */
+    public CartPage goToCart() {
+        logger.info("Navigating to the cart page.");
+        cartButton.click();
+        return new CartPage(getDriver(), this.explicitWaitInSeconds);
+    }
 
 }
