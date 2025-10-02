@@ -1,10 +1,13 @@
 package com.darkuros.selenium.pageobjects;
 
 import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
+
+import com.darkuros.selenium.utils.IReporter;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 /**
@@ -15,8 +18,8 @@ public class CartPage extends BasePage {
 
     private static final Logger logger = LoggerFactoryUtils.getLogger(CartPage.class);
 
-    public CartPage(WebDriver driver, long explicitWaitInSeconds) {
-        super(driver, explicitWaitInSeconds);
+    public CartPage(WebDriver driver, long explicitWaitInSeconds, IReporter reporter) {
+        super(driver, explicitWaitInSeconds, reporter);
     }
 
     // --- WebElements and Locators ---
@@ -56,6 +59,6 @@ public class CartPage extends BasePage {
     public CheckoutPage goToCheckout() {
         logger.info("Clicking the checkout button.");
         checkoutButton.click();
-        return new CheckoutPage(getDriver(), explicitWaitInSeconds);
+        return new CheckoutPage(getDriver(), explicitWaitInSeconds, reporter);
     }
 }

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 
+import com.darkuros.selenium.utils.IReporter;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 /**
@@ -23,8 +24,8 @@ public class ForgotPasswordPage extends BasePage {
 	 * @param driver WebDriver instance to interact with the browser.
 	 * @param explicitWaitInSeconds Time in seconds for explicit waits.
 	 */
-	public ForgotPasswordPage(WebDriver driver, long explicitWaitInSeconds) {
-		super(driver, explicitWaitInSeconds); // This initializes 'this.driver' and 'this.wait' in BasePage
+	public ForgotPasswordPage(WebDriver driver, long explicitWaitInSeconds, IReporter reporter) {
+		super(driver, explicitWaitInSeconds, reporter); // This initializes 'this.driver' and 'this.wait' in BasePage
 	}
 
 	@FindBy(css = ".mt-1 + input")
@@ -108,14 +109,14 @@ public class ForgotPasswordPage extends BasePage {
 	public LoginPage navigateBackToLoginPage() {
 		logger.info("Navigating back to Login page from Forgot Password page");
 		wait.until(ExpectedConditions.elementToBeClickable(loginLink)).click();
-		return new LoginPage(getDriver(), explicitWaitInSeconds);
+		return new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 	}
 
 	// Method to navigate back to register page from forgot password page
 	public RegisterPage navigateBackToRegisterPage() {
 		logger.info("Navigating back to Register page from Forgot Password page");
 		wait.until(ExpectedConditions.elementToBeClickable(registerLink)).click();
-		return new RegisterPage(getDriver(), explicitWaitInSeconds);
+		return new RegisterPage(getDriver(), explicitWaitInSeconds, reporter);
 	}
 
 	public LoginPage fillSavePasswordFormAndSubmit(String userEmail, String password, String confirmPassword) {
@@ -126,7 +127,7 @@ public class ForgotPasswordPage extends BasePage {
 		enterConfirmPassword(confirmPassword);
 		clickOnSubmitButton();
 		logger.info("Filled save password form and submitted");
-		return new LoginPage(getDriver(), explicitWaitInSeconds);
+		return new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 	}
 
 	public String getForgotPasswordPageURL() {

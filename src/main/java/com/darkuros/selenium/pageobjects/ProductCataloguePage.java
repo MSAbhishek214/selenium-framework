@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 
+import com.darkuros.selenium.utils.IReporter;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 /**
@@ -27,8 +28,8 @@ public class ProductCataloguePage extends BasePage {
 	 *
 	 * @param driver The WebDriver instance used to interact with the web page.
 	 */
-	public ProductCataloguePage(WebDriver driver, long explicitWaitInSeconds) {
-		super(driver, explicitWaitInSeconds);
+	public ProductCataloguePage(WebDriver driver, long explicitWaitInSeconds, IReporter reporter) {
+		super(driver, explicitWaitInSeconds, reporter);
 	}
 
 	// Get a list of all products in the catalogue page

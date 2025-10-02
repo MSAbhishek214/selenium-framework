@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 
+import com.darkuros.selenium.utils.IReporter;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 /**
@@ -25,6 +26,7 @@ public abstract class BasePage {
 	private final WebDriver driver; // Driver declared here but lives in BaseTest
 	protected final WebDriverWait wait;
 	protected final long explicitWaitInSeconds;
+	protected final IReporter reporter;
 	
 	@FindBy(css = "button[routerlink*='cart']")
     private WebElement cartButton;
@@ -44,9 +46,10 @@ public abstract class BasePage {
 	 * 
 	 * @param driver the WebDriver instance to be used by this page
 	 * @param explicitWaitInSeconds the time in seconds for explicit waits
+	 * @param reporter the IReporter instance for logging test steps
 	 * @throws IllegalStateException if the provided WebDriver is null
 	 */
-	public BasePage(WebDriver driver, long explicitWaitTime) {
+	public BasePage(WebDriver driver, long explicitWaitTime, IReporter reporter) {
 		if (driver == null) {
 			logger.error("WebDriver passed to BasePage is null! Throwing IllegalStateException.");
 			throw new IllegalStateException("WebDriver passed to BasePage is null!");
@@ -54,6 +57,7 @@ public abstract class BasePage {
 		this.driver = driver;
 		this.explicitWaitInSeconds = explicitWaitTime;
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(explicitWaitInSeconds));
+		this.reporter = reporter;
 		
 		// Log the initialization of the BasePage
 		logger.info("Initializing Page Object: {}", this.getClass().getSimpleName());
@@ -83,7 +87,7 @@ public abstract class BasePage {
     public CartPage goToCart() {
         logger.info("Navigating to the cart page.");
         cartButton.click();
-        return new CartPage(getDriver(), this.explicitWaitInSeconds);
+        return new CartPage(getDriver(), this.explicitWaitInSeconds, this.reporter);
     }
 
 }

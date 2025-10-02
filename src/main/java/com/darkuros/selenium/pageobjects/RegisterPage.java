@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 
+import com.darkuros.selenium.utils.IReporter;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 /**
@@ -18,8 +19,8 @@ import com.darkuros.selenium.utils.LoggerFactoryUtils;
 public class RegisterPage extends BasePage {
 	private static final Logger logger = LoggerFactoryUtils.getLogger(RegisterPage.class);
 
-	public RegisterPage(WebDriver driver, long explicitWaitInSeconds) {
-		super(driver, explicitWaitInSeconds);
+	public RegisterPage(WebDriver driver, long explicitWaitInSeconds, IReporter reporter) {
+		super(driver, explicitWaitInSeconds, reporter);
 	}
 
 	// Username field locator
@@ -165,7 +166,7 @@ public class RegisterPage extends BasePage {
 	public LoginPage navigateToLogin() {
 		logger.info("Navigating to the login page.");
 		navigateToLogin.click();
-		return new LoginPage(getDriver(), explicitWaitInSeconds);
+		return new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 	}
 
 	public String getSuccessMessageAfterRegister() {
