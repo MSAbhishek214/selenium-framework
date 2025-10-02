@@ -10,14 +10,14 @@ import com.darkuros.selenium.pageobjects.ProductCataloguePage;
 
 public class OrderAnItemTest extends BaseTest {
 
-    @Test(groups = { "debug" })
+    @Test
     public void submitOrderTest() {
         // Test data
         String productName = "ZARA COAT 3";
         String countryName = "India";
 
         // 1. Login
-        LoginPage loginPage = new LoginPage(getDriver(), this.explicitWaitInSeconds);
+        LoginPage loginPage = new LoginPage(getDriver(), this.explicitWaitInSeconds, reporter);
         ProductCataloguePage productCataloguePage = loginPage.loginApplication("dark@uros.com", "123@Dark");
 
         // 2. Find product and add to cart

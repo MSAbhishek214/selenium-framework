@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.slf4j.Logger;
 
+import com.darkuros.selenium.utils.IReporter;
 import com.darkuros.selenium.utils.InteractionUtils;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
-
-import org.slf4j.Logger;
 
 /**
  * LoginPage class represents the login page of the application. It contains
@@ -20,8 +20,8 @@ public class LoginPage extends BasePage {
 	private static final Logger logger = LoggerFactoryUtils.getLogger(LoginPage.class);
 
 	// Constructor to initialize driver
-	public LoginPage(WebDriver driver, long explicitWaitInSeconds) {
-		super(driver, explicitWaitInSeconds); // This initializes 'this.driver' and 'this.wait' in BasePage
+	public LoginPage(WebDriver driver, long explicitWaitInSeconds, IReporter reporter) {
+		super(driver, explicitWaitInSeconds, reporter); // This initializes 'this.driver' and 'this.wait' in BasePage
 	}
 
 	// Find email xpath for landing page
@@ -77,14 +77,14 @@ public class LoginPage extends BasePage {
 	public RegisterPage navigateToRegisterLink() {
 		InteractionUtils.safeClick(getDriver(), registerLink);
 		logger.info("Register link clicked, navigating to RegisterPage");
-		return new RegisterPage(getDriver(), explicitWaitInSeconds);
+		return new RegisterPage(getDriver(), explicitWaitInSeconds, reporter);
 	}
 
 	// Navigate to forgot password link
 	public ForgotPasswordPage navigateToForgotPasswordLink() {
 		InteractionUtils.safeClick(getDriver(), forgotPasswordLink);
 		logger.info("Forgot password link clicked, navigating to ForgotPasswordPage");
-		return new ForgotPasswordPage(getDriver(), explicitWaitInSeconds);
+		return new ForgotPasswordPage(getDriver(), explicitWaitInSeconds, reporter);
 	}
 
 	// Get the text of the password change successful message
@@ -120,10 +120,13 @@ public class LoginPage extends BasePage {
 	public ProductCataloguePage loginApplication(String email, String password) {
 		logger.info("Logging in with email: {}", email);
 		enterUserEmail(email);
+		reporter.logInfo("Email entered: " + email);
 		enterUserPassword(password);
+		reporter.logInfo("Password entered: " + password);
 		clickSubmitButton();
+		reporter.logInfo("Login form submitted");
 		logger.info("Login submitted, waiting for landing page to load");
-		return new ProductCataloguePage(getDriver(), explicitWaitInSeconds);
+		return new ProductCataloguePage(getDriver(), explicitWaitInSeconds, reporter);
 	}
 
 	/**

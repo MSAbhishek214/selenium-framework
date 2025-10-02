@@ -19,6 +19,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.darkuros.selenium.utils.ConfigReader;
+import com.darkuros.selenium.utils.ExtentReportLogger;
+import com.darkuros.selenium.utils.IReporter;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -39,6 +41,8 @@ public class BaseTest {
 	private static ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
 	
 	protected long explicitWaitInSeconds;
+	// Reporter instance for logging test steps
+	protected IReporter reporter;
 	
 	/**
 	 * Returns the WebDriver instance for the current thread. This method ensures
@@ -58,8 +62,10 @@ public class BaseTest {
 	 */
 	@BeforeMethod(alwaysRun = true)
 	public void setup() {
+		// Create a new reporter instance for each test
+		this.reporter = new ExtentReportLogger();
+		// Read baseURL from config file
 		String baseURL = ConfigReader.get("baseURL");
-
 		// Read browser and headless mode from system properties or config file
 		String browser = System.getProperty("browser", ConfigReader.get("browser"));
 		Boolean headless = Boolean.parseBoolean(System.getProperty("headless", ConfigReader.get("headless")));

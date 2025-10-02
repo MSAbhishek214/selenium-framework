@@ -7,6 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
+
+import com.darkuros.selenium.utils.IReporter;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 /**
@@ -17,8 +19,8 @@ public class CheckoutPage extends BasePage {
 
     private static final Logger logger = LoggerFactoryUtils.getLogger(CheckoutPage.class);
 
-    public CheckoutPage(WebDriver driver, long explicitWaitInSeconds) {
-        super(driver, explicitWaitInSeconds);
+    public CheckoutPage(WebDriver driver, long explicitWaitInSeconds, IReporter reporter) {
+        super(driver, explicitWaitInSeconds, reporter);
     }
 
     // --- WebElements and Locators ---

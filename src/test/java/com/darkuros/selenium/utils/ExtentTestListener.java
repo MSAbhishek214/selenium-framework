@@ -82,4 +82,14 @@ public class ExtentTestListener implements ITestListener {
 		logger.info("Flushing ExtentReports for suite: {}", context.getSuite().getName());
 		extent.flush();
 	}
+	
+	/**
+	 * Retrieves the ExtentTest instance for the currently running test.
+	 *
+	 * @return The ExtentTest instance associated with the current thread.
+	 */
+	public static ExtentTest getTest() {
+		return extentTest.get();
+	}
+	
 }
