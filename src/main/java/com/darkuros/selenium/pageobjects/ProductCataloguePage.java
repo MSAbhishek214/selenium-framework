@@ -79,6 +79,7 @@ public class ProductCataloguePage extends BasePage {
         WebElement product = getProductByName(productName);
         if (product != null) {
             product.findElement(addToCartButton).click();
+            reporter.logPass("Added '" + productName + "' to the cart.");
             logger.info("Clicked 'Add to Cart' for product: {}", productName);
             wait.until(ExpectedConditions.visibilityOfElementLocated(toastMessage));
             logger.info("'Product Added to Cart' toast is visible.");

@@ -12,6 +12,8 @@ public class OrderAnItemTest extends BaseTest {
 
     @Test
     public void submitOrderTest() {
+    	reporter.logInfo("Starting the end-to-end order submission test.");
+    	
         // Test data
         String productName = "ZARA COAT 3";
         String countryName = "India";
@@ -36,5 +38,6 @@ public class OrderAnItemTest extends BaseTest {
         // 5. Verify confirmation message
         String confirmationMessage = checkoutPage.getConfirmationMessage();
         Assert.assertEquals(confirmationMessage, "THANKYOU FOR THE ORDER.");
+        reporter.logPass("Successfully verified the order confirmation message.");
     }
 }
