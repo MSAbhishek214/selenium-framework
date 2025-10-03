@@ -87,16 +87,19 @@ public class ForgotPasswordPage extends BasePage {
 
 	public void enterUserEmail(String userEmail) {
 		logger.info("Entering user email: {}", userEmail);
+		reporter.logInfo("Entering user email as " + userEmail);
 		wait.until(ExpectedConditions.visibilityOf(emailInput)).sendKeys(userEmail);
 	}
 
 	public void enterPassword(String password) {
 		logger.info("Entering password: {}", password);
+		reporter.logInfo("Entering password as " + password);
 		wait.until(ExpectedConditions.visibilityOf(passwordInput)).sendKeys(password);
 	}
 
 	public void enterConfirmPassword(String confirmPassword) {
 		logger.info("Entering confirm password: {}", confirmPassword);
+		reporter.logInfo("Entering confirm password as " + confirmPassword);
 		wait.until(ExpectedConditions.visibilityOf(confirmPasswordInput)).sendKeys(confirmPassword);
 	}
 
@@ -122,10 +125,12 @@ public class ForgotPasswordPage extends BasePage {
 	public LoginPage fillSavePasswordFormAndSubmit(String userEmail, String password, String confirmPassword) {
 		logger.info("Filling save password form with user email: {}, password: {}, confirm password: {}", userEmail,
 				password, confirmPassword);
+		reporter.logInfo("Filling save password form.");
 		enterUserEmail(userEmail);
 		enterPassword(password);
 		enterConfirmPassword(confirmPassword);
 		clickOnSubmitButton();
+		reporter.logInfo("Save password form filled and submitted.");
 		logger.info("Filled save password form and submitted");
 		return new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 	}

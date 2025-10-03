@@ -23,65 +23,73 @@ public class ForgotPasswordTest extends BaseTest {
 				"baseURL");
 	}
 
-	@Test
+	@Test(groups = { "debug" })
 	public void saveNewPasswordWithValidCredentials() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		loginPage = forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "123@Dark", "123@Dark");
+
 		Assert.assertEquals(loginPage.getLoginPageURL(), "https://rahulshettyacademy.com/client/#/auth/login");
 		Assert.assertEquals(loginPage.getPasswordChangeSuccessfulText(), "Password Changed Successfully");
+		reporter.logPass("Password changed successfully and navigated to login page.");
 	}
 
-	@Test
+	@Test(groups = { "debug" })
 	public void invalidEmail() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("com", "123@Dark", "123@Dark");
 
 		Assert.assertEquals(forgotPasswordPage.getInvalidEmailErrorText(), "*Enter Valid Email");
+		reporter.logPass("Invalid email error message displayed as expected.");
 	}
 
-	@Test
+	@Test(groups = { "debug" })
 	public void emptyEmail() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("", "123@Dark", "123@Dark");
 
 		Assert.assertEquals(forgotPasswordPage.getEmptyEmailErrorText(), "*Email is required");
+		reporter.logPass("Empty email error message displayed as expected.");
 	}
 
-	@Test
+	@Test(groups = { "debug" })
 	public void emptyPassword() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "", "123@Dark");
 
 		Assert.assertEquals(forgotPasswordPage.getPasswordErrorText(), "*Password is required");
+		reporter.logPass("Empty password error message displayed as expected.");
 		Assert.assertEquals(forgotPasswordPage.getConfirmPasswordErrorText(),
 				"Password and Confirm Password must match with each other.");
-
+		reporter.logPass("Confirm password mismatch message displayed as expected.");
 	}
 
-	@Test
+	@Test(groups = { "debug" })
 	public void emptyConfirmPassword() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "123@Dark", "");
 
 		Assert.assertEquals(forgotPasswordPage.getConfirmPasswordErrorText(), "*Confirm Password is required");
+		reporter.logPass("Empty confirm password error message displayed as expected.");
 	}
 
-	@Test
+	@Test(groups = { "debug" })
 	public void emptyPasswordAndConfirmPassword() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("dark@uros.com", "", "");
 
 		Assert.assertEquals(forgotPasswordPage.getPasswordErrorText(), "*Password is required");
+		reporter.logPass("Empty password error message displayed as expected.");
 		Assert.assertEquals(forgotPasswordPage.getConfirmPasswordErrorText(), "*Confirm Password is required");
+		reporter.logPass("Empty confirm password error message displayed as expected.");
 	}
 
-	@Test
+	@Test(groups = { "debug" })
 	public void passwordsDontMatch() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
@@ -89,6 +97,6 @@ public class ForgotPasswordTest extends BaseTest {
 
 		Assert.assertEquals(forgotPasswordPage.getConfirmPasswordErrorText(),
 				"Password and Confirm Password must match with each other.");
+		reporter.logPass("Confirm password mismatch message displayed as expected.");
 	}
-
 }

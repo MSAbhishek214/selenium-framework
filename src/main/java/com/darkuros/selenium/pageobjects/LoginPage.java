@@ -82,6 +82,7 @@ public class LoginPage extends BasePage {
 
 	// Navigate to forgot password link
 	public ForgotPasswordPage navigateToForgotPasswordLink() {
+		reporter.logInfo("Navigating to Forgot Password page");
 		InteractionUtils.safeClick(getDriver(), forgotPasswordLink);
 		logger.info("Forgot password link clicked, navigating to ForgotPasswordPage");
 		return new ForgotPasswordPage(getDriver(), explicitWaitInSeconds, reporter);
