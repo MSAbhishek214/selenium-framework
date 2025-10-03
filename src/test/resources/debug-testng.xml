@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Debug" parallel="methods" thread-count="4" verbose="2">
+<!--
+    TestNG Suite Configuration: Debug Mode
+
+    This suite is designed for targeted debug runs across critical test classes.
+    It includes only the 'debug' group and disables parallel execution for controlled traceability.
+
+    Logging Strategy:
+    - verbose="1" is intentionally kept minimal to suppress TestNG console noise.
+    - All detailed logging, including test lifecycle events, retry attempts, and error traces,
+      is handled via the SLF4J + Logback backbone integrated into the framework.
+    - ExtentTestListener bridges TestNG events with structured reporting and SLF4J logs.
+
+    Listeners:
+    - RetryTransformer: Applies retry logic for failed tests based on custom annotations.
+    - ExtentTestListener: Captures test metadata, screenshots, and logs for ExtentReports.
+
+    Best Practices:
+    - Avoid increasing verbose unless diagnosing TestNG internals; prefer SLF4J logs for clarity.
+    - Use listener hooks to enrich logs with test metadata, environment info, and failure diagnostics.
+    - Keep suite modular and group-driven to support selective execution and CI integration.
+
+    Owner: Abhishek Rotti
+-->
+<suite name="Debug" verbose="1" parallel="false" thread-count="1">
 	<groups>
 		<run>
             <include name="debug"></include>

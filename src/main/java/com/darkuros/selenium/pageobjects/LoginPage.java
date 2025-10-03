@@ -75,6 +75,7 @@ public class LoginPage extends BasePage {
 
 	// Navigate to register user link
 	public RegisterPage navigateToRegisterLink() {
+		reporter.logInfo("Navigating to Register page");
 		InteractionUtils.safeClick(getDriver(), registerLink);
 		logger.info("Register link clicked, navigating to RegisterPage");
 		return new RegisterPage(getDriver(), explicitWaitInSeconds, reporter);
@@ -82,6 +83,7 @@ public class LoginPage extends BasePage {
 
 	// Navigate to forgot password link
 	public ForgotPasswordPage navigateToForgotPasswordLink() {
+		reporter.logInfo("Navigating to Forgot Password page");
 		InteractionUtils.safeClick(getDriver(), forgotPasswordLink);
 		logger.info("Forgot password link clicked, navigating to ForgotPasswordPage");
 		return new ForgotPasswordPage(getDriver(), explicitWaitInSeconds, reporter);

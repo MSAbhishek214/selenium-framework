@@ -99,6 +99,7 @@ public class RegisterPage extends BasePage {
 		logger.info(
 				"Registering user with details: First Name: {}, Last Name: {}, Email: {}, Phone Number: {}, Occupation: {}, gender: {}, Password: {}",
 				firstName, lastName, email, phoneNumber, Occupation, gender, password);
+		reporter.logInfo("Filling out the user registration form.");
 		enterFirstName(firstName);
 		enterLastName(lastName);
 		enterEmail(email);
@@ -111,26 +112,31 @@ public class RegisterPage extends BasePage {
 		ageCheckBoxSelection.click();
 		clickRegisterButton();
 		logger.info("User registration form filled with provided details and submitted.");
+		reporter.logInfo("User registration form submitted.");
 	}
 
 	public void enterFirstName(String firstName) {
 		logger.info("Entering first name: {}", firstName);
 		wait.until(ExpectedConditions.visibilityOf(firstNameInput)).sendKeys(firstName);
+		reporter.logInfo("Entered first name: " + firstName);
 	}
 
 	public void enterLastName(String lastName) {
 		logger.info("Entering last name: {}", lastName);
 		wait.until(ExpectedConditions.visibilityOf(lastNameInput)).sendKeys(lastName);
+		reporter.logInfo("Entered last name: " + lastName);
 	}
 
 	public void enterEmail(String email) {
 		logger.info("Entering email: {}", email);
 		wait.until(ExpectedConditions.visibilityOf(emailInput)).sendKeys(email);
+		reporter.logInfo("Entered email: " + email);
 	}
 
 	public void enterPhoneNumber(String phoneNumber) {
 		logger.info("Entering phone number: {}", phoneNumber);
 		wait.until(ExpectedConditions.visibilityOf(phoneNumberInput)).sendKeys(phoneNumber);
+		reporter.logInfo("Entered phone number: " + phoneNumber);
 
 	}
 
@@ -139,6 +145,7 @@ public class RegisterPage extends BasePage {
 		wait.until(ExpectedConditions.elementToBeClickable(occupationDropdown));
 		if (!occupationValue.isBlank()) {
 			new Select(occupationDropdown).selectByVisibleText(occupationValue);
+			reporter.logInfo("Selected occupation: " + occupationValue);
 		}
 	}
 
@@ -146,16 +153,19 @@ public class RegisterPage extends BasePage {
 		WebElement genderOption = getDriver().findElement(By.cssSelector("input[value='" + gender + "']"));
 		wait.until(ExpectedConditions.elementToBeClickable(genderOption)).click();
 		logger.info("Selected gender: {}", gender);
+		reporter.logInfo("Selected gender: " + gender);
 	}
 
 	public void enterPassword(String password) {
 		logger.info("Entering password: {}", password);
 		wait.until(ExpectedConditions.visibilityOf(passwordInput)).sendKeys(password);
+		reporter.logInfo("Entered password: " + password);
 	}
 
 	public void enterConfirmPassword(String confirmPassword) {
 		logger.info("Entering confirm password: {}", confirmPassword);
 		wait.until(ExpectedConditions.visibilityOf(confirmPasswordInput)).sendKeys(confirmPassword);
+		reporter.logInfo("Entered confirm password: " + confirmPassword);
 	}
 
 	public void clickRegisterButton() {

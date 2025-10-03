@@ -44,6 +44,7 @@ public class CartPage extends BasePage {
                 .anyMatch(item -> item.getText().equalsIgnoreCase(productName));
         if (isPresent) {
             logger.info("'{}' was found in the cart.", productName);
+            reporter.logPass("Verified that '" + productName + "' is correctly displayed in the cart.");
         } else {
             logger.warn("'{}' was NOT found in the cart.", productName);
         }

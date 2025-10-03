@@ -53,6 +53,7 @@ public class CheckoutPage extends BasePage {
         
         wait.until(ExpectedConditions.visibilityOfElementLocated(countryResults));
         selectCountryButton.click();
+        reporter.logInfo("Selected shipping country: " + countryName);
     }
 
     /**
@@ -61,6 +62,7 @@ public class CheckoutPage extends BasePage {
     public void placeOrder() {
         logger.info("Placing the order.");
         placeOrderButton.click();
+        reporter.logPass("Order has been placed.");
     }
     
     /**
