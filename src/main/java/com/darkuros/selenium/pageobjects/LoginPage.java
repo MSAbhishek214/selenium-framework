@@ -75,6 +75,7 @@ public class LoginPage extends BasePage {
 
 	// Navigate to register user link
 	public RegisterPage navigateToRegisterLink() {
+		reporter.logInfo("Navigating to Register page");
 		InteractionUtils.safeClick(getDriver(), registerLink);
 		logger.info("Register link clicked, navigating to RegisterPage");
 		return new RegisterPage(getDriver(), explicitWaitInSeconds, reporter);

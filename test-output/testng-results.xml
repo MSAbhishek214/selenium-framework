@@ -1,106 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="15" passed="7" failed="0" skipped="0">
+<testng-results ignored="15" total="15" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-03T11:37:51 IST" name="Debug" finished-at="2025-10-03T11:38:11 IST" duration-ms="20024">
+  <suite started-at="2025-10-03T12:05:49 IST" name="Debug" finished-at="2025-10-03T12:05:49 IST" duration-ms="184">
     <groups>
-      <group name="debug">
-        <method signature="ForgotPasswordTest.emptyConfirmPassword()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" name="emptyConfirmPassword" class="com.darkuros.selenium.tests.ForgotPasswordTest"/>
-        <method signature="ForgotPasswordTest.emptyEmail()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" name="emptyEmail" class="com.darkuros.selenium.tests.ForgotPasswordTest"/>
-        <method signature="ForgotPasswordTest.emptyPassword()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" name="emptyPassword" class="com.darkuros.selenium.tests.ForgotPasswordTest"/>
-        <method signature="ForgotPasswordTest.emptyPasswordAndConfirmPassword()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" name="emptyPasswordAndConfirmPassword" class="com.darkuros.selenium.tests.ForgotPasswordTest"/>
-        <method signature="ForgotPasswordTest.invalidEmail()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" name="invalidEmail" class="com.darkuros.selenium.tests.ForgotPasswordTest"/>
-        <method signature="ForgotPasswordTest.passwordsDontMatch()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" name="passwordsDontMatch" class="com.darkuros.selenium.tests.ForgotPasswordTest"/>
-        <method signature="ForgotPasswordTest.saveNewPasswordWithValidCredentials()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" name="saveNewPasswordWithValidCredentials" class="com.darkuros.selenium.tests.ForgotPasswordTest"/>
-      </group> <!-- debug -->
     </groups>
-    <test started-at="2025-10-03T11:37:51 IST" name="debug" finished-at="2025-10-03T11:38:11 IST" duration-ms="20024">
-      <class name="com.darkuros.selenium.tests.ForgotPasswordTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:37:51 IST" name="setup" finished-at="2025-10-03T11:37:55 IST" duration-ms="3426" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="emptyConfirmPassword()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:37:55 IST" name="emptyConfirmPassword" finished-at="2025-10-03T11:37:55 IST" duration-ms="440" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emptyConfirmPassword -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:37:55 IST" name="tearDown" finished-at="2025-10-03T11:37:55 IST" duration-ms="125" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:37:55 IST" name="setup" finished-at="2025-10-03T11:37:56 IST" duration-ms="965" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="emptyEmail()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:37:56 IST" name="emptyEmail" finished-at="2025-10-03T11:37:57 IST" duration-ms="397" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emptyEmail -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:37:57 IST" name="tearDown" finished-at="2025-10-03T11:37:57 IST" duration-ms="117" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:37:57 IST" name="setup" finished-at="2025-10-03T11:38:01 IST" duration-ms="3850" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="emptyPassword()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:01 IST" name="emptyPassword" finished-at="2025-10-03T11:38:01 IST" duration-ms="404" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emptyPassword -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:01 IST" name="tearDown" finished-at="2025-10-03T11:38:01 IST" duration-ms="125" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:01 IST" name="setup" finished-at="2025-10-03T11:38:03 IST" duration-ms="2171" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="emptyPasswordAndConfirmPassword()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:03 IST" name="emptyPasswordAndConfirmPassword" finished-at="2025-10-03T11:38:04 IST" duration-ms="412" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- emptyPasswordAndConfirmPassword -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:04 IST" name="tearDown" finished-at="2025-10-03T11:38:04 IST" duration-ms="118" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:04 IST" name="setup" finished-at="2025-10-03T11:38:06 IST" duration-ms="1929" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="invalidEmail()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:06 IST" name="invalidEmail" finished-at="2025-10-03T11:38:06 IST" duration-ms="364" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidEmail -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:06 IST" name="tearDown" finished-at="2025-10-03T11:38:06 IST" duration-ms="122" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:06 IST" name="setup" finished-at="2025-10-03T11:38:09 IST" duration-ms="2395" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="passwordsDontMatch()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:09 IST" name="passwordsDontMatch" finished-at="2025-10-03T11:38:09 IST" duration-ms="366" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- passwordsDontMatch -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:09 IST" name="tearDown" finished-at="2025-10-03T11:38:09 IST" duration-ms="104" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:09 IST" name="setup" finished-at="2025-10-03T11:38:10 IST" duration-ms="989" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="saveNewPasswordWithValidCredentials()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:10 IST" name="saveNewPasswordWithValidCredentials" finished-at="2025-10-03T11:38:11 IST" duration-ms="903" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- saveNewPasswordWithValidCredentials -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.darkuros.selenium.tests.ForgotPasswordTest@1787bc24]" started-at="2025-10-03T11:38:11 IST" name="tearDown" finished-at="2025-10-03T11:38:11 IST" duration-ms="100" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.darkuros.selenium.tests.ForgotPasswordTest -->
+    <test started-at="2025-10-03T12:05:49 IST" name="debug" finished-at="2025-10-03T12:05:49 IST" duration-ms="184">
     </test> <!-- debug -->
   </suite> <!-- Debug -->
 </testng-results>

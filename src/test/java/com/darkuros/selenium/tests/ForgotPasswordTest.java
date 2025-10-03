@@ -23,7 +23,7 @@ public class ForgotPasswordTest extends BaseTest {
 				"baseURL");
 	}
 
-	@Test(groups = { "debug" })
+	@Test
 	public void saveNewPasswordWithValidCredentials() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
@@ -34,7 +34,7 @@ public class ForgotPasswordTest extends BaseTest {
 		reporter.logPass("Password changed successfully and navigated to login page.");
 	}
 
-	@Test(groups = { "debug" })
+	@Test
 	public void invalidEmail() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
@@ -44,7 +44,7 @@ public class ForgotPasswordTest extends BaseTest {
 		reporter.logPass("Invalid email error message displayed as expected.");
 	}
 
-	@Test(groups = { "debug" })
+	@Test
 	public void emptyEmail() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
@@ -54,7 +54,7 @@ public class ForgotPasswordTest extends BaseTest {
 		reporter.logPass("Empty email error message displayed as expected.");
 	}
 
-	@Test(groups = { "debug" })
+	@Test
 	public void emptyPassword() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
@@ -67,7 +67,7 @@ public class ForgotPasswordTest extends BaseTest {
 		reporter.logPass("Confirm password mismatch message displayed as expected.");
 	}
 
-	@Test(groups = { "debug" })
+	@Test
 	public void emptyConfirmPassword() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
@@ -77,7 +77,7 @@ public class ForgotPasswordTest extends BaseTest {
 		reporter.logPass("Empty confirm password error message displayed as expected.");
 	}
 
-	@Test(groups = { "debug" })
+	@Test
 	public void emptyPasswordAndConfirmPassword() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
@@ -89,7 +89,7 @@ public class ForgotPasswordTest extends BaseTest {
 		reporter.logPass("Empty confirm password error message displayed as expected.");
 	}
 
-	@Test(groups = { "debug" })
+	@Test
 	public void passwordsDontMatch() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
