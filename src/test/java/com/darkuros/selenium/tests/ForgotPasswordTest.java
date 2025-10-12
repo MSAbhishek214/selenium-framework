@@ -23,7 +23,7 @@ public class ForgotPasswordTest extends BaseTest {
 				"baseURL");
 	}
 
-	@Test
+	@Test(groups = { "debug" })
 	public void saveNewPasswordWithValidCredentials() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();

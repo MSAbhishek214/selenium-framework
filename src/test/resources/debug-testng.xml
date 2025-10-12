@@ -4,41 +4,50 @@
     TestNG Suite Configuration: Debug Mode
 
     This suite is designed for targeted debug runs across critical test classes.
-    It includes only the 'debug' group and disables parallel execution for controlled traceability.
+    It includes only the 'debug' group and disables parallel execution for
+controlled traceability.
 
     Logging Strategy:
     - verbose="1" is intentionally kept minimal to suppress TestNG console noise.
-    - All detailed logging, including test lifecycle events, retry attempts, and error traces,
+    - All detailed logging, including test lifecycle events, retry attempts, and
+error traces,
       is handled via the SLF4J + Logback backbone integrated into the framework.
-    - ExtentTestListener bridges TestNG events with structured reporting and SLF4J logs.
+    - ExtentTestListener bridges TestNG events with structured reporting and SLF4J
+logs.
 
     Listeners:
-    - RetryTransformer: Applies retry logic for failed tests based on custom annotations.
-    - ExtentTestListener: Captures test metadata, screenshots, and logs for ExtentReports.
+    - RetryTransformer: Applies retry logic for failed tests based on custom
+annotations.
+    - ExtentTestListener: Captures test metadata, screenshots, and logs for
+ExtentReports.
 
     Best Practices:
-    - Avoid increasing verbose unless diagnosing TestNG internals; prefer SLF4J logs for clarity.
-    - Use listener hooks to enrich logs with test metadata, environment info, and failure diagnostics.
-    - Keep suite modular and group-driven to support selective execution and CI integration.
+    - Avoid increasing verbose unless diagnosing TestNG internals; prefer SLF4J
+logs for clarity.
+    - Use listener hooks to enrich logs with test metadata, environment info, and
+failure diagnostics.
+    - Keep suite modular and group-driven to support selective execution and CI
+integration.
 
     Owner: Abhishek Rotti
 -->
 <suite name="Debug" verbose="1" parallel="false" thread-count="1">
 	<groups>
 		<run>
-            <include name="debug"></include>
-        </run>
+			<include name="debug"></include>
+		</run>
 	</groups>
 	<listeners>
+		<listener class-name="com.darkuros.selenium.utils.SuiteListener" />
 		<listener class-name="com.darkuros.selenium.utils.RetryTransformer" />
-        <listener class-name="com.darkuros.selenium.utils.ExtentTestListener" />
+		<listener class-name="com.darkuros.selenium.utils.ExtentTestListener" />
 	</listeners>
 	<test name="debug">
-        <classes>
-            <class name="com.darkuros.selenium.tests.ForgotPasswordTest" />
-            <class name="com.darkuros.selenium.tests.LoginTest" />
-            <class name="com.darkuros.selenium.tests.RegisterTest" />
-            <class name="com.darkuros.selenium.tests.OrderAnItemTest" />
-        </classes>
+		<classes>
+			<class name="com.darkuros.selenium.tests.ForgotPasswordTest" />
+			<class name="com.darkuros.selenium.tests.LoginTest" />
+			<class name="com.darkuros.selenium.tests.RegisterTest" />
+			<class name="com.darkuros.selenium.tests.OrderAnItemTest" />
+		</classes>
 	</test>
 </suite>
