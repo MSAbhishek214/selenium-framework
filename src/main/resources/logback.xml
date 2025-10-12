@@ -57,9 +57,9 @@ blocks.
 -->
 <configuration>
 
-    <statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />
+    <!--<statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />-->
     
-    <property name="LOGGING_ENABLED" value="${logging.enabled:-true}" />
+    <property name="LOGGING_ENABLED" value="${loggingEnabled:-true}" />
 
     <appender name="CONSOLE_WARN" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">

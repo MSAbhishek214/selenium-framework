@@ -16,10 +16,6 @@ public class ConfigReader {
 			FileInputStream file = new FileInputStream("src/test/resources/config.properties");
 			properties.load(file);
 			logger.info("Loaded config.properties successfully.");
-
-			String loggingEnabled = properties.getProperty("logging.enabled", "true");
-			System.setProperty("logging.enabled", loggingEnabled);
-			logger.info("Logging enabled set to: {}", loggingEnabled);
 		} catch (IOException e) {
 			logger.error("Could not load prperties file, throwing RuntimeException");
 			throw new RuntimeException("Failed to load config.properties: " + e.getMessage());

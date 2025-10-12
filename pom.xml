@@ -67,6 +67,27 @@
 
 	<build>
 		<plugins>
+
+	        <!-- Maven properties plugin to read config.properties -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>read-project-properties</goal>
+						</goals>
+						<configuration>
+							<files>
+								<file>src/test/resources/config.properties</file>
+							</files>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 			<!-- Maven Surefire Plugin for running TestNG XML -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -76,8 +97,12 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/debug-testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<systemPropertyVariables>
+						<loggingEnabled>${loggingEnabled}</loggingEnabled>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>
