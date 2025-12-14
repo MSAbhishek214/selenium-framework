@@ -1,26 +1,15 @@
 package com.darkuros.selenium.tests;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.darkuros.selenium.base.BaseTest;
 import com.darkuros.selenium.models.UserTestData;
 import com.darkuros.selenium.pageobjects.LoginPage;
 import com.darkuros.selenium.pageobjects.RegisterPage;
-import com.darkuros.selenium.utils.ConfigReader;
 import com.darkuros.selenium.utils.DataProviderUtils;
-import com.darkuros.selenium.utils.FrameworkHealthChecker;
 
 public class RegisterTest extends BaseTest {
-
-	@Override
-	@BeforeMethod(alwaysRun = true)
-	public void setup() {
-		super.setup(); // Call the setup method from BaseTest to initialize the driver
-		FrameworkHealthChecker.validateDriver(getDriver(), "RegisterTest.setup()");
-		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), "RegisterTest.setup()", "browser", "baseURL");
-	}
 
 	@Test
 	public void clickRegisterWithEmptyForm() {

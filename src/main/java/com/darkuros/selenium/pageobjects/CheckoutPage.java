@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 
 import com.darkuros.selenium.utils.IReporter;
+import com.darkuros.selenium.utils.InteractionUtils;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 /**
@@ -50,7 +51,7 @@ public class CheckoutPage extends BasePage {
         logger.info("Selecting country: {}", countryName);
         Actions a = new Actions(getDriver());
         a.sendKeys(countryInput, countryName).build().perform();
-        
+        InteractionUtils.scrollIntoView(getDriver(), countryInput);
         wait.until(ExpectedConditions.visibilityOfElementLocated(countryResults));
         selectCountryButton.click();
         reporter.logInfo("Selected shipping country: " + countryName);
