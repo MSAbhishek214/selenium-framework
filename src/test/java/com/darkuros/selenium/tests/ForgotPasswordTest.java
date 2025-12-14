@@ -1,29 +1,15 @@
 package com.darkuros.selenium.tests;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.darkuros.selenium.base.BaseTest;
 import com.darkuros.selenium.pageobjects.ForgotPasswordPage;
 import com.darkuros.selenium.pageobjects.LoginPage;
-import com.darkuros.selenium.utils.ConfigReader;
-import com.darkuros.selenium.utils.FrameworkHealthChecker;
 
 public class ForgotPasswordTest extends BaseTest {
 
-	// This @BeforeMethod will run before EACH @Test method in THIS class
-	// (LoginTest)
-	@Override
-	@BeforeMethod(alwaysRun = true)
-	public void setup() {
-		super.setup();
-		FrameworkHealthChecker.validateDriver(getDriver(), "ForgotPasswordTest.setup()");
-		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), "ForgotPasswordTest.setup()", "browser",
-				"baseURL");
-	}
-
-	@Test(groups = { "debug" })
+	@Test
 	public void saveNewPasswordWithValidCredentials() {
 		LoginPage loginPage = new LoginPage(getDriver(), explicitWaitInSeconds, reporter);
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();

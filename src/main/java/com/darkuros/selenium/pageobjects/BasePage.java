@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 
 import com.darkuros.selenium.utils.IReporter;
+import com.darkuros.selenium.utils.InteractionUtils;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 /**
@@ -86,7 +87,7 @@ public abstract class BasePage {
      */
     public CartPage goToCart() {
         logger.info("Navigating to the cart page.");
-        cartButton.click();
+        InteractionUtils.safeClick(getDriver(), cartButton);
         return new CartPage(getDriver(), this.explicitWaitInSeconds, this.reporter);
     }
 

@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Debug" class="navigator-link">
-              <span class="suite-name border-passed">Debug</span>
+              <span class="suite-name border-skipped">Debug</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,  2 skipped,  1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Retried methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Debug" class="hide-methods skipped suite-Debug"> (hide)</a> <!-- hide-methods skipped suite-Debug -->
+                      <a href="#" panel-name="suite-Debug" class="show-methods skipped suite-Debug"> (show)</a> <!-- show-methods skipped suite-Debug -->
+                    </span>
+                    <div class="method-list-content skipped suite-Debug">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Debug" title="com.darkuros.selenium.tests.OrderAnItemTest" class="method navigator-link" hash-for-method="submitOrderTest">submitOrderTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Debug" title="com.darkuros.selenium.tests.OrderAnItemTest" class="method navigator-link" hash-for-method="submitOrderTest">submitOrderTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Debug -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +122,7 @@
                     <div class="method-list-content passed suite-Debug">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Debug" title="com.darkuros.selenium.tests.ForgotPasswordTest" class="method navigator-link" hash-for-method="saveNewPasswordWithValidCredentials">saveNewPasswordWithValidCredentials</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Debug" title="com.darkuros.selenium.tests.OrderAnItemTest" class="method navigator-link" hash-for-method="submitOrderTest">submitOrderTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Debug -->
@@ -118,17 +137,65 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Debug" class="panel Debug">
-          <div class="suite-Debug-class-passed">
+          <div class="suite-Debug-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.darkuros.selenium.tests.ForgotPasswordTest</span>
+              <img src="skipped.png"/>
+              <span class="class-name">com.darkuros.selenium.tests.OrderAnItemTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="saveNewPasswordWithValidCredentials">
-                  </a> <!-- saveNewPasswordWithValidCredentials -->
-                  <span class="method-name">saveNewPasswordWithValidCredentials</span>
+                  <a name="submitOrderTest">
+                  </a> <!-- submitOrderTest -->
+                  <span class="method-name">submitOrderTest</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: .ta-results (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.35.0&apos;, revision: &apos;1c58e5028b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\abhis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61810}, goog:processID: 16032, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61810/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 86d56f3c4153fd58f2e5b75df7dde516
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.darkuros.selenium.pageobjects.CheckoutPage.selectCountry(CheckoutPage.java:55)
+	at com.darkuros.selenium.tests.OrderAnItemTest.submitOrderTest(OrderAnItemTest.java:43)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="submitOrderTest">
+                  </a> <!-- submitOrderTest -->
+                  <span class="method-name">submitOrderTest</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: .ta-results (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.35.0&apos;, revision: &apos;1c58e5028b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\abhis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64082}, goog:processID: 25200, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64082/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 73907c746b8eb2f44207a9124bae62cb
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.darkuros.selenium.pageobjects.CheckoutPage.selectCountry(CheckoutPage.java:55)
+	at com.darkuros.selenium.tests.OrderAnItemTest.submitOrderTest(OrderAnItemTest.java:43)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Debug-class-skipped -->
+          <div class="suite-Debug-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.darkuros.selenium.tests.OrderAnItemTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="submitOrderTest">
+                  </a> <!-- submitOrderTest -->
+                  <span class="method-name">submitOrderTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -154,7 +221,6 @@
     &lt;/run&gt;
   &lt;/groups&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;com.darkuros.selenium.utils.SuiteListener&quot;/&gt;
     &lt;listener class-name=&quot;com.darkuros.selenium.utils.RetryTransformer&quot;/&gt;
     &lt;listener class-name=&quot;com.darkuros.selenium.utils.ExtentTestListener&quot;/&gt;
   &lt;/listeners&gt;
@@ -191,7 +257,7 @@
               <span class="test-group-name">debug</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">saveNewPasswordWithValidCredentials</span>
+                <span class="method-in-group-name">submitOrderTest</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -211,16 +277,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'saveNewPasswordWithValidCredentials')
-data.setCell(0, 2, 'com.darkuros.selenium.tests.ForgotPasswordTest')
-data.setCell(0, 3, 1974);
+data.setCell(0, 1, 'submitOrderTest')
+data.setCell(0, 2, 'com.darkuros.selenium.tests.OrderAnItemTest')
+data.setCell(0, 3, 16844);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'submitOrderTest')
+data.setCell(1, 2, 'com.darkuros.selenium.tests.OrderAnItemTest')
+data.setCell(1, 3, 16749);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'submitOrderTest')
+data.setCell(2, 2, 'com.darkuros.selenium.tests.OrderAnItemTest')
+data.setCell(2, 3, 7319);
 window.suiteTableData['Debug']= { tableData: data, tableDiv: 'times-div-Debug'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 40 seconds</span>
               <div id="times-div-Debug">
               </div> <!-- times-div-Debug -->
             </div> <!-- times-div -->
@@ -239,31 +313,13 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.darkuros.selenium.tests.OrderAnItemTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">submitOrderTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.darkuros.selenium.tests.LoginTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">isRegisterLinkWorking</span>
-                <br/>
-                <span class="ignored-method-name">loginScenarios</span>
-                <br/>
-                <span class="ignored-method-name">isForgotPasswordLinkWorking</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
               <span class="ignored-class-name">com.darkuros.selenium.tests.RegisterTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">clickRegisterWithEmptyForm</span>
-                <br/>
                 <span class="ignored-method-name">registerUserWithValidDetails</span>
                 <br/>
                 <span class="ignored-method-name">passwordLessThan8Chars</span>
+                <br/>
+                <span class="ignored-method-name">clickRegisterWithEmptyForm</span>
                 <br/>
                 <span class="ignored-method-name">registerUserWithOnlyRequiredFields</span>
                 <br/>
@@ -272,17 +328,30 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">com.darkuros.selenium.tests.ForgotPasswordTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">passwordsDontMatch</span>
-                <br/>
-                <span class="ignored-method-name">emptyConfirmPassword</span>
+                <span class="ignored-method-name">saveNewPasswordWithValidCredentials</span>
                 <br/>
                 <span class="ignored-method-name">emptyPassword</span>
                 <br/>
-                <span class="ignored-method-name">emptyEmail</span>
-                <br/>
                 <span class="ignored-method-name">emptyPasswordAndConfirmPassword</span>
                 <br/>
+                <span class="ignored-method-name">emptyEmail</span>
+                <br/>
+                <span class="ignored-method-name">emptyConfirmPassword</span>
+                <br/>
                 <span class="ignored-method-name">invalidEmail</span>
+                <br/>
+                <span class="ignored-method-name">passwordsDontMatch</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.darkuros.selenium.tests.LoginTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">isForgotPasswordLinkWorking</span>
+                <br/>
+                <span class="ignored-method-name">isRegisterLinkWorking</span>
+                <br/>
+                <span class="ignored-method-name">loginScenarios</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -294,18 +363,42 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.darkuros.selenium.tests.ForgotPasswordTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.darkuros.selenium.tests.OrderAnItemTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">saveNewPasswordWithValidCredentials</span>
-                <span class="method-start">2458 ms</span>
+                <span class="method-name">submitOrderTest</span>
+                <span class="method-start">2367 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">4434 ms</span>
+                <span class="method-start">19216 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">19333 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">submitOrderTest</span>
+                <span class="method-start">21558 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">38310 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">38413 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">submitOrderTest</span>
+                <span class="method-start">40906 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">48226 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -10,6 +10,7 @@
 			<class name="com.darkuros.selenium.tests.ForgotPasswordTest" />
 			<class name="com.darkuros.selenium.tests.LoginTest" />
 			<class name="com.darkuros.selenium.tests.RegisterTest" />
+			<class name="com.darkuros.selenium.tests.OrderAnItemTest" />
 		</classes>
 	</test>
 </suite>

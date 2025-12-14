@@ -20,10 +20,9 @@ import org.testng.annotations.BeforeMethod;
 
 import com.darkuros.selenium.utils.ConfigReader;
 import com.darkuros.selenium.utils.ExtentReportLogger;
+import com.darkuros.selenium.utils.FrameworkHealthChecker;
 import com.darkuros.selenium.utils.IReporter;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	/**
@@ -80,12 +79,10 @@ public class BaseTest {
 
 		switch (browser.toLowerCase()) {
 		case "firefox":
-			WebDriverManager.firefoxdriver().setup();
 			localDriver = new FirefoxDriver();
 			logger.info("Launching browser: {}", browser);
 			break;
 		case "edge":
-			WebDriverManager.edgedriver().setup();
 			EdgeOptions edgeOptions = new EdgeOptions();
 			if (headless) {
 				edgeOptions.addArguments("--headless=new");
@@ -99,7 +96,6 @@ public class BaseTest {
 			localDriver = new EdgeDriver(edgeOptions);
 			break;
 		default:
-			WebDriverManager.chromedriver().browserVersion("140").setup();
 			ChromeOptions chromeOptions = new ChromeOptions();
 			if (headless) {
 				chromeOptions.addArguments("--headless=new");
@@ -115,6 +111,15 @@ public class BaseTest {
 
 		driverThreadLocal.set(localDriver);
 		logger.info("ThreadLocal WebDriver set for current thread: {}", Thread.currentThread().threadId());
+		
+		// --- Centralized Health Check ---
+        // Dynamically get the name of the subclass (e.g., "LoginTest")
+		String context = this.getClass().getSimpleName() + ".setup()";
+		
+		// Validate WebDriver and configuration
+		FrameworkHealthChecker.validateDriver(getDriver(), context);
+		FrameworkHealthChecker.validateConfig(ConfigReader.getProps(), context, "browser", "baseURL");
+		
 		getDriver().manage().window().maximize();
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
 		logger.info("Implicit wait set to {} seconds", implicitWait);

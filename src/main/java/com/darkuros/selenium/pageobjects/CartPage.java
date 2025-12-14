@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.slf4j.Logger;
 
 import com.darkuros.selenium.utils.IReporter;
+import com.darkuros.selenium.utils.InteractionUtils;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 /**
@@ -59,7 +60,7 @@ public class CartPage extends BasePage {
      */
     public CheckoutPage goToCheckout() {
         logger.info("Clicking the checkout button.");
-        checkoutButton.click();
+        InteractionUtils.safeClick(getDriver(), checkoutButton);
         return new CheckoutPage(getDriver(), explicitWaitInSeconds, reporter);
     }
 }

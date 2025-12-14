@@ -9,10 +9,34 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Debug</th></tr>
-<tr><td><a href="#t0">debug</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">4,691</td><td>debug</td><td></td></tr>
+<tr><td><a href="#t0">debug</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">2</td><td class="num">0</td><td class="num">48,526</td><td>debug</td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Debug</th></tr></tbody><tbody id="t0"><tr><th colspan="4">debug &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.darkuros.selenium.tests.ForgotPasswordTest</td><td><a href="#m0">saveNewPasswordWithValidCredentials</a></td><td rowspan="1">1760249633985</td><td rowspan="1">1974</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Debug</th></tr></tbody><tbody id="t0"><tr><th colspan="4">debug &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="2">com.darkuros.selenium.tests.OrderAnItemTest</td><td><a href="#m0">submitOrderTest</a></td><td rowspan="2">1765713377805</td><td rowspan="2">16844</td></tr><tr class="retriedeven"><td><a href="#m1">submitOrderTest</a></td></tr><tr><th colspan="4">debug &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.darkuros.selenium.tests.OrderAnItemTest</td><td><a href="#m2">submitOrderTest</a></td><td rowspan="1">1765713416344</td><td rowspan="1">7319</td></tr></tbody>
 </table>
-<h2>debug</h2><h3 id="m0">com.darkuros.selenium.tests.ForgotPasswordTest#saveNewPasswordWithValidCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>debug</h2><h3 id="m0">com.darkuros.selenium.tests.OrderAnItemTest#submitOrderTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: .ta-results (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.35.0&apos;, revision: &apos;1c58e5028b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\abhis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61810}, goog:processID: 16032, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61810/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 86d56f3c4153fd58f2e5b75df7dde516
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.darkuros.selenium.pageobjects.CheckoutPage.selectCountry(CheckoutPage.java:55)
+	at com.darkuros.selenium.tests.OrderAnItemTest.submitOrderTest(OrderAnItemTest.java:43)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.darkuros.selenium.tests.OrderAnItemTest#submitOrderTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.cssSelector: .ta-results (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.35.0&apos;, revision: &apos;1c58e5028b&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.8&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.41, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\abhis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64082}, goog:processID: 25200, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64082/devtoo..., se:cdpVersion: 143.0.7499.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 73907c746b8eb2f44207a9124bae62cb
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.darkuros.selenium.pageobjects.CheckoutPage.selectCountry(CheckoutPage.java:55)
+	at com.darkuros.selenium.tests.OrderAnItemTest.submitOrderTest(OrderAnItemTest.java:43)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.darkuros.selenium.tests.OrderAnItemTest#submitOrderTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
