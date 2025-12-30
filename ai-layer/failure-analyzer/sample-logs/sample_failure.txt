@@ -1,0 +1,5 @@
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted
+Element: [[ChromeDriver: chrome on LINUX]]
+Message: Other element would receive the click: <div class="toast">...
+Stacktrace:
+timeout waiting for page load
