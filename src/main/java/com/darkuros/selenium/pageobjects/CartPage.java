@@ -60,7 +60,9 @@ public class CartPage extends BasePage {
      */
     public CheckoutPage goToCheckout() {
         logger.info("Clicking the checkout button.");
+        InteractionUtils.scrollIntoView(getDriver(), checkoutButton);
         InteractionUtils.safeClick(getDriver(), checkoutButton);
+        reporter.logPass("Clicked on checkout button successfully");
         return new CheckoutPage(getDriver(), explicitWaitInSeconds, reporter);
     }
 }
