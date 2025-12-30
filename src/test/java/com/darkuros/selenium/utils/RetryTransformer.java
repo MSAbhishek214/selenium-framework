@@ -24,6 +24,7 @@ public class RetryTransformer implements IAnnotationTransformer {
 	 * @param testConstructor The test constructor (can be null).
 	 * @param testMethod The test method (can be null).
 	 */
+	@SuppressWarnings("rawtypes")
 	@Override
 	public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
 		annotation.setRetryAnalyzer(RetryAnalyzer.class);
