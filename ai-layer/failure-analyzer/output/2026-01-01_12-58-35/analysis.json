@@ -1,0 +1,4 @@
+{
+  "raw_output": "```json\n{\n  \"type\": \"TimeoutException\",\n  \"cause\": \"The test is timing out while trying to interact with a web element.\",\n  \"suggestion\": \"Increase the implicit wait time or use explicit waits in your test.\",\n  \"confidence\": 0.9\n}\n```\n\n",
+  "note": "JSON parsing failed"
+}

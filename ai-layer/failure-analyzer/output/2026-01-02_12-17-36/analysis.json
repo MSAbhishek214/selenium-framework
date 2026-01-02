@@ -1,0 +1,6 @@
+{
+  "type": "ElementClickInterceptedException",
+  "cause": "The current element is intercepting the click event on the element you attempted to click.",
+  "suggestion": "Check if there are any other elements covering the target element. You can use JavaScript methods like `document.querySelector('.toast').click()` or `.dispatchEvent(new MouseEvent('click'))` to try clicking the element directly.",
+  "confidence": 100
+}

@@ -1,0 +1,6 @@
+{
+  "type": "element_click_intercepted",
+  "cause": "Another element is intercepting the click event for the target element.",
+  "suggestion": "Inspect the DOM and ensure that the element being clicked does not have any interfering elements or scripts.",
+  "confidence": 0.95
+}
