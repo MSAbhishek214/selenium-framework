@@ -1,0 +1,7 @@
+{
+  "classification": "ENVIRONMENT",
+  "action": "IGNORE",
+  "priority": "LOW",
+  "confidence": 0.85,
+  "rationale": "The failure is due to a browser version mismatch, which is an environment issue that typically does not affect test execution but rather the stability of the CI pipeline. Ignoring it will avoid false alarms in future runs."
+}

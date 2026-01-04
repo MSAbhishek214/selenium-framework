@@ -1,0 +1,7 @@
+{
+  "classification": "FLAKY",
+  "action": "FLAG_FOR_REVIEW",
+  "priority": "MEDIUM",
+  "confidence": 0.82,
+  "rationale": "The failure matches common synchronization issues and persisted after retries, suggesting an unstable test that should be reviewed rather than ignored or immediately escalated."
+}

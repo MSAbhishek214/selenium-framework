@@ -1,0 +1,6 @@
+{
+  "type": "SessionNotCreatedException",
+  "cause": "Chrome browser failed to start due to version mismatch",
+  "suggestion": "Verify browser and driver compatibility",
+  "confidence": 0.94
+}

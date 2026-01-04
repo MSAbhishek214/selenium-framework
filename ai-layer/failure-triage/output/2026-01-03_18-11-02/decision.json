@@ -1,0 +1,7 @@
+{
+  "classification": "TEST_BUG",
+  "action": "FLAG_FOR_REVIEW",
+  "priority": "HIGH",
+  "confidence": 0.85,
+  "rationale": "The failure is a test-specific issue caused by an outdated browser driver version mismatch, which affects the stability and reliability of the tests. Requiring humans to review and stabilize this issue ensures that it doesn't impact future deployments."
+}

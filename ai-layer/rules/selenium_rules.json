@@ -1,0 +1,15 @@
+{
+  "hard_stop_exceptions": [
+    "SessionNotCreatedException",
+    "InvalidArgumentException"
+  ],
+  "environment_failures": [
+    "SessionNotCreatedException",
+    "WebDriverException"
+  ],
+  "flaky_indicators": [
+    "TimeoutException",
+    "ElementClickInterceptedException",
+    "StaleElementReferenceException"
+  ]
+}

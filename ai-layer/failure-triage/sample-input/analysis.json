@@ -1,0 +1,6 @@
+{
+  "type": "TimeoutException",
+  "cause": "Element did not become clickable within 30 seconds",
+  "suggestion": "Increase wait or stabilize locator",
+  "confidence": 0.91
+}

@@ -1,0 +1,7 @@
+{
+  "classification": "TEST_BUG",
+  "action": "IGNORE",
+  "priority": "LOW",
+  "confidence": 0.85,
+  "rationale": "The timeout exception indicates that the locator did not become clickable within the expected time frame, which is a common issue with dynamic web elements. Increasing wait times or stabilizing locators are suggested as potential solutions, but they do not resolve the underlying problem of the test logic. Ignoring the failure does not compromise CI's green status and avoids hiding real failures."
+}
