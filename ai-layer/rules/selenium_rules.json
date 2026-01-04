@@ -3,7 +3,7 @@
     "SessionNotCreatedException",
     "InvalidArgumentException"
   ],
-  "environment_failures": [
+  "environment_exceptions": [
     "SessionNotCreatedException",
     "WebDriverException"
   ],

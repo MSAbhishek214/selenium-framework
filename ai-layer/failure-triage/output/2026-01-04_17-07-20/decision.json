@@ -1,0 +1,7 @@
+{
+  "classification": "PRODUCT_BUG",
+  "action": "ESCALATE",
+  "priority": "HIGH",
+  "confidence": 0.98,
+  "rationale": "The failure is likely due to a problem with the product, not an issue with CI or the environment. Increasing the wait time may resolve the issue."
+}

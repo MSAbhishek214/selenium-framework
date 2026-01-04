@@ -1,0 +1,14 @@
+{
+  "type": "SessionNotCreatedException",
+  "cause": "Chrome browser failed to start due to version mismatch",
+  "suggestion": "Verify browser and driver compatibility",
+  "confidence": 0.94,
+  "rulebook": {
+    "hard_stop": true,
+    "environment_issue": true,
+    "flaky_signal": false,
+    "matched_rules": [
+      "SessionNotCreatedException"
+    ]
+  }
+}
