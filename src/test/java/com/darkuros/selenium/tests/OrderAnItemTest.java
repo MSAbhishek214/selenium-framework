@@ -12,7 +12,7 @@ import com.darkuros.selenium.pageobjects.ProductCataloguePage;
 
 public class OrderAnItemTest extends BaseTest {
 
-	@Test(groups = { "debug" })
+	@Test
 	public void submitOrderTest() {
 
 		reporter.logInfo("Starting the end-to-end order submission test.");

@@ -13,6 +13,12 @@ class LocalLLM:
         result = subprocess.run(
             ["ollama", "run", self.model_name],
             input=prompt.encode("utf-8"),
+            stderr=subprocess.PIPE,
             stdout=subprocess.PIPE
         )
-        return result.stdout.decode("utf-8")
+
+        if result.returncode != 0:
+            raise RuntimeError(
+                f"LLM invocation failed:\n{result.stderr.decode('utf-8')}"
+            )
+        return result.stdout.decode("utf-8").strip()

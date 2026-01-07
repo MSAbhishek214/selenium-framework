@@ -26,22 +26,22 @@ def enrich_analysis(
 
 
 if __name__ == "__main__":
-    BASE_DIR = Path(__file__).resolve().parent
+    BASE_DIR = Path(__file__).resolve().parent # rules
 
     analysis_path = (
-        BASE_DIR.parent
-        / "failure-triage"
-        / "sample-input"
-        / "analysis_env.json"
+        BASE_DIR.parent.parent # selenium-framework
+        / "failure-input"
+        / "2026-01-06T12-39-40.813403500Z-99d499ea-a8d4-4cc2-84ae-5f72aec239db"
+        / "analysis.json"
     )
 
     rulebook_path = BASE_DIR / "selenium_rules.json"
 
     output_path = (
-        BASE_DIR.parent
+        BASE_DIR.parent # ai-layer
         / "failure-triage"
         / "sample-input"
-        / "enriched1_analysis.json"
+        / "enrich2_analysis.json"
     )
 
     enrich_analysis(analysis_path, rulebook_path, output_path)

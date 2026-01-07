@@ -1,0 +1,18 @@
+{
+  "schemaVersion" : "1.0",
+  "runId" : "2026-01-06T12-39-40.813403500Z-99d499ea-a8d4-4cc2-84ae-5f72aec239db",
+  "test" : {
+    "name" : "invalidEmail",
+    "className" : "com.darkuros.selenium.tests.ForgotPasswordTest",
+    "suite" : "Regression"
+  },
+  "failure" : {
+    "exceptionType" : "java.lang.AssertionError",
+    "message" : "expected [*Ente Valid Email] but found [*Enter Valid Email]"
+  },
+  "timestampUtc" : 1767703180814,
+  "environment" : {
+    "os" : "Windows 11",
+    "java_version" : "21.0.8"
+  }
+}

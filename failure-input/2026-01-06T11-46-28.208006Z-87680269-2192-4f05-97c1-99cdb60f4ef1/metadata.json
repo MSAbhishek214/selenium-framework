@@ -1,0 +1,14 @@
+{
+  "runId" : "2026-01-06T11-46-28.208006Z-87680269-2192-4f05-97c1-99cdb60f4ef1",
+  "testName" : "invalidEmail",
+  "testClass" : "com.darkuros.selenium.tests.ForgotPasswordTest",
+  "suiteName" : "Regression",
+  "stackTrace" : "java.lang.AssertionError",
+  "exceptionMessage" : "expected [*Ente Valid Email] but found [*Enter Valid Email]",
+  "exceptionType" : "\tat org.testng.Assert.fail(Assert.java:111)\n\tat org.testng.Assert.failNotEquals(Assert.java:1590)\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:150)\n\tat org.testng.Assert.assertEquals(Assert.java:132)\n\tat org.testng.Assert.assertEquals(Assert.java:656)\n\tat org.testng.Assert.assertEquals(Assert.java:666)\n\tat com.darkuros.selenium.tests.ForgotPasswordTest.invalidEmail(ForgotPasswordTest.java:29)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)\n\tat org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)\n\tat org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:269)\n\tat org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:76)\n\tat org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)\n\tat org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)\n\tat org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)\n\tat org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)\n\tat java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)\n\tat org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\n",
+  "timeStampUTC" : 1767699988209,
+  "environment" : {
+    "os" : "Windows 11",
+    "java_version" : "21.0.8"
+  }
+}

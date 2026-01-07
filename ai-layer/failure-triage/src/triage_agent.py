@@ -95,5 +95,5 @@ Decision Constraints:
 
 
 if __name__ == "__main__":
-    sample_input = BASE_DIR / "sample-input" / "enriched1_analysis.json"
+    sample_input = BASE_DIR / "sample-input" / "enrich2_analysis.json"
     run_triage(sample_input)

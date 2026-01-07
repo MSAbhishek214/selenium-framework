@@ -4,13 +4,13 @@
 	<listeners>
 		<listener class-name="com.darkuros.selenium.utils.RetryTransformer" />
 		<listener class-name="com.darkuros.selenium.utils.ExtentTestListener" />
+		<listener class-name="com.darkuros.selenium.utils.FailureCaptureListener" />
 	</listeners>
 	<test name="debug">
 		<classes>
 			<class name="com.darkuros.selenium.tests.ForgotPasswordTest" />
 			<class name="com.darkuros.selenium.tests.LoginTest" />
 			<class name="com.darkuros.selenium.tests.RegisterTest" />
-			<class name="com.darkuros.selenium.tests.OrderAnItemTest" />
 		</classes>
 	</test>
 </suite>

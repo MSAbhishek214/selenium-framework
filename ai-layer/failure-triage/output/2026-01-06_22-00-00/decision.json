@@ -1,0 +1,7 @@
+{
+  "classification": "TEST_BUG",
+  "action": "FLAG_FOR_REVIEW",
+  "priority": "MEDIUM",
+  "confidence": 0.95,
+  "rationale": "The error message is clear, the test is deterministic (it fails on a specific input), and it's consistent with previous failures. The failure likely indicates a bug in the forgot password function that processes email inputs."
+}

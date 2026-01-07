@@ -32,11 +32,11 @@ integration.
     Owner: Abhishek Rotti
 -->
 <suite name="Debug" verbose="1" parallel="false" thread-count="1">
-	<groups>
+	<!-- <groups>
 		<run>
 			<include name="debug"></include>
 		</run>
-	</groups>
+	</groups> -->
 	<listeners>
 		<listener class-name="com.darkuros.selenium.utils.RetryTransformer" />
 		<listener class-name="com.darkuros.selenium.utils.ExtentTestListener" />
