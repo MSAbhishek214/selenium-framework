@@ -1,4 +1,4 @@
-package com.darkuros.selenium.utils;
+package com.darkuros.selenium.data;
 
 import org.testng.annotations.DataProvider;
 

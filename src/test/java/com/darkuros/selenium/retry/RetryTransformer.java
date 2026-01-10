@@ -1,4 +1,4 @@
-package com.darkuros.selenium.utils;
+package com.darkuros.selenium.retry;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;

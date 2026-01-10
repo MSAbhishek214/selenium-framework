@@ -17,11 +17,6 @@ Logback.
       Logs routed to both console (WARN only) and rolling file if logging is enabled.
       Additivity disabled.
 
-    - io.github.bonigarcia → Level: WARN
-      Silences WebDriverManager logs.
-      Logs routed to both console (WARN only) and rolling file if logging is enabled.
-      Additivity disabled.
-
   ──────────────────────────────────────────────────────────────
   🧪 Console Appenders:
     - CONSOLE_WARN:
@@ -53,11 +48,9 @@ Logback.
     - Dynamic verbosity toggling: use -Dlog.level=DEBUG and conditional config
 blocks.
 
-  Last updated: 2025-10-09
+  Last updated: 2026-01-10
 -->
 <configuration>
-
-    <!--<statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />-->
     
     <property name="LOGGING_ENABLED" value="${loggingEnabled:-true}" />
 
@@ -101,10 +94,6 @@ blocks.
                 <appender-ref ref="CONSOLE_WARN" />
                 <appender-ref ref="FILE" />
             </logger>
-            <logger name="io.github.bonigarcia" level="WARN" additivity="false">
-                <appender-ref ref="CONSOLE_WARN" />
-                <appender-ref ref="FILE" />
-            </logger>
             <root level="INFO">
                 <appender-ref ref="CONSOLE" />
                 <appender-ref ref="FILE" />
@@ -115,9 +104,6 @@ blocks.
                 <appender-ref ref="CONSOLE_WARN" />
             </logger>
             <logger name="org.testng.internal" level="WARN" additivity="false">
-                <appender-ref ref="CONSOLE_WARN" />
-            </logger>
-            <logger name="io.github.bonigarcia" level="WARN" additivity="false">
                 <appender-ref ref="CONSOLE_WARN" />
             </logger>
             <root level="INFO">

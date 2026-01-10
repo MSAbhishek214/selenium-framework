@@ -1,4 +1,4 @@
-package com.darkuros.selenium.utils;
+package com.darkuros.selenium.reporting;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,6 +9,7 @@ import org.testng.ITestContext;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 public class ExtentReportManager {
 	private static ExtentReports extent;

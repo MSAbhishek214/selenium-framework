@@ -4,10 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.darkuros.selenium.base.BaseTest;
+import com.darkuros.selenium.data.DataProviderUtils;
 import com.darkuros.selenium.models.UserTestData;
 import com.darkuros.selenium.pageobjects.LoginPage;
 import com.darkuros.selenium.pageobjects.RegisterPage;
-import com.darkuros.selenium.utils.DataProviderUtils;
 
 public class RegisterTest extends BaseTest {
 

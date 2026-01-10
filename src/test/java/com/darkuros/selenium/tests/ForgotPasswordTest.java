@@ -26,7 +26,7 @@ public class ForgotPasswordTest extends BaseTest {
 		ForgotPasswordPage forgotPasswordPage = loginPage.navigateToForgotPasswordLink();
 		forgotPasswordPage.fillSavePasswordFormAndSubmit("com", "123@Dark", "123@Dark");
 
-		Assert.assertEquals(forgotPasswordPage.getInvalidEmailErrorText(), "*Ente Valid Email");
+		Assert.assertEquals(forgotPasswordPage.getInvalidEmailErrorText(), "*Enter Valid Email");
 		reporter.logPass("Invalid email error message displayed as expected.");
 	}
 

@@ -18,8 +18,8 @@ import org.slf4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.darkuros.selenium.reporting.ExtentReportLogger;
 import com.darkuros.selenium.utils.ConfigReader;
-import com.darkuros.selenium.utils.ExtentReportLogger;
 import com.darkuros.selenium.utils.FrameworkHealthChecker;
 import com.darkuros.selenium.utils.IReporter;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;

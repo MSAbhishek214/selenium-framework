@@ -1,8 +1,10 @@
-package com.darkuros.selenium.utils;
+package com.darkuros.selenium.retry;
 
 import org.slf4j.Logger;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
+
+import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 /**
  * This class implements IRetryAnalyzer to provide retry logic for failed tests.

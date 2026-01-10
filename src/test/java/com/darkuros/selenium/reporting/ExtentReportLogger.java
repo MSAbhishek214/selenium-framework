@@ -1,6 +1,8 @@
-package com.darkuros.selenium.utils;
+package com.darkuros.selenium.reporting;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.darkuros.selenium.listeners.ExtentTestListener;
+import com.darkuros.selenium.utils.IReporter;
 
 /**
  * An implementation of the IReporter interface that logs messages

@@ -1,4 +1,4 @@
-package com.darkuros.selenium.utils;
+package com.darkuros.selenium.listeners;
 
 import com.darkuros.selenium.failurecapture.FailureCapture;
 import com.darkuros.selenium.failurecapture.FailureContext;

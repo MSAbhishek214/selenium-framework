@@ -5,8 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.darkuros.selenium.base.BaseTest;
+import com.darkuros.selenium.data.DataProviderUtils;
 import com.darkuros.selenium.pageobjects.LoginPage;
-import com.darkuros.selenium.utils.DataProviderUtils;
 import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 public class LoginTest extends BaseTest {

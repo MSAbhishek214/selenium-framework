@@ -1,4 +1,4 @@
-package com.darkuros.selenium.utils;
+package com.darkuros.selenium.listeners;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.darkuros.selenium.base.BaseTest;
+import com.darkuros.selenium.reporting.ExtentReportManager;
+import com.darkuros.selenium.utils.LoggerFactoryUtils;
 
 public class ExtentTestListener implements ITestListener {
 	private static final Logger logger = LoggerFactoryUtils.getLogger(ExtentTestListener.class);
